@@ -16,7 +16,7 @@
         <% setLang(purch.partner_id.lang) %>
         <div class="address">
             <table class="recipient">
-                <tr><td>${purch.partner_id.title or ''}  ${purch.partner_id.name }</td></tr>
+                <tr><td class="name">${purch.partner_id.title or ''}  ${purch.partner_id.name }</td></tr>
                 <tr><td>${purch.partner_address_id.street or ''}</td></tr>
                 <tr><td>${purch.partner_address_id.street2 or ''}</td></tr>
                 <tr><td>${purch.partner_address_id.zip or ''} ${purch.partner_address_id.city or ''}</td></tr>
@@ -38,7 +38,7 @@
             </table>
 
             <table class="shipping">
-                <tr><td class="address_title">Expected Delivery address:</td></tr>
+                <tr><td class="address_title">${_("Expected Delivery address:")}</td></tr>
                 %if purch.dest_address_id:
                     <tr><td>${purch.partner_id.title or ''}  ${purch.partner_id.name }</td></tr>
                     <tr><td>${purch.dest_address_id.street or ''}</td></tr>
@@ -67,7 +67,7 @@
             </table>
         </div>
 
-        <h1 style="clear:both; padding-top: 20px;">Request for Quotation: ${purch.name}</h1>
+        <h1 style="clear:both; padding-top: 20px;">${_("Request for Quotation:")} ${purch.name}</h1>
 
         <table class="list_table" width="100%" style="margin-top: 40px;">
             <thead>
@@ -96,7 +96,7 @@
         <p style="margin-top: 20px;">${purch.notes or '' | carriage_returns}</p>
 
         <p style="margin-top: 20px;">
-            Regards,
+            ${_("Regards,")}
         </p>
 
         <p style="margin-top: 20px;">${user.signature or ''}</p>
