@@ -59,7 +59,7 @@
             %endif
         </div>
 
-        <h1 style="clear:both; padding-top: 20px;">${quotation and _('Quotation N°') or _('Purchase Order N°') } ${purch.name}</h1>
+        <h1 style="clear:both; padding-top: 20px;">${quotation and _(u'Quotation N°') or _(u'Purchase Order N°') } ${purch.name}</h1>
 
         <table class="basic_table" width="100%">
             <tr>
