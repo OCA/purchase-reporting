@@ -18,7 +18,6 @@
         %>
 
         <% setLang(purch.partner_id.lang) %>
-
         <div class="address">
             <table class="recipient">
                 <tr><td class="name">${purch.partner_id.title or ''}  ${purch.partner_id.name }</td></tr>
@@ -107,7 +106,7 @@
             <tfoot>
                 <tr>
                     <td colspan="4" style="border-style:none"/>
-                    <td style="border-top:2px solid"><b>_${_("Net Total:")}</b></td>
+                    <td style="border-top:2px solid"><b>${_("Net Total:")}</b></td>
                     <td class="amount" style="border-top:2px solid;">${formatLang(purch.amount_untaxed, digits=get_digits(dp='Purchase Price'))} ${purch.pricelist_id.currency_id.symbol}</td>
                 </tr>
                 <tr>
