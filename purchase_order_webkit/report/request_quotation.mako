@@ -16,7 +16,7 @@
         <% setLang(purch.partner_id.lang) %>
         <div class="address">
             <table class="recipient">
-                <tr><td class="name">${purch.partner_id.title or ''}  ${purch.partner_id.name }</td></tr>
+                <tr><td class="name">${purch.partner_id.title and purch.partner_id.title.name or ''}  ${purch.partner_id.name }</td></tr>
                 <tr><td>${purch.partner_address_id.street or ''}</td></tr>
                 <tr><td>${purch.partner_address_id.street2 or ''}</td></tr>
                 <tr><td>${purch.partner_address_id.zip or ''} ${purch.partner_address_id.city or ''}</td></tr>
@@ -40,7 +40,7 @@
             <table class="shipping">
                 <tr><td class="address_title">${_("Expected Delivery address:")}</td></tr>
                 %if purch.dest_address_id:
-                    <tr><td>${purch.partner_id.title or ''}  ${purch.partner_id.name }</td></tr>
+                    <tr><td>${purch.partner_id.title and purch.partner_id.title.name or ''}  ${purch.partner_id.name }</td></tr>
                     <tr><td>${purch.dest_address_id.street or ''}</td></tr>
                     <tr><td>${purch.dest_address_id.street2 or ''}</td></tr>
                     <tr><td>${purch.dest_address_id.zip or ''} ${purch.dest_address_id.city or ''}</td></tr>
