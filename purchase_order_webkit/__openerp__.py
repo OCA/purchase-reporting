@@ -41,6 +41,6 @@ Replaces the legacy rml Quotation / Purchase Order report by a brand new webkit 
     'update_xml': ['purchase_report.xml'],
     'demo_xml': [],
     'test': [],
-    'installable': True,
+    'installable': False,
     'active': False,
 }
