@@ -6,11 +6,6 @@
 </head>
 <body>
     <%page expression_filter="entity"/>
-    <%
-    def carriage_returns(text):
-        return text.replace('\n', '<br />')
-
-    %>
 
     %for purch in objects :
         <%
@@ -21,20 +16,20 @@
         <div class="address">
             <table class="recipient">
                 <tr><td class="name">${purch.partner_id.title and purch.partner_id.title.name or ''}  ${purch.partner_id.name }</td></tr>
-                <tr><td>${purch.partner_address_id.street or ''}</td></tr>
-                <tr><td>${purch.partner_address_id.street2 or ''}</td></tr>
-                <tr><td>${purch.partner_address_id.zip or ''} ${purch.partner_address_id.city or ''}</td></tr>
-                %if purch.partner_address_id.country_id :
-                <tr><td>${purch.partner_address_id.country_id.name or ''} </td></tr>
+                <tr><td>${purch.partner_id.street or ''}</td></tr>
+                <tr><td>${purch.partner_id.street2 or ''}</td></tr>
+                <tr><td>${purch.partner_id.zip or ''} ${purch.partner_id.city or ''}</td></tr>
+                %if purch.partner_id.country_id :
+                <tr><td>${purch.partner_id.country_id.name or ''} </td></tr>
                 %endif
-                %if purch.partner_address_id.phone :
-                <tr><td>${_("Tel")}: ${purch.partner_address_id.phone}</td></tr>
+                %if purch.partner_id.phone :
+                <tr><td>${_("Tel")}: ${purch.partner_id.phone}</td></tr>
                 %endif
-                %if purch.partner_address_id.fax :
-                <tr><td>${_("Fax")}: ${purch.partner_address_id.fax}</td></tr>
+                %if purch.partner_id.fax :
+                <tr><td>${_("Fax")}: ${purch.partner_id.fax}</td></tr>
                 %endif
-                %if purch.partner_address_id.email :
-                <tr><td>${_("E-mail")}: ${purch.partner_address_id.email}</td></tr>
+                %if purch.partner_id.email :
+                <tr><td>${_("E-mail")}: ${purch.partner_id.email}</td></tr>
                 %endif
                 %if purch.partner_id.vat :
                 <tr><td>${_("VAT")}: ${purch.partner_id.vat}</td></tr>
@@ -96,11 +91,6 @@
                     <td class="amount">${formatLang(line.price_unit, digits=get_digits(dp='Purchase Price'))}</td>
                     <td class="amount">${formatLang(line.price_subtotal, digits=get_digits(dp='Purchase Price'))} ${purch.pricelist_id.currency_id.symbol}</td>
                 </tr>
-                %if line.notes :
-                    <tr class="line">
-                        <td colspan="6" class="note">${line.notes  | carriage_returns}</td>
-                    </tr>
-                %endif
             %endfor
             </tbody>
             <tfoot>
@@ -122,7 +112,7 @@
             </tfoot>
         </table>
 
-        <p style="margin-top: 40px;">${purch.notes or '' | carriage_returns}</p>
+        <p style="margin-top: 40px;">${purch.note1 or '' | n}</p>
 
         <p style="page-break-after:always"/>
         <br/>

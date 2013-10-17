@@ -27,4 +27,5 @@
 #
 ##############################################################################
 
-import report
+from . import report
+from . import purchase_order
