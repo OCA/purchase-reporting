@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 6.0.3\n"
-"Report-Msgid-Bugs-To: support@openerp.com\n"
-"POT-Creation-Date: 2011-12-12 11:14+0000\n"
-"PO-Revision-Date: 2011-12-12 11:14+0000\n"
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-12-11 13:01+0000\n"
+"PO-Revision-Date: 2013-12-11 13:01+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,93 +16,167 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/request_quotation.mako:76
-msgid "Expected Date"
-msgstr "Date d'échéance"
+#: view:purchase.condition_text:0
+msgid "purchase condition text"
+msgstr "Condition de texte"
 
 #. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:35
-#: report:addons/purchase_order_webkit/report/request_quotation.mako:30
-msgid "Fax"
-msgstr "Fax"
+#: field:purchase.condition_text,name:0
+msgid "Condition summary"
+msgstr "Résumé des conditions"
 
 #. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:87
-msgid "Net Price"
-msgstr "Prix net"
+#: model:ir.model,name:purchase_order_webkit.model_purchase_condition_text
+msgid "purchase conditions"
+msgstr "Conditions d'achats"
 
 #. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:32
-#: report:addons/purchase_order_webkit/report/request_quotation.mako:27
-msgid "Tel"
-msgstr "Tél"
-
-#. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:82
-#: report:addons/purchase_order_webkit/report/request_quotation.mako:75
-msgid "Description"
-msgstr "Description"
-
-#. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:67
-msgid "Your Order Reference"
-msgstr "Votre Référence Commande"
-
-#. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:62
-msgid "Purchase Order N°"
-msgstr "N° de confirmation du bon de commande"
-
-#. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:68
-msgid "Date Ordered"
-msgstr "Date de Commande"
-
-#. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:83
-msgid "Taxes"
-msgstr "Taxes"
-
-#. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:85
-#: report:addons/purchase_order_webkit/report/request_quotation.mako:77
-msgid "Qty"
-msgstr "Qté"
-
-#. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:38
-#: report:addons/purchase_order_webkit/report/request_quotation.mako:33
-msgid "E-mail"
-msgstr "E-mail"
-
-#. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:84
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:282
 msgid "Date Req."
 msgstr "Date prévue"
 
 #. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:69
-msgid "Validated by"
-msgstr "Validée par"
+#: view:purchase.order:0
+msgid "Your bottom conditions here"
+msgstr "Vos conditions de bas de page"
 
 #. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:66
+#: selection:purchase.condition_text,type:0
+msgid "Top condition"
+msgstr "Conditions d'entête"
+
+#. module: purchase_order_webkit
+#: view:purchase.order:0
+msgid "Conditions"
+msgstr "Conditions"
+
+#. module: purchase_order_webkit
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:328
+msgid "Taxes:"
+msgstr "Taxes:"
+
+#. module: purchase_order_webkit
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:262
+msgid "Your Order Reference"
+msgstr "Votre Référence de commande"
+
+#. module: purchase_order_webkit
+#: report:addons/purchase_order_webkit/report/request_quotation.mako:267
+msgid "Expected Date"
+msgstr "Date d'échéance"
+
+#. module: purchase_order_webkit
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:261
 msgid "Document"
 msgstr "Document"
 
 #. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:86
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:280
+#: report:addons/purchase_order_webkit/report/request_quotation.mako:266
+msgid "Description"
+msgstr "Description"
+
+#. module: purchase_order_webkit
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:257
+msgid "Purchase Order N°"
+msgstr "N° de confirmation du bon de commande"
+
+#. module: purchase_order_webkit
+#: field:purchase.condition_text,type:0
+msgid "type"
+msgstr "type"
+
+#. module: purchase_order_webkit
+#: field:purchase.condition_text,text:0
+msgid "Condition"
+msgstr "Condition"
+
+#. module: purchase_order_webkit
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:284
 msgid "Unit Price"
 msgstr "Prix"
 
 #. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:41
-#: report:addons/purchase_order_webkit/report/request_quotation.mako:36
-msgid "VAT"
-msgstr "TVA"
+#: view:purchase.order:0
+msgid "Your top conditions here"
+msgstr "Vos conditions d'entête"
 
 #. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:62
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:337
+msgid "Total:"
+msgstr "Total:"
+
+#. module: purchase_order_webkit
+#: field:purchase.order,note2:0
+#: field:purchase.order,text_condition2:0
+msgid "Footer"
+msgstr "Bas de page"
+
+#. module: purchase_order_webkit
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:263
+msgid "Date Ordered"
+msgstr "Date de Commande"
+
+#. module: purchase_order_webkit
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:281
+msgid "Taxes"
+msgstr "Taxes"
+
+#. module: purchase_order_webkit
+#: model:ir.model,name:purchase_order_webkit.model_purchase_order
+msgid "Purchase Order"
+msgstr "Bon de commande"
+
+#. module: purchase_order_webkit
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:264
+msgid "Validated by"
+msgstr "Validée par"
+
+#. module: purchase_order_webkit
+#: view:purchase.condition_text:0
+msgid "Purchase condition text"
+msgstr "Conditions d'achat"
+
+#. module: purchase_order_webkit
+#: model:ir.actions.act_window,name:purchase_order_webkit.action_purchase_condition_form_webkit
+#: model:ir.actions.act_window,name:purchase_order_webkit.action_purchase_condition_webkit
+msgid "purchase.condition_text"
+msgstr "purchase.condition_text"
+
+#. module: purchase_order_webkit
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:283
+#: report:addons/purchase_order_webkit/report/request_quotation.mako:268
+msgid "Qty"
+msgstr "Qté"
+
+#. module: purchase_order_webkit
+#: field:purchase.order,note1:0
+#: field:purchase.order,text_condition1:0
+msgid "Header"
+msgstr "Entête"
+
+#. module: purchase_order_webkit
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:257
 msgid "Quotation N°"
 msgstr "Demande de prix N°"
+
+#. module: purchase_order_webkit
+#: selection:purchase.condition_text,type:0
+msgid "Bottom condition"
+msgstr "Conditions de bas de page"
+
+#. module: purchase_order_webkit
+#: report:addons/purchase_order_webkit/report/request_quotation.mako:259
+msgid "Request for Quotation:"
+msgstr "Demande de prix:"
+
+#. module: purchase_order_webkit
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:285
+msgid "Net Price"
+msgstr "Prix net"
+
+#. module: purchase_order_webkit
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:319
+msgid "Net :"
+msgstr "Net :"
 
