@@ -36,11 +36,11 @@ class request_quotation(report_sxw.rml_parse):
         super(request_quotation, self).__init__(cr, uid, name, context=context)
         self.localcontext.update({
             'time': time,
-            'cr':cr,
+            'cr': cr,
             'uid': uid,
         })
 
 report_sxw.report_sxw('report.purchase.quotation.webkit',
-                       'purchase.order',
-                       'addons/purchase_report_webkit/report/request_quotation.mako',
-                       parser=request_quotation)
+                      'purchase.order',
+                      'addons/purchase_report_webkit/report/request_quotation.mako',
+                      parser=request_quotation)

@@ -256,7 +256,7 @@ td.vat {
         </div>
 
         <h1 style="clear:both; padding-top: 20px;">${_("Request for Quotation:")} ${purch.name}</h1>
-
+        <p>${purch.note1 or '' | n}</p>
         <table class="list_main_table" width="100%" >
             <thead>
                 <tr>
