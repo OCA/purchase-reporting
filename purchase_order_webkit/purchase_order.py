@@ -64,8 +64,6 @@ class PurchaseOrder(orm.Model):
         cond = self.pool.get('purchase.condition_text').browse(cr, uid,
                                                                commentid,
                                                                {'lang': lang})
-        import pdb
-        pdb.set_trace()
         return {'value': {key: cond.text}}
 
     def set_header(self, cr, uid, inv_id, commentid):
