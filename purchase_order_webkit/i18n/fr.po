@@ -18,7 +18,7 @@ msgstr ""
 #. module: purchase_order_webkit
 #: view:purchase.condition_text:0
 msgid "purchase condition text"
-msgstr "Condition de texte"
+msgstr "Textes des conditions d'achat"
 
 #. module: purchase_order_webkit
 #: field:purchase.condition_text,name:0
@@ -53,7 +53,7 @@ msgstr "Conditions"
 #. module: purchase_order_webkit
 #: report:addons/purchase_order_webkit/report/purchase_order.mako:328
 msgid "Taxes:"
-msgstr "Taxes:"
+msgstr "Taxes :"
 
 #. module: purchase_order_webkit
 #: report:addons/purchase_order_webkit/report/purchase_order.mako:262
@@ -104,7 +104,7 @@ msgstr "Vos conditions d'entête"
 #. module: purchase_order_webkit
 #: report:addons/purchase_order_webkit/report/purchase_order.mako:337
 msgid "Total:"
-msgstr "Total:"
+msgstr "Total :"
 
 #. module: purchase_order_webkit
 #: field:purchase.order,note2:0
@@ -168,7 +168,7 @@ msgstr "Conditions de bas de page"
 #. module: purchase_order_webkit
 #: report:addons/purchase_order_webkit/report/request_quotation.mako:259
 msgid "Request for Quotation:"
-msgstr "Demande de prix:"
+msgstr "Demande de prix :"
 
 #. module: purchase_order_webkit
 #: report:addons/purchase_order_webkit/report/purchase_order.mako:285
