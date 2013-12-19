@@ -23,7 +23,7 @@ from openerp import netsvc
 
 
 class PurchaseConditionText(orm.Model):
-    """Purchase order Textual information"""
+    """ Purchase order Textual information """
     _name = "purchase.condition_text"
     _description = "purchase conditions"
 
@@ -32,35 +32,34 @@ class PurchaseConditionText(orm.Model):
         'type': fields.selection([('header', 'Top condition'),
                                   ('footer', 'Bottom condition')],
                                  'type', required=True),
-        'text': fields.html('Condition', translate=True, required=True)}
+        'text': fields.html('Condition', translate=True, required=True),
+    }
 
 
 class PurchaseOrder(orm.Model):
-    """Adds condition to Po"""
+    """ Adds condition to Po """
 
     _inherit = "purchase.order"
     _description = 'Purchase Order'
 
-    _columns = {'text_condition1': fields.many2one('purchase.condition_text',
-                                                   'Header',
-                                                   domain=[('type',
-                                                            '=',
-                                                            'header')]),
-                'text_condition2': fields.many2one('purchase.condition_text',
-                                                   'Footer',
-                                                   domain=[('type',
-                                                            '=',
-                                                            'footer')]),
-                'note1': fields.html('Header'),
-                'note2': fields.html('Footer')}
+    _columns = {
+        'text_condition1': fields.many2one('purchase.condition_text',
+                                           'Header',
+                                           domain=[('type', '=', 'header')]),
+        'text_condition2': fields.many2one('purchase.condition_text',
+                                           'Footer',
+                                           domain=[('type', '=', 'footer')]),
+        'note1': fields.html('Header'),
+        'note2': fields.html('Footer')
+    }
 
     def _set_condition(self, cursor, uid, inv_id, commentid, key):
-        """Set the text of the notes in purchases"""
+        """ Set the text of the notes in purchases """
         if not commentid:
             return {}
         try:
             lang = self.browse(cursor, uid, inv_id)[0].partner_id.lang
-        except Exception as exc:
+        except Exception:
             lang = 'en_US'
         cond = self.pool.get('purchase.condition_text').browse(cursor, uid,
                                                                commentid,
@@ -76,12 +75,12 @@ class PurchaseOrder(orm.Model):
         return self._set_condition(cursor, uid, inv_id, commentid, 'note2')
 
     def print_quotation(self, cursor, uid, ids, context=None):
-        '''
+        """
         This function prints the purchase order and mark it as sent,
         so that we can see more easily the next step of the workflow
-        '''
-        assert len(ids) == 1, """This option should only
-                              be used for a single id at a time"""
+        """
+        assert len(ids) == 1, \
+            "This option should only be used for a single id at a time"
         wf_service = netsvc.LocalService("workflow")
         wf_service.trg_validate(uid, 'purchase.order',
                                 ids[0], 'send_rfq', cursor)
@@ -91,4 +90,5 @@ class PurchaseOrder(orm.Model):
                  }
         return {'type': 'ir.actions.report.xml',
                 'report_name': 'purchase.order.webkit',
-                'datas': datas, 'nodestroy': True}
+                'datas': datas,
+                'nodestroy': True}
