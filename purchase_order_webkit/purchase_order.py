@@ -53,28 +53,28 @@ class PurchaseOrder(orm.Model):
         'note2': fields.html('Footer')
     }
 
-    def _set_condition(self, cursor, uid, inv_id, commentid, key):
+    def _set_condition(self, cr, uid, inv_id, commentid, key):
         """ Set the text of the notes in purchases """
         if not commentid:
             return {}
         try:
-            lang = self.browse(cursor, uid, inv_id)[0].partner_id.lang
+            lang = self.browse(cr, uid, inv_id)[0].partner_id.lang
         except Exception:
             lang = 'en_US'
-        cond = self.pool.get('purchase.condition_text').browse(cursor, uid,
+        cond = self.pool.get('purchase.condition_text').browse(cr, uid,
                                                                commentid,
                                                                {'lang': lang})
         import pdb
         pdb.set_trace()
         return {'value': {key: cond.text}}
 
-    def set_header(self, cursor, uid, inv_id, commentid):
-        return self._set_condition(cursor, uid, inv_id, commentid, 'note1')
+    def set_header(self, cr, uid, inv_id, commentid):
+        return self._set_condition(cr, uid, inv_id, commentid, 'note1')
 
-    def set_footer(self, cursor, uid, inv_id, commentid):
-        return self._set_condition(cursor, uid, inv_id, commentid, 'note2')
+    def set_footer(self, cr, uid, inv_id, commentid):
+        return self._set_condition(cr, uid, inv_id, commentid, 'note2')
 
-    def print_quotation(self, cursor, uid, ids, context=None):
+    def print_quotation(self, cr, uid, ids, context=None):
         """
         This function prints the purchase order and mark it as sent,
         so that we can see more easily the next step of the workflow
@@ -83,10 +83,10 @@ class PurchaseOrder(orm.Model):
             "This option should only be used for a single id at a time"
         wf_service = netsvc.LocalService("workflow")
         wf_service.trg_validate(uid, 'purchase.order',
-                                ids[0], 'send_rfq', cursor)
+                                ids[0], 'send_rfq', cr)
         datas = {'model': 'purchase.order',
                  'ids': ids,
-                 'form': self.read(cursor, uid, ids[0], context=context),
+                 'form': self.read(cr, uid, ids[0], context=context),
                  }
         return {'type': 'ir.actions.report.xml',
                 'report_name': 'purchase.order.webkit',
