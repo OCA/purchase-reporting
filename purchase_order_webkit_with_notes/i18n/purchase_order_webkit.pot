@@ -97,6 +97,11 @@ msgid "Unit Price"
 msgstr ""
 
 #. module: purchase_order_webkit
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:288
+msgid "UoM"
+msgstr "UdM"
+
+#. module: purchase_order_webkit
 #: view:purchase.order:0
 msgid "Your top conditions here"
 msgstr ""

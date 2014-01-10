@@ -1,13 +1,13 @@
 ## -*- coding: utf-8 -*-
 <html>
 <head>
-    <style type="text/css">
+     <style type="text/css">
         ${css}
 
 .list_main_table {
-    border:thin solid #E3E4EA;
-    text-align:center;
-    border-collapse: collapse;
+border:thin solid #E3E4EA;
+text-align:center;
+border-collapse: collapse;
 }
 table.list_main_table {
     margin-top: 20px;
@@ -71,31 +71,6 @@ caption.formatted_note {
 caption.formatted_note p {
     margin: 0;
 }
-
-.main_col1 {
-    width: 40%;
-}
-td.main_col1 {
-    text-align:left;
-}
-.main_col2,
-.main_col3,
-.main_col4,
-.main_col6 {
-    width: 10%;
-}
-.main_col5 {
-    width: 7%;
-}
-td.main_col5 {
-    text-align: center;
-    font-style:italic;
-    font-size: 10;
-}
-.main_col7 {
-    width: 13%;
-}
-
 .list_bank_table {
     text-align:center;
     border-collapse: collapse;
@@ -178,9 +153,6 @@ td.main_col5 {
     font-size:12;
 }
 
-th.date {
-    width: 90px;
-}
 
 td.amount, th.amount {
     text-align: right;
@@ -203,30 +175,30 @@ td.vat {
 }
 
 .main_col1 {
-    width: 30%;
+    width: 40%;
 }
 td.main_col1 {
     text-align:left;
 }
-.main_col2,
-.main_col3,
-.main_col4,
+.main_col2 {
+    width: 10%;
+}
+.main_col3 {
+    width: 10%;
+    text-align:center;
+}
 .main_col6 {
     width: 10%;
-    text-align:right;
 }
 .main_col4 {
-    width: 20%;
+	width: 10%;
+	text-align:right;
 }
 .main_col5 {
     width: 7%;
+    text-align:left;
 }
-td.main_col5 {
-    text-align: center;
-    font-style:italic;
-    font-size: 10;
-}
-.main_col6 {
+.main_col7 {
     width: 13%;
 }
 
@@ -283,8 +255,9 @@ td.main_col5 {
             %endif
         </div>
 
-        <h1 style="clear:both; padding-top: 20px;">${quotation and _(u'Quotation N°') or _(u'Purchase Order N°') } ${purch.name}</h1>
-        <p>${purch.note1 or '' | n}</p>
+        <h3 style="clear: both; padding-top: 20px;">
+        	${quotation and _(u'Quotation N°') or _(u'Purchase Order N°') } ${purch.name}
+        </h3>
         <table class="basic_table" width="100%">
             <tr>
                 <th>${_("Document")}</th>
@@ -294,12 +267,14 @@ td.main_col5 {
             </tr>
             <tr>
                 <td>${purch.name}</td>
-                <td>${purch.partner_ref or ''}</td>
-                <td>${formatLang(purch.date_order, date=True)}</td>
-                <td>${purch.validator and purch.validator.name or ''  }</td>
+                <td style="text-align:center">${purch.partner_ref or ''}</td>
+                <td class="date">${formatLang(purch.date_order, date=True)}</td>
+                <td style="text-align:center">${purch.validator and purch.validator.name or ''  }</td>
             </tr>
         </table>
-
+        %if purch.note1:
+        <p>${purch.note1 or '' | n}</p>
+        %endif
         <table class="list_main_table" width="100%" >
             <thead>
                 <tr>
@@ -308,10 +283,11 @@ td.main_col5 {
 	              <tr>
                     <th class="main_col1">${_("Description")}</th>
                     <th class="main_col2">${_("Taxes")}</th>
-                    <th class="date main_col3">${_("Date Req.")}</th>
-                    <th class="amount main_col4">${_("Qty")}</th>
-                    <th class="amount main_col5">${_("Unit Price")}</th>
-                    <th class="amount main_col6">${_("Net Price")}</th>
+                    <th class="main_col3">${_("Date Req.")}</th>
+                    <th style="text-align:center" class="amount main_col4">${_("Qty")}</th>
+                    <th class="main_col5">${_("Unit")}</th>
+                    <th class="amount main_col6">${_("Unit Price")}</th>
+                    <th class="amount main_col7">${_("Net Price")}</th>
                   </tr>
                 </table>
               </th>
@@ -325,11 +301,12 @@ td.main_col5 {
                 <table style="width:100%">
                   <tr>
                     <td class="main_col1">${line.name}</td>
-                    <td class="main_col2">${ ', '.join([ tax.name or '' for tax in line.taxes_id ])}</td>
-                    <td class="date main_col3">${formatLang(line.date_order, date=True)}</td>
-                    <td class="amount main_col4">${line.product_qty} ${line.product_uom.name}</td>
-                    <td class="amount main col5">${formatLang(line.price_unit, digits=get_digits(dp='Purchase Price'))}</td>
-                    <td class="amount main_col6">${formatLang(line.price_subtotal, digits=get_digits(dp='Purchase Price'))} ${purch.pricelist_id.currency_id.symbol}</td>
+                    <td style="text-align:center" class="main_col2">${ ', '.join([ tax.name or '' for tax in line.taxes_id ])}</td>
+                    <td style="text-align:center" class="main_col3">${formatLang(line.date_order, date=True)}</td>
+                    <td class="amount main_col4">${line.product_qty}</td>
+                    <th class="main_col5">${line.product_uom.name}</th>
+                    <td class="amount main col6">${formatLang(line.price_unit, digits=get_digits(dp='Purchase Price'))}</td>
+                    <td class="amount main_col7">${formatLang(line.price_subtotal, digits=get_digits(dp='Purchase Price'))} ${purch.pricelist_id.currency_id.symbol}</td>
                   </tr>
                  </table>
               </div>
@@ -375,8 +352,9 @@ td.main_col5 {
         </tr>
       </tfoot>
     </table>
-
+        %if purch.note2:
 	    <p>${purch.note2 or '' | n}</p>
+	    %endif
         <p style="page-break-after:always"/>
         <br/>
 	%endfor
