@@ -1,13 +1,13 @@
 ## -*- coding: utf-8 -*-
 <html>
 <head>
-    <style type="text/css">
+     <style type="text/css">
         ${css}
 
 .list_main_table {
-    border:thin solid #E3E4EA;
-    text-align:center;
-    border-collapse: collapse;
+border:thin solid #E3E4EA;
+text-align:center;
+border-collapse: collapse;
 }
 table.list_main_table {
     margin-top: 20px;
@@ -71,31 +71,6 @@ caption.formatted_note {
 caption.formatted_note p {
     margin: 0;
 }
-
-.main_col1 {
-    width: 40%;
-}
-td.main_col1 {
-    text-align:left;
-}
-.main_col2,
-.main_col3,
-.main_col4,
-.main_col6 {
-    width: 10%;
-}
-.main_col5 {
-    width: 7%;
-}
-td.main_col5 {
-    text-align: center;
-    font-style:italic;
-    font-size: 10;
-}
-.main_col7 {
-    width: 13%;
-}
-
 .list_bank_table {
     text-align:center;
     border-collapse: collapse;
@@ -178,9 +153,6 @@ td.main_col5 {
     font-size:12;
 }
 
-th.date {
-    width: 90px;
-}
 
 td.amount, th.amount {
     text-align: right;
@@ -201,6 +173,35 @@ td.vat {
     margin-right: 120px;
     float: right;
 }
+
+.main_col1 {
+    width: 40%;
+}
+td.main_col1 {
+    text-align:left;
+}
+.main_col2 {
+    width: 10%;
+}
+.main_col3 {
+    width: 10%;
+    text-align:center;
+}
+.main_col6 {
+    width: 10%;
+}
+.main_col4 {
+    width: 10%;
+    text-align:right;
+}
+.main_col5 {
+    width: 7%;
+    text-align:left;
+}
+.main_col7 {
+    width: 13%;
+}
+
 
     </style>
 </head>
@@ -256,8 +257,7 @@ td.vat {
             %endif
         </div>
 
-        <h1 style="clear:both; padding-top: 20px;">${_("Request for Quotation:")} ${purch.name}</h1>
-        <p>${purch.note1 or '' | n}</p>
+        <h3 style="clear:both; padding-top: 20px;">${_("Request for Quotation:")} ${purch.name}</h3>
         <table class="list_main_table" width="100%" >
             <thead>
                 <tr>
@@ -282,12 +282,12 @@ td.vat {
 		                    <td>${line.name}</td>
 		                    <td>${formatLang(line.date_planned, date=True)}</td>
 		                    <td class="amount">${line.product_qty} ${line.product_uom and line.product_uom.name or ''}</td>
-                  </tr>
+                        </tr>
+                    %endfor
                  </table>
               </div>
             </td>
           </tr>
-           %endfor
             </tbody>
         </table>
 
