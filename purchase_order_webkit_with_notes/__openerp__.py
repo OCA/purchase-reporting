@@ -28,12 +28,12 @@
 ##############################################################################
 
 {
-    'name': 'Purchase Order Report using Webkit Library',
+    'name': 'Purchase Order Report using Webkit Library and notest',
     'version': '1.0',
     'category': 'Reports/Webkit',
     'description': """
 Replaces the legacy rml Quotation / Purchase Order report by
-a brand new webkit report.
+a brand new webkit report. And add note for the header and the footer of the purchase order and quotation
     """,
     'author': 'Camptocamp',
     'website': 'http://www.openerp.com',

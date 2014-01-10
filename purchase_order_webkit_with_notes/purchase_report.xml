@@ -5,7 +5,7 @@
             name="purchase.order.webkit"
             auto="False"
             model="purchase.order"
-            file="purchase_order_webkit/report/purchase_order.mako"
+            file="purchase_order_webkit_with_notes/report/purchase_order.mako"
             string="Purchase Order"
             report_type="webkit" />
 
@@ -17,7 +17,7 @@
             name="purchase.quotation.webkit"
             auto="False"
             model="purchase.order"
-            file="purchase_order_webkit/report/request_quotation.mako"
+            file="purchase_order_webkit_with_notes/report/request_quotation.mako"
             string="Request for Quotation"
             report_type="webkit" />
 
