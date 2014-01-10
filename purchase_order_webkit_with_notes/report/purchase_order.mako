@@ -202,6 +202,35 @@ td.vat {
     float: right;
 }
 
+.main_col1 {
+    width: 30%;
+}
+td.main_col1 {
+    text-align:left;
+}
+.main_col2,
+.main_col3,
+.main_col4,
+.main_col6 {
+    width: 10%;
+    text-align:right;
+}
+.main_col4 {
+    width: 20%;
+}
+.main_col5 {
+    width: 7%;
+}
+td.main_col5 {
+    text-align: center;
+    font-style:italic;
+    font-size: 10;
+}
+.main_col6 {
+    width: 13%;
+}
+
+
     </style>
 
 </head>
@@ -259,9 +288,9 @@ td.vat {
         <table class="basic_table" width="100%">
             <tr>
                 <th>${_("Document")}</th>
-                <th>${_("Your Order Reference")}</th>
+                <th style="text-align:center">${_("Your Order Reference")}</th>
                 <th class="date">${_("Date Ordered")}</th>
-                <th>${_("Validated by")}</th>
+                <th style="text-align:center">${_("Validated by")}</th>
             </tr>
             <tr>
                 <td>${purch.name}</td>
@@ -277,12 +306,12 @@ td.vat {
 	          <th class="list_main_headers" style="width: 100%">
 	            <table style="width:100%">
 	              <tr>
-                    <th>${_("Description")}</th>
-                    <th>${_("Taxes")}</th>
-                    <th class="date">${_("Date Req.")}</th>
-                    <th class="amount">${_("Qty")}</th>
-                    <th class="amount">${_("Unit Price")}</th>
-                    <th class="amount">${_("Net Price")}</th>
+                    <th class="main_col1">${_("Description")}</th>
+                    <th class="main_col2">${_("Taxes")}</th>
+                    <th class="date main_col3">${_("Date Req.")}</th>
+                    <th class="amount main_col4">${_("Qty")}</th>
+                    <th class="amount main_col5">${_("Unit Price")}</th>
+                    <th class="amount main_col6">${_("Net Price")}</th>
                   </tr>
                 </table>
               </th>
@@ -295,12 +324,12 @@ td.vat {
               <div class="nobreak">
                 <table style="width:100%">
                   <tr>
-                    <td>${line.name}</td>
-                    <td>${ ', '.join([ tax.name or '' for tax in line.taxes_id ])}</td>
-                    <td>${formatLang(line.date_order, date=True)}</td>
-                    <td class="amount">${line.product_qty} ${line.product_uom.name}</td>
-                    <td class="amount">${formatLang(line.price_unit, digits=get_digits(dp='Purchase Price'))}</td>
-                    <td class="amount">${formatLang(line.price_subtotal, digits=get_digits(dp='Purchase Price'))} ${purch.pricelist_id.currency_id.symbol}</td>
+                    <td class="main_col1">${line.name}</td>
+                    <td class="main_col2">${ ', '.join([ tax.name or '' for tax in line.taxes_id ])}</td>
+                    <td class="date main_col3">${formatLang(line.date_order, date=True)}</td>
+                    <td class="amount main_col4">${line.product_qty} ${line.product_uom.name}</td>
+                    <td class="amount main col5">${formatLang(line.price_unit, digits=get_digits(dp='Purchase Price'))}</td>
+                    <td class="amount main_col6">${formatLang(line.price_subtotal, digits=get_digits(dp='Purchase Price'))} ${purch.pricelist_id.currency_id.symbol}</td>
                   </tr>
                  </table>
               </div>
@@ -319,7 +348,7 @@ td.vat {
                     ${_("Net :")}
                   </th>
                   <td class="amount total_sum_cell">
-                    ${formatLang(purch.amount_untaxed, digits=get_digits(dp='Purchase Price'))} ${purch.pricelist_id.currency_id.symbol}}
+                    ${formatLang(purch.amount_untaxed, digits=get_digits(dp='Purchase Price'))} ${purch.pricelist_id.currency_id.symbol}
                   </td>
                 </tr>
                 <tr>
