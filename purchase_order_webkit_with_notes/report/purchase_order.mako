@@ -285,7 +285,7 @@ td.main_col1 {
                     <th class="main_col2">${_("Taxes")}</th>
                     <th class="main_col3">${_("Date Req.")}</th>
                     <th style="text-align:center" class="amount main_col4">${_("Qty")}</th>
-                    <th class="main_col5">${_("Unit")}</th>
+                    <th class="main_col5">${_("UoM")}</th>
                     <th class="amount main_col6">${_("Unit Price")}</th>
                     <th class="amount main_col7">${_("Net Price")}</th>
                   </tr>
