@@ -272,9 +272,6 @@ td.main_col1 {
                 <td style="text-align:center">${purch.validator and purch.validator.name or ''  }</td>
             </tr>
         </table>
-        %if purch.note1:
-        <p>${purch.note1 or '' | n}</p>
-        %endif
         <table class="list_main_table" width="100%" >
             <thead>
                 <tr>
@@ -352,9 +349,6 @@ td.main_col1 {
         </tr>
       </tfoot>
     </table>
-        %if purch.note2:
-	    <p>${purch.note2 or '' | n}</p>
-	    %endif
         <p style="page-break-after:always"/>
         <br/>
 	%endfor

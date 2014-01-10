@@ -258,6 +258,9 @@ td.main_col1 {
         </div>
 
         <h3 style="clear:both; padding-top: 20px;">${_("Request for Quotation:")} ${purch.name}</h3>
+        %if purch.note1:
+        <p>${purch.note1 or '' | n}</p>
+        %endif
         <table class="list_main_table" width="100%" >
             <thead>
                 <tr>
@@ -291,7 +294,9 @@ td.main_col1 {
             </tbody>
         </table>
 
-        <p>${purch.note1 or '' | n}</p>
+        %if purch.note2:
+        <p>${purch.note2 or '' | n}</p>
+        %endif
         <p style="page-break-after:always"/>
         <br/>
 	%endfor

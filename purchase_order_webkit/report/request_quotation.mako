@@ -291,7 +291,6 @@ td.main_col1 {
             </tbody>
         </table>
 
-        <p>${purch.note1 or '' | n}</p>
         <p style="page-break-after:always"/>
         <br/>
 	%endfor

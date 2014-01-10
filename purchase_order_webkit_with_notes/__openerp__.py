@@ -28,7 +28,7 @@
 ##############################################################################
 
 {
-    'name': 'Purchase Order Report using Webkit Library and notest',
+    'name': 'Purchase Order Report using Webkit Library and notes',
     'version': '1.0',
     'category': 'Reports/Webkit',
     'description': """
