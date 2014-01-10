@@ -42,5 +42,5 @@ class request_quotation(report_sxw.rml_parse):
 
 report_sxw.report_sxw('report.purchase.quotation.webkit',
                       'purchase.order',
-                      'addons/purchase_report_webkit/report/request_quotation.mako',
+                      'addons/purchase_report_webkit_with_notes/report/request_quotation.mako',
                       parser=request_quotation)
