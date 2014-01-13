@@ -47,8 +47,8 @@ msgstr "Date d'échéance"
 
 #. module: purchase_order_webkit
 #: report:addons/purchase_order_webkit/report/purchase_order.mako:261
-msgid "Document"
-msgstr "Document"
+msgid "Source Document"
+msgstr "Document d'origine"
 
 #. module: purchase_order_webkit
 #: report:addons/purchase_order_webkit/report/purchase_order.mako:280

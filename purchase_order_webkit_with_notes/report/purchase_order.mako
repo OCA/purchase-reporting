@@ -260,13 +260,13 @@ td.main_col1 {
         </h3>
         <table class="basic_table" width="100%">
             <tr>
-                <th>${_("Document")}</th>
+                <th>${_("Source Document")}</th>
                 <th style="text-align:center">${_("Your Order Reference")}</th>
                 <th class="date">${_("Date Ordered")}</th>
                 <th style="text-align:center">${_("Validated by")}</th>
             </tr>
             <tr>
-                <td>${purch.name}</td>
+                <td>${purch.origin}</td>
                 <td style="text-align:center">${purch.partner_ref or ''}</td>
                 <td class="date">${formatLang(purch.date_order, date=True)}</td>
                 <td style="text-align:center">${purch.validator and purch.validator.name or ''  }</td>
@@ -304,7 +304,7 @@ td.main_col1 {
                     <td style="text-align:center" class="main_col2">${ ', '.join([ tax.name or '' for tax in line.taxes_id ])}</td>
                     <td style="text-align:center" class="main_col3">${formatLang(line.date_order, date=True)}</td>
                     <td class="amount main_col4">${line.product_qty}</td>
-                    <th class="main_col5">${line.product_uom.name}</th>
+                    <td class="main_col5">${line.product_uom.name}</td>
                     <td class="amount main col6">${formatLang(line.price_unit, digits=get_digits(dp='Purchase Price'))}</td>
                     <td class="amount main_col7">${formatLang(line.price_subtotal, digits=get_digits(dp='Purchase Price'))} ${purch.pricelist_id.currency_id.symbol}</td>
                   </tr>

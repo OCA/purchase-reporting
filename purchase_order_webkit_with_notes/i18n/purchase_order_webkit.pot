@@ -67,7 +67,7 @@ msgstr ""
 
 #. module: purchase_order_webkit_with_notes
 #: report:addons/purchase_order_webkit_with_notes/report/purchase_order.mako:261
-msgid "Document"
+msgid "Source Document"
 msgstr ""
 
 #. module: purchase_order_webkit_with_notes
