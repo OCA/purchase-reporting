@@ -42,5 +42,5 @@ a brand new webkit report. And add note for the header and the footer of the pur
              'view/purchase_view.xml'],
     'test': [],
     'installable': True,
-    'active': True,
+    'active': False,
 }

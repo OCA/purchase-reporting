@@ -41,5 +41,5 @@ a brand new webkit report.
     'data': ['purchase_report.xml'],
     'test': [],
     'installable': True,
-    'active': True,
+    'active': False,
 }
