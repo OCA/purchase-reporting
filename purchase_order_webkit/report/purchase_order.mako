@@ -266,7 +266,7 @@ td.main_col1 {
                 <th style="text-align:center">${_("Validated by")}</th>
             </tr>
             <tr>
-                <td>${purch.origin}</td>
+                <td>${purch.origin or ''}</td>
                 <td style="text-align:center">${purch.partner_ref or ''}</td>
                 <td class="date">${formatLang(purch.date_order, date=True)}</td>
                 <td style="text-align:center">${purch.validator and purch.validator.name or ''  }</td>
