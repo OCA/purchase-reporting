@@ -33,7 +33,9 @@
     'category': 'Reports/Webkit',
     'description': """
 Replaces the legacy rml Quotation / Purchase Order report by
-a brand new webkit report. And add note for the header and the footer of the purchase order and quotation
+a brand new webkit report with header and footer notes on the purchase order and quotation
+
+It's the same report as purchase_order_webkit, but add notes for header and footer
     """,
     'author': 'Camptocamp',
     'website': 'http://www.camptocamp.com',
