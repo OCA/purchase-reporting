@@ -28,18 +28,20 @@
 ##############################################################################
 
 {
-    'name': 'Purchase Order Report using Webkit Library',
+    'name': 'Purchase Order Report using Webkit Library and notes',
     'version': '1.0',
     'category': 'Reports/Webkit',
     'description': """
 Replaces the legacy rml Quotation / Purchase Order report by
-a brand new webkit report.
-It's the same report as purchase_report_webkit_with_notes, but without header and footer notes
+a brand new webkit report with header and footer notes on the purchase order and quotation
+
+It's the same report as purchase_order_webkit, but add notes for header and footer
     """,
     'author': 'Camptocamp',
     'website': 'http://www.camptocamp.com',
     'depends': ['base', 'report_webkit', 'base_headers_webkit', 'purchase'],
-    'data': ['purchase_report.xml'],
+    'data': ['purchase_report.xml',
+             'view/purchase_view.xml'],
     'test': [],
     'installable': True,
     'active': False,

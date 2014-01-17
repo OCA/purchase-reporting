@@ -191,8 +191,8 @@ td.main_col1 {
     width: 10%;
 }
 .main_col4 {
-	width: 10%;
-	text-align:right;
+    width: 10%;
+    text-align:right;
 }
 .main_col5 {
     width: 7%;
@@ -204,7 +204,6 @@ td.main_col1 {
 
 
     </style>
-
 </head>
 <body>
     <%page expression_filter="entity"/>
@@ -237,11 +236,14 @@ td.main_col1 {
         %endfor
     </%def>
 
-    %for purch in objects :
-        <%
-              quotation = purch.state == 'draft'
-        %>
 
+    <%
+    def carriage_returns(text):
+        return text.replace('\n', '<br />')
+
+    %>
+
+    %for purch in objects :
         <% setLang(purch.partner_id.lang) %>
         <div class="address">
             <table class="recipient">
@@ -255,100 +257,46 @@ td.main_col1 {
             %endif
         </div>
 
-        <h3 style="clear: both; padding-top: 20px;">
-        	${quotation and _(u'Quotation N°') or _(u'Purchase Order N°') } ${purch.name}
-        </h3>
-        <table class="basic_table" width="100%">
-            <tr>
-                <th>${_("Source Document")}</th>
-                <th style="text-align:center">${_("Your Order Reference")}</th>
-                <th class="date">${_("Date Ordered")}</th>
-                <th style="text-align:center">${_("Validated by")}</th>
-            </tr>
-            <tr>
-                <td>${purch.origin or ''}</td>
-                <td style="text-align:center">${purch.partner_ref or ''}</td>
-                <td class="date">${formatLang(purch.date_order, date=True)}</td>
-                <td style="text-align:center">${purch.validator and purch.validator.name or ''  }</td>
-            </tr>
-        </table>
+        <h3 style="clear:both; padding-top: 20px;">${_("Request for Quotation:")} ${purch.name}</h3>
+        %if purch.note1:
+        <p>${purch.note1 or '' | n}</p>
+        %endif
         <table class="list_main_table" width="100%" >
             <thead>
                 <tr>
 	          <th class="list_main_headers" style="width: 100%">
 	            <table style="width:100%">
-	              <tr>
-                    <th class="main_col1">${_("Description")}</th>
-                    <th class="main_col2">${_("Taxes")}</th>
-                    <th class="main_col3">${_("Date Req.")}</th>
-                    <th style="text-align:center" class="amount main_col4">${_("Qty")}</th>
-                    <th class="main_col5">${_("UoM")}</th>
-                    <th class="amount main_col6">${_("Unit Price")}</th>
-                    <th class="amount main_col7">${_("Net Price")}</th>
+                    <th>${_("Description")}</th>
+                    <th>${_("Expected Date")}</th>
+                    <th class="amount">${_("Qty")}</th>
                   </tr>
                 </table>
               </th>
                 </tr>
             </thead>
             <tbody>
-            %for line in purch.order_line :
           <tr>
             <td class="list_main_lines" style="width: 100%">
               <div class="nobreak">
                 <table style="width:100%">
                   <tr>
-                    <td class="main_col1">${line.name}</td>
-                    <td style="text-align:center" class="main_col2">${ ', '.join([ tax.name or '' for tax in line.taxes_id ])}</td>
-                    <td style="text-align:center" class="main_col3">${formatLang(line.date_order, date=True)}</td>
-                    <td class="amount main_col4">${line.product_qty}</td>
-                    <td class="main_col5">${line.product_uom.name}</td>
-                    <td class="amount main col6">${formatLang(line.price_unit, digits=get_digits(dp='Purchase Price'))}</td>
-                    <td class="amount main_col7">${formatLang(line.price_subtotal, digits=get_digits(dp='Purchase Price'))} ${purch.pricelist_id.currency_id.symbol}</td>
-                  </tr>
+		            %for line in purch.order_line :
+		                <tr class="line">
+		                    <td>${line.name}</td>
+		                    <td>${formatLang(line.date_planned, date=True)}</td>
+		                    <td class="amount">${line.product_qty} ${line.product_uom and line.product_uom.name or ''}</td>
+                        </tr>
+                    %endfor
                  </table>
               </div>
             </td>
           </tr>
-           %endfor
             </tbody>
-	      <tfoot class="totals">
-	        <tr>
-	          <td class="list_main_footers" style="width: 100%">
-	            <div class="nobreak">
-	              <table style="width:100%">
-	                <tr>
-	                  <td class="total_empty_cell"/>
-                  <th>
-                    ${_("Net :")}
-                  </th>
-                  <td class="amount total_sum_cell">
-                    ${formatLang(purch.amount_untaxed, digits=get_digits(dp='Purchase Price'))} ${purch.pricelist_id.currency_id.symbol}
-                  </td>
-                </tr>
-                <tr>
-                  <td class="total_empty_cell"/>
-                  <th>
-                    ${_("Taxes:")}
-                  </th>
-                  <td class="amount total_sum_cell">
-                    ${formatLang(purch.amount_tax, digits=get_digits(dp='Purchase Price'))} ${purch.pricelist_id.currency_id.symbol}
-                  </td>
-                </tr>
-                <tr>
-                  <td class="total_empty_cell"/>
-                  <th>
-                    ${_("Total:")}
-                  </th>
-                  <td class="amount total_sum_cell">
-                    ${formatLang(purch.amount_total, digits=get_digits(dp='Purchase Price'))} ${purch.pricelist_id.currency_id.symbol}
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </td>
-        </tr>
-      </tfoot>
-    </table>
+        </table>
+
+        %if purch.note2:
+        <p>${purch.note2 or '' | n}</p>
+        %endif
         <p style="page-break-after:always"/>
         <br/>
 	%endfor

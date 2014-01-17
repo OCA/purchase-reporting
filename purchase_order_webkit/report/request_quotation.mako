@@ -1,12 +1,242 @@
 ## -*- coding: utf-8 -*-
 <html>
 <head>
-    <style type="text/css">
+     <style type="text/css">
         ${css}
+
+.list_main_table {
+border:thin solid #E3E4EA;
+text-align:center;
+border-collapse: collapse;
+}
+table.list_main_table {
+    margin-top: 20px;
+}
+.list_main_headers {
+    padding: 0;
+}
+.list_main_headers th {
+    border: thin solid #000000;
+    padding-right:3px;
+    padding-left:3px;
+    background-color: #EEEEEE;
+    text-align:center;
+    font-size:12;
+    font-weight:bold;
+}
+.list_main_table td {
+    padding-right:3px;
+    padding-left:3px;
+    padding-top:3px;
+    padding-bottom:3px;
+}
+.list_main_lines,
+.list_main_footers {
+    padding: 0;
+}
+.list_main_footers {
+    padding-top: 15px;
+}
+.list_main_lines td,
+.list_main_footers td,
+.list_main_footers th {
+    border-style: none;
+    text-align:left;
+    font-size:12;
+    padding:0;
+}
+.list_main_footers th {
+    text-align:right;
+}
+
+td .total_empty_cell {
+    width: 77%;
+}
+td .total_sum_cell {
+    width: 13%;
+}
+
+.nobreak {
+    page-break-inside: avoid;
+}
+caption.formatted_note {
+    text-align:left;
+    border-right:thin solid #EEEEEE;
+    border-left:thin solid #EEEEEE;
+    border-top:thin solid #EEEEEE;
+    padding-left:10px;
+    font-size:11;
+    caption-side: bottom;
+}
+caption.formatted_note p {
+    margin: 0;
+}
+.list_bank_table {
+    text-align:center;
+    border-collapse: collapse;
+    page-break-inside: avoid;
+    display:table;
+}
+
+.act_as_row {
+   display:table-row;
+}
+.list_bank_table .act_as_thead {
+    background-color: #EEEEEE;
+    text-align:left;
+    font-size:12;
+    font-weight:bold;
+    padding-right:3px;
+    padding-left:3px;
+    white-space:nowrap;
+    background-clip:border-box;
+    display:table-cell;
+}
+.list_bank_table .act_as_cell {
+    text-align:left;
+    font-size:12;
+    padding-right:3px;
+    padding-left:3px;
+    padding-top:3px;
+    padding-bottom:3px;
+    white-space:nowrap;
+    display:table-cell;
+}
+
+
+.list_tax_table {
+}
+.list_tax_table td {
+    text-align:left;
+    font-size:12;
+}
+.list_tax_table th {
+}
+.list_tax_table thead {
+    display:table-header-group;
+}
+
+
+.list_total_table {
+    border:thin solid #E3E4EA;
+    text-align:center;
+    border-collapse: collapse;
+}
+.list_total_table td {
+    border-top : thin solid #EEEEEE;
+    text-align:left;
+    font-size:12;
+    padding-right:3px;
+    padding-left:3px;
+    padding-top:3px;
+    padding-bottom:3px;
+}
+.list_total_table th {
+    background-color: #EEEEEE;
+    border: thin solid #000000;
+    text-align:center;
+    font-size:12;
+    font-weight:bold;
+    padding-right:3px
+    padding-left:3px
+}
+.list_total_table thead {
+    display:table-header-group;
+}
+
+.right_table {
+    right: 4cm;
+    width:"100%";
+}
+
+.std_text {
+    font-size:12;
+}
+
+
+td.amount, th.amount {
+    text-align: right;
+    white-space: nowrap;
+}
+
+td.date {
+    white-space: nowrap;
+    width: 90px;
+}
+
+td.vat {
+    white-space: nowrap;
+}
+.address .recipient {
+    font-size: 12px;
+    margin-left: 350px;
+    margin-right: 120px;
+    float: right;
+}
+
+.main_col1 {
+    width: 40%;
+}
+td.main_col1 {
+    text-align:left;
+}
+.main_col2 {
+    width: 10%;
+}
+.main_col3 {
+    width: 10%;
+    text-align:center;
+}
+.main_col6 {
+    width: 10%;
+}
+.main_col4 {
+    width: 10%;
+    text-align:right;
+}
+.main_col5 {
+    width: 7%;
+    text-align:left;
+}
+.main_col7 {
+    width: 13%;
+}
+
+
     </style>
 </head>
 <body>
     <%page expression_filter="entity"/>
+
+    <%def name="address(partner, commercial_partner=None)">
+        <%doc>
+            XXX add a helper for address in report_webkit module as this won't be suported in v8.0
+        </%doc>
+        <% company_partner = False %>
+        %if commercial_partner:
+            %if commercial_partner.id != partner.id:
+                <% company_partner = commercial_partner %>
+            %endif
+        %elif partner.parent_id:
+            <% company_partner = partner.parent_id %>
+        %endif
+
+        %if company_partner:
+            <tr><td class="name">${company_partner.name or ''}</td></tr>
+            <tr><td>${partner.title and partner.title.name or ''} ${partner.name}</td></tr>
+            <% address_lines = partner.contact_address.split("\n")[1:] %>
+        %else:
+            <tr><td class="name">${partner.title and partner.title.name or ''} ${partner.name}</td></tr>
+            <% address_lines = partner.contact_address.split("\n") %>
+        %endif
+        %for part in address_lines:
+            % if part:
+                <tr><td>${part}</td></tr>
+            % endif
+        %endfor
+    </%def>
+
+
     <%
     def carriage_returns(text):
         return text.replace('\n', '<br />')
@@ -17,90 +247,49 @@
         <% setLang(purch.partner_id.lang) %>
         <div class="address">
             <table class="recipient">
-                <tr><td class="name">${purch.partner_id.title and purch.partner_id.title.name or ''}  ${purch.partner_id.name }</td></tr>
-                <tr><td>${purch.partner_address_id.street or ''}</td></tr>
-                <tr><td>${purch.partner_address_id.street2 or ''}</td></tr>
-                <tr><td>${purch.partner_address_id.zip or ''} ${purch.partner_address_id.city or ''}</td></tr>
-                %if purch.partner_address_id.country_id :
-                <tr><td>${purch.partner_address_id.country_id.name or ''} </td></tr>
-                %endif
-                %if purch.partner_address_id.phone :
-                <tr><td>${_("Tel")}: ${purch.partner_address_id.phone}</td></tr>
-                %endif
-                %if purch.partner_address_id.fax :
-                <tr><td>${_("Fax")}: ${purch.partner_address_id.fax}</td></tr>
-                %endif
-                %if purch.partner_address_id.email :
-                <tr><td>${_("E-mail")}: ${purch.partner_address_id.email}</td></tr>
-                %endif
-                %if purch.partner_id.vat :
-                <tr><td>${_("VAT")}: ${purch.partner_id.vat}</td></tr>
-                %endif
+		        ${address(partner=purch.partner_id)}
             </table>
 
-            <table class="shipping">
-                <tr><td class="address_title">${_("Expected Delivery address:")}</td></tr>
-                %if purch.dest_address_id:
-                    <tr><td>${purch.partner_id.title and purch.partner_id.title.name or ''}  ${purch.partner_id.name }</td></tr>
-                    <tr><td>${purch.dest_address_id.street or ''}</td></tr>
-                    <tr><td>${purch.dest_address_id.street2 or ''}</td></tr>
-                    <tr><td>${purch.dest_address_id.zip or ''} ${purch.dest_address_id.city or ''}</td></tr>
-                    %if purch.dest_address_id.state_id:
-                    <tr><td>${purch.dest_address_id.state_id.name or ''} </td></tr>
-                    %endif
-                    %if purch.dest_address_id.country_id:
-                    <tr><td>${purch.dest_address_id.country_id.name or ''} </td></tr>
-                    %endif
-                %elif purch.warehouse_id:
-                    <tr><td>${purch.warehouse_id.name }</td></tr>
-                    %if purch.warehouse_id.partner_address_id:
-                        <tr><td>${purch.warehouse_id.partner_address_id.street or ''}</td></tr>
-                        <tr><td>${purch.warehouse_id.partner_address_id.street2 or ''}</td></tr>
-                        <tr><td>${purch.warehouse_id.partner_address_id.zip or ''} ${purch.warehouse_id.partner_address_id.city or ''}</td></tr>
-                        %if purch.warehouse_id.partner_address_id.state_id:
-                        <tr><td>${purch.warehouse_id.partner_address_id.state_id.name or ''} </td></tr>
-                        %endif
-                        %if purch.warehouse_id.partner_address_id.country_id:
-                        <tr><td>${purch.warehouse_id.partner_address_id.country_id.name or ''} </td></tr>
-                        %endif
-                    %endif
-                %endif
-            </table>
+            %if purch.dest_address_id:
+                <table class="shipping">
+			        ${address(partner=purch.dest_address_id)}
+                </table>
+            %endif
         </div>
 
-        <h1 style="clear:both; padding-top: 20px;">${_("Request for Quotation:")} ${purch.name}</h1>
-
-        <table class="list_table" width="100%" style="margin-top: 40px;">
+        <h3 style="clear:both; padding-top: 20px;">${_("Request for Quotation:")} ${purch.name}</h3>
+        <table class="list_main_table" width="100%" >
             <thead>
                 <tr>
+	          <th class="list_main_headers" style="width: 100%">
+	            <table style="width:100%">
                     <th>${_("Description")}</th>
                     <th>${_("Expected Date")}</th>
                     <th class="amount">${_("Qty")}</th>
+                  </tr>
+                </table>
+              </th>
                 </tr>
             </thead>
             <tbody>
-            %for line in purch.order_line :
-                <tr class="line">
-                    <td>${line.name}</td>
-                    <td>${formatLang(line.date_planned, date=True)}</td>
-                    <td class="amount">${line.product_qty} ${line.product_uom and line.product_uom.name or ''}</td>
-                </tr>
-                %if line.notes :
-                    <tr class="line">
-                        <td colspan="6" class="note">${line.notes  | carriage_returns}</td>
-                    </tr>
-                %endif
-            %endfor
+          <tr>
+            <td class="list_main_lines" style="width: 100%">
+              <div class="nobreak">
+                <table style="width:100%">
+                  <tr>
+		            %for line in purch.order_line :
+		                <tr class="line">
+		                    <td>${line.name}</td>
+		                    <td>${formatLang(line.date_planned, date=True)}</td>
+		                    <td class="amount">${line.product_qty} ${line.product_uom and line.product_uom.name or ''}</td>
+                        </tr>
+                    %endfor
+                 </table>
+              </div>
+            </td>
+          </tr>
             </tbody>
         </table>
-
-        <p style="margin-top: 20px;">${purch.notes or '' | carriage_returns}</p>
-
-        <p style="margin-top: 20px;">
-            ${_("Regards,")}
-        </p>
-
-        <p style="margin-top: 20px;">${user.signature or ''}</p>
 
         <p style="page-break-after:always"/>
         <br/>

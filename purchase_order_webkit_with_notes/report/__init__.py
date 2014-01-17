@@ -26,21 +26,3 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #
 ##############################################################################
-
-import time
-from report import report_sxw
-
-
-class request_quotation(report_sxw.rml_parse):
-    def __init__(self, cr, uid, name, context):
-        super(request_quotation, self).__init__(cr, uid, name, context=context)
-        self.localcontext.update({
-            'time': time,
-            'cr':cr,
-            'uid': uid,
-        })
-
-report_sxw.report_sxw('report.purchase.quotation.webkit',
-                       'purchase.order',
-                       'addons/purchase_report_webkit/report/request_quotation.mako',
-                       parser=request_quotation)
