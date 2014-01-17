@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#   Copyright (c) 2011 Camptocamp SA (http://www.camptocamp.com)
-#   @author Guewen Baconnier
+#   Copyright (c) 2014 Camptocamp SA (http://www.camptocamp.com)
+#   @author Guewen Baconnier Vincent Renaville
 #
 # WARNING: This program as such is intended to be used by professional
 # programmers who take the whole responsability of assessing all potential
@@ -36,7 +36,7 @@ Replaces the legacy rml Quotation / Purchase Order report by
 a brand new webkit report.
     """,
     'author': 'Camptocamp',
-    'website': 'http://www.openerp.com',
+    'website': 'http://www.camptocamp.com',
     'depends': ['base', 'report_webkit', 'base_headers_webkit', 'purchase'],
     'data': ['purchase_report.xml'],
     'test': [],
