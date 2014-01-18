@@ -7,16 +7,18 @@ msgstr ""
 "Project-Id-Version: OpenERP Server 6.0.3\n"
 "Report-Msgid-Bugs-To: support@openerp.com\n"
 "POT-Creation-Date: 2011-12-12 11:14+0000\n"
-"PO-Revision-Date: 2011-12-12 11:14+0000\n"
-"Last-Translator: <>\n"
+"PO-Revision-Date: 2014-01-18 00:28+0000\n"
+"Last-Translator: Joël Grand-Guillaume @ camptocamp "
+"<joel.grandguillaume@camptocamp.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2014-01-18 07:04+0000\n"
+"X-Generator: Launchpad (build 16901)\n"
 
 #. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/request_quotation.mako:76
+#: report:addons/purchase_order_webkit/report/request_quotation.mako:267
 msgid "Expected Date"
 msgstr "Date d'échéance"
 
@@ -27,7 +29,7 @@ msgid "Fax"
 msgstr "Fax"
 
 #. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:87
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:285
 msgid "Net Price"
 msgstr "Prix net"
 
@@ -38,34 +40,34 @@ msgid "Tel"
 msgstr "Tél"
 
 #. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:82
-#: report:addons/purchase_order_webkit/report/request_quotation.mako:75
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:280
+#: report:addons/purchase_order_webkit/report/request_quotation.mako:266
 msgid "Description"
 msgstr "Description"
 
 #. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:67
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:262
 msgid "Your Order Reference"
-msgstr "Votre Référence Commande"
+msgstr "Votre Référence de commande"
 
 #. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:62
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:257
 msgid "Purchase Order N°"
 msgstr "N° de confirmation du bon de commande"
 
 #. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:68
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:263
 msgid "Date Ordered"
 msgstr "Date de Commande"
 
 #. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:83
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:281
 msgid "Taxes"
 msgstr "Taxes"
 
 #. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:85
-#: report:addons/purchase_order_webkit/report/request_quotation.mako:77
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:283
+#: report:addons/purchase_order_webkit/report/request_quotation.mako:268
 msgid "Qty"
 msgstr "Qté"
 
@@ -76,12 +78,12 @@ msgid "E-mail"
 msgstr "E-mail"
 
 #. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:84
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:282
 msgid "Date Req."
 msgstr "Date prévue"
 
 #. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:69
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:264
 msgid "Validated by"
 msgstr "Validée par"
 
@@ -91,7 +93,7 @@ msgid "Document"
 msgstr "Document"
 
 #. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:86
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:284
 msgid "Unit Price"
 msgstr "Prix"
 
@@ -102,7 +104,6 @@ msgid "VAT"
 msgstr "TVA"
 
 #. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:62
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:257
 msgid "Quotation N°"
 msgstr "Demande de prix N°"
-
