@@ -299,7 +299,7 @@ td.main_col1 {
                   <tr>
                     <td class="main_col1">${line.name}</td>
                     <td style="text-align:center" class="main_col2">${ ', '.join([ tax.name or '' for tax in line.taxes_id ])}</td>
-                    <td style="text-align:center" class="main_col3">${formatLang(line.date_order, date=True)}</td>
+                    <td style="text-align:center" class="main_col3">${formatLang(line.date_planned, date=True)}</td>
                     <td class="amount main_col4">${line.product_qty}</td>
                     <td class="main_col5">${line.product_uom.name}</td>
                     <td class="amount main col6">${formatLang(line.price_unit, digits=get_digits(dp='Purchase Price'))}</td>
