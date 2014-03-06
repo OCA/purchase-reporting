@@ -179,27 +179,34 @@ td.vat {
 }
 td.main_col1 {
     text-align:left;
+    vertical-align:top;
 }
 .main_col2 {
     width: 10%;
+    vertical-align:top;
 }
 .main_col3 {
     width: 10%;
     text-align:center;
+    vertical-align:top;
 }
 .main_col6 {
     width: 10%;
+    vertical-align:top;
 }
 .main_col4 {
 	width: 10%;
 	text-align:right;
+    vertical-align:top;
 }
 .main_col5 {
     width: 7%;
     text-align:left;
+    vertical-align:top;
 }
 .main_col7 {
     width: 13%;
+    vertical-align:top;
 }
 
 
@@ -300,12 +307,12 @@ td.main_col1 {
               <div class="nobreak">
                 <table style="width:100%">
                   <tr>
-                    <td class="main_col1">${line.name}</td>
+                    <td class="main_col1">${line.name and line.name.replace('\n','<br/>') or '' | n}</td>
                     <td style="text-align:center" class="main_col2">${ ', '.join([ tax.name or '' for tax in line.taxes_id ])}</td>
                     <td style="text-align:center" class="main_col3">${formatLang(line.date_planned, date=True)}</td>
                     <td class="amount main_col4">${line.product_qty}</td>
                     <td class="main_col5">${line.product_uom.name}</td>
-                    <td class="amount main col6">${formatLang(line.price_unit, digits=get_digits(dp='Purchase Price'))}</td>
+                    <td class="amount main_col6">${formatLang(line.price_unit, digits=get_digits(dp='Purchase Price'))}</td>
                     <td class="amount main_col7">${formatLang(line.price_subtotal, digits=get_digits(dp='Purchase Price'))} ${purch.pricelist_id.currency_id.symbol}</td>
                   </tr>
                  </table>
