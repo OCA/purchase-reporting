@@ -287,12 +287,12 @@ td.main_col1 {
               <div class="nobreak">
                 <table style="width:100%">
                   <tr>
-		            %for line in purch.order_line :
-		                <tr class="line">
-		                    <td class="main_col1">${line.name and line.name.replace('\n','<br/>') or '' | n}</td>
-		                    <td style="text-align:center" class="main_col3">${formatLang(line.date_planned, date=True)}</td>
-		                    <td class="amount main_col4">${line.product_qty} ${line.product_uom and line.product_uom.name or ''}</td>
-                        </tr>
+                    %for line in purch.order_line :
+                    <tr class="line">
+                      <td class="main_col1">${line.name.replace('\n','<br/>') or '' | n}</td>
+                      <td style="text-align:center" class="main_col3">${formatLang(line.date_planned, date=True)}</td>
+                      <td class="amount main_col4">${line.product_qty} ${line.product_uom and line.product_uom.name or ''}</td>
+                    </tr>
                     %endfor
                  </table>
               </div>
