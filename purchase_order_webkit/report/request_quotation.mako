@@ -179,27 +179,34 @@ td.vat {
 }
 td.main_col1 {
     text-align:left;
+    vertical-align:top;
 }
 .main_col2 {
     width: 10%;
+    vertical-align:top;
 }
 .main_col3 {
     width: 10%;
     text-align:center;
+    vertical-align:top;
 }
 .main_col6 {
     width: 10%;
+    vertical-align:top;
 }
 .main_col4 {
     width: 10%;
     text-align:right;
+    vertical-align:top;
 }
 .main_col5 {
     width: 7%;
     text-align:left;
+    vertical-align:top;
 }
 .main_col7 {
     width: 13%;
+    vertical-align:top;
 }
 
 
@@ -263,9 +270,9 @@ td.main_col1 {
                 <tr>
 	          <th class="list_main_headers" style="width: 100%">
 	            <table style="width:100%">
-                    <th>${_("Description")}</th>
-                    <th>${_("Expected Date")}</th>
-                    <th class="amount">${_("Qty")}</th>
+                    <th class="main_col1">${_("Description")}</th>
+                    <th class="main_col3">${_("Expected Date")}</th>
+                    <th style="text-align:center" class="amount main_col4">${_("Qty")}</th>
                   </tr>
                 </table>
               </th>
@@ -277,13 +284,13 @@ td.main_col1 {
               <div class="nobreak">
                 <table style="width:100%">
                   <tr>
-		            %for line in purch.order_line :
-		                <tr class="line">
-		                    <td>${line.name}</td>
-		                    <td>${formatLang(line.date_planned, date=True)}</td>
-		                    <td class="amount">${line.product_qty} ${line.product_uom and line.product_uom.name or ''}</td>
-                        </tr>
-                    %endfor
+                  %for line in purch.order_line :
+                  <tr class="line">
+                    <td class="main_col1">${line.name.replace('\n','<br/>') or '' | n}</td>
+                    <td style="text-align:center" class="main_col3">${formatLang(line.date_planned, date=True)}</td>
+                    <td class="amount main_col4">${line.product_qty} ${line.product_uom and line.product_uom.name or ''}</td>
+                  </tr>
+                  %endfor
                  </table>
               </div>
             </td>
