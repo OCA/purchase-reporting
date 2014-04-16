@@ -273,6 +273,7 @@ td.main_col1 {
                 <tr>
 	          <th class="list_main_headers" style="width: 100%">
 	            <table style="width:100%">
+	              <tr>
                     <th class="main_col1">${_("Description")}</th>
                     <th class="main_col3">${_("Expected Date")}</th>
                     <th style="text-align:center" class="amount main_col4">${_("Qty")}</th>

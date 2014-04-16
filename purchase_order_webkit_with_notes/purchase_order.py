@@ -87,6 +87,21 @@ class PurchaseOrder(orm.Model):
                  'form': self.read(cr, uid, ids[0], context=context),
                  }
         return {'type': 'ir.actions.report.xml',
+                'report_name': 'purchase.quotation.webkit',
+                'datas': datas,
+                'nodestroy': True}
+
+    def print_purchase(self, cr, uid, ids, context=None):
+        """
+        This function prints the purchase order and mark it as sent,
+        so that we can see more easily the next step of the workflow
+        """
+        datas = {'model': 'purchase.order',
+                 'ids': ids,
+                 'form': self.read(cr, uid, ids[0], context=context),
+                 }
+        return {'type': 'ir.actions.report.xml',
                 'report_name': 'purchase.order.webkit',
                 'datas': datas,
                 'nodestroy': True}
+

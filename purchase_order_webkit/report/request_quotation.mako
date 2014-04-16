@@ -267,23 +267,23 @@ td.main_col1 {
         <h3 style="clear:both; padding-top: 20px;">${_("Request for Quotation:")} ${purch.name}</h3>
         <table class="list_main_table" width="100%" >
             <thead>
-                <tr>
+             <tr>
 	          <th class="list_main_headers" style="width: 100%">
 	            <table style="width:100%">
+	              <tr>
                     <th class="main_col1">${_("Description")}</th>
                     <th class="main_col3">${_("Expected Date")}</th>
                     <th style="text-align:center" class="amount main_col4">${_("Qty")}</th>
                   </tr>
                 </table>
               </th>
-                </tr>
+             </tr>
             </thead>
             <tbody>
           <tr>
             <td class="list_main_lines" style="width: 100%">
               <div class="nobreak">
                 <table style="width:100%">
-                  <tr>
                   %for line in purch.order_line :
                   <tr class="line">
                     <td class="main_col1">${line.name.replace('\n','<br/>') or '' | n}</td>
