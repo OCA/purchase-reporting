@@ -185,3 +185,22 @@ msgstr ""
 msgid "Net :"
 msgstr ""
 
+#. module: purchase_order_webkit
+#: report:addons/purchase_order_webkit_with_notes/report/purchase_order.mako:266
+msgid "Shipping address:"
+msgstr ""
+
+#. module: purchase_order_webkit
+#: report:addons/purchase_order_webkit_with_notes/report/request_quotation.mako:268
+msgid "Shipping address:"
+msgstr ""
+
+#. module: purchase_order_webkit
+#: report:addons/purchase_order_webkit_with_notes/report/purchase_order.mako:259
+msgid "Invoice address:"
+msgstr ""
+
+#. module: purchase_order_webkit
+#: report:addons/purchase_order_webkit_with_notes/report/request_quotation.mako:261
+msgid "Invoice address:"
+msgstr ""

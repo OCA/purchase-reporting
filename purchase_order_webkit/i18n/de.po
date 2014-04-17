@@ -134,3 +134,25 @@ msgstr "Nettopreis"
 #: report:addons/purchase_order_webkit/report/purchase_order.mako:319
 msgid "Net :"
 msgstr "Netto:"
+
+#. module: purchase_order_webkit
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:266
+msgid "Shipping address:"
+msgstr "Lieferadresse:"
+
+#. module: purchase_order_webkit
+#: report:addons/purchase_order_webkit/report/request_quotation.mako:268
+msgid "Shipping address:"
+msgstr "Lieferadresse:"
+
+#. module: purchase_order_webkit
+#: report:addons/purchase_order_webkit/report/purchase_order.mako:259
+msgid "Invoice address:"
+msgstr "Rechnungsadresse:"
+
+#. module: purchase_order_webkit
+#: report:addons/purchase_order_webkit/report/request_quotation.mako:261
+msgid "Invoice address:"
+msgstr "Rechnungsadresse:"
+
+
