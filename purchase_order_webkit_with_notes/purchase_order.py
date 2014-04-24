@@ -93,8 +93,7 @@ class PurchaseOrder(orm.Model):
 
     def print_purchase(self, cr, uid, ids, context=None):
         """
-        This function prints the purchase order and mark it as sent,
-        so that we can see more easily the next step of the workflow
+        This function prints the purchase order (already sent)
         """
         datas = {'model': 'purchase.order',
                  'ids': ids,
