@@ -254,12 +254,19 @@ td.main_col1 {
         <% setLang(purch.partner_id.lang) %>
         <div class="address">
             <table class="recipient">
-		        ${address(partner=purch.partner_id)}
+                ${address(partner=purch.partner_id)}
             </table>
-
+            %if purch.company_id.partner_id:
+                <table class="invoice">
+                <tr><td class="address_title">${_("Invoice address:")}</td></tr>
+                ${address(partner=purch.company_id.partner_id)}
+                </table>
+            %endif
+            <br/>
             %if purch.dest_address_id:
                 <table class="shipping">
-			        ${address(partner=purch.dest_address_id)}
+                <tr><td class="address_title">${_("Shipping address:")}</td></tr>
+                ${address(partner=purch.dest_address_id)}
                 </table>
             %endif
         </div>
@@ -273,6 +280,7 @@ td.main_col1 {
                 <tr>
 	          <th class="list_main_headers" style="width: 100%">
 	            <table style="width:100%">
+	              <tr>
                     <th class="main_col1">${_("Description")}</th>
                     <th class="main_col3">${_("Expected Date")}</th>
                     <th style="text-align:center" class="amount main_col4">${_("Qty")}</th>
