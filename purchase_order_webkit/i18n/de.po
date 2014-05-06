@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-04-17 06:56+0000\n"
-"X-Generator: Launchpad (build 16985)\n"
+"X-Launchpad-Export-Date: 2014-05-06 07:29+0000\n"
+"X-Generator: Launchpad (build 16996)\n"
 
 #. module: purchase_order_webkit
 #: model:ir.model,name:purchase_order_webkit.model_purchase_condition_text
@@ -134,25 +134,3 @@ msgstr "Nettopreis"
 #: report:addons/purchase_order_webkit/report/purchase_order.mako:319
 msgid "Net :"
 msgstr "Netto:"
-
-#. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:266
-msgid "Shipping address:"
-msgstr "Lieferadresse:"
-
-#. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/request_quotation.mako:268
-msgid "Shipping address:"
-msgstr "Lieferadresse:"
-
-#. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/purchase_order.mako:259
-msgid "Invoice address:"
-msgstr "Rechnungsadresse:"
-
-#. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit/report/request_quotation.mako:261
-msgid "Invoice address:"
-msgstr "Rechnungsadresse:"
-
-
