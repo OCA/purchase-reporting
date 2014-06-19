@@ -43,8 +43,12 @@ table.list_main_table {
     border-style: none;
     text-align:left;
     font-size:12;
-    padding:0;
 }
+
+.list_main_lines td {
+    border-bottom:thin solid #EEEEEE
+}
+
 .list_main_footers th {
     text-align:right;
 }
@@ -288,79 +292,57 @@ td.main_col1 {
         </table>
         <table class="list_main_table" width="100%" >
             <thead>
-                <tr>
-	          <th class="list_main_headers" style="width: 100%">
-	            <table style="width:100%">
-	              <tr>
-                    <th class="main_col1">${_("Description")}</th>
-                    <th class="main_col2">${_("Taxes")}</th>
-                    <th class="main_col3">${_("Date Req.")}</th>
-                    <th style="text-align:center" class="amount main_col4">${_("Qty")}</th>
-                    <th class="main_col5">${_("UoM")}</th>
-                    <th class="amount main_col6">${_("Unit Price")}</th>
-                    <th class="amount main_col7">${_("Net Price")}</th>
-                  </tr>
-                </table>
-              </th>
-                </tr>
+              <tr class="list_main_headers">
+                <th class="main_col1">${_("Description")}</th>
+                <th class="main_col2">${_("Taxes")}</th>
+                <th class="main_col3">${_("Date Req.")}</th>
+                <th style="text-align:center" class="amount main_col4">${_("Qty")}</th>
+                <th class="main_col5">${_("UoM")}</th>
+                <th class="amount main_col6">${_("Unit Price")}</th>
+                <th class="amount main_col7">${_("Net Price")}</th>
+              </tr>
             </thead>
             <tbody>
             %for line in purch.order_line :
-          <tr>
-            <td class="list_main_lines" style="width: 100%">
-              <div class="nobreak">
-                <table style="width:100%">
-                  <tr>
-                    <td class="main_col1">${line.name.replace('\n','<br/>') or '' | n}</td>
-                    <td style="text-align:center" class="main_col2">${ ', '.join([ tax.name or '' for tax in line.taxes_id ])}</td>
-                    <td style="text-align:center" class="main_col3">${formatLang(line.date_planned, date=True)}</td>
-                    <td class="amount main_col4">${line.product_qty}</td>
-                    <td class="main_col5">${line.product_uom.name}</td>
-                    <td class="amount main_col6">${formatLang(line.price_unit, digits=get_digits(dp='Purchase Price'))}</td>
-                    <td class="amount main_col7">${formatLang(line.price_subtotal, digits=get_digits(dp='Purchase Price'))} ${purch.pricelist_id.currency_id.symbol}</td>
-                  </tr>
-                 </table>
-              </div>
-            </td>
-          </tr>
+              <tr class="list_main_lines">
+                <td class="main_col1">${line.name.replace('\n','<br/>') or '' | n}</td>
+                <td style="text-align:center" class="main_col2">${ ', '.join([ tax.name or '' for tax in line.taxes_id ])}</td>
+                <td style="text-align:center" class="main_col3">${formatLang(line.date_planned, date=True)}</td>
+                <td class="amount main_col4">${line.product_qty}</td>
+                <td class="main_col5">${line.product_uom.name}</td>
+                <td class="amount main_col6">${formatLang(line.price_unit, digits=get_digits(dp='Purchase Price'))}</td>
+                <td class="amount main_col7">${formatLang(line.price_subtotal, digits=get_digits(dp='Purchase Price'))} ${purch.pricelist_id.currency_id.symbol}</td>
+              </tr>
            %endfor
             </tbody>
 	      <tfoot class="totals">
-	        <tr>
-	          <td class="list_main_footers" style="width: 100%">
-	            <div class="nobreak">
-	              <table style="width:100%">
-	                <tr>
-	                  <td class="total_empty_cell"/>
-                  <th>
-                    ${_("Net :")}
-                  </th>
-                  <td class="amount total_sum_cell">
-                    ${formatLang(purch.amount_untaxed, digits=get_digits(dp='Purchase Price'))} ${purch.pricelist_id.currency_id.symbol}
-                  </td>
-                </tr>
-                <tr>
-                  <td class="total_empty_cell"/>
-                  <th>
-                    ${_("Taxes:")}
-                  </th>
-                  <td class="amount total_sum_cell">
-                    ${formatLang(purch.amount_tax, digits=get_digits(dp='Purchase Price'))} ${purch.pricelist_id.currency_id.symbol}
-                  </td>
-                </tr>
-                <tr>
-                  <td class="total_empty_cell"/>
-                  <th>
-                    ${_("Total:")}
-                  </th>
-                  <td class="amount total_sum_cell">
-                    ${formatLang(purch.amount_total, digits=get_digits(dp='Purchase Price'))} ${purch.pricelist_id.currency_id.symbol}
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </td>
-        </tr>
+            <tr class="list_main_footers">
+                <td colspan="4" class="total_empty_cell"/>
+              <td colspan="2" style="font-weight:bold">
+                ${_("Net :")}
+              </td>
+              <td class="amount total_sum_cell">
+                ${formatLang(purch.amount_untaxed, digits=get_digits(dp='Purchase Price'))} ${purch.pricelist_id.currency_id.symbol}
+              </td>
+            </tr>
+            <tr class="list_main_footers">
+              <td colspan="4" class="total_empty_cell"/>
+              <td colspan="2" style="font-weight:bold">
+                ${_("Taxes:")}
+              </td>
+              <td class="amount total_sum_cell">
+                ${formatLang(purch.amount_tax, digits=get_digits(dp='Purchase Price'))} ${purch.pricelist_id.currency_id.symbol}
+              </td>
+            </tr>
+            <tr class="list_main_footers">
+              <td colspan="4" class="total_empty_cell"/>
+              <td colspan="2" style="font-weight:bold">
+                ${_("Total:")}
+              </td>
+              <td class="amount total_sum_cell">
+                ${formatLang(purch.amount_total, digits=get_digits(dp='Purchase Price'))} ${purch.pricelist_id.currency_id.symbol}
+              </td>
+            </tr>
       </tfoot>
     </table>
         <p style="page-break-after:always"/>

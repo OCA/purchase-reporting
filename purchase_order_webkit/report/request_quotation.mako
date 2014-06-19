@@ -43,7 +43,7 @@ table.list_main_table {
     border-style: none;
     text-align:left;
     font-size:12;
-    padding:0;
+    border-bottom:thin solid #EEEEEE
 }
 .list_main_footers th {
     text-align:right;
@@ -274,34 +274,20 @@ td.main_col1 {
         <h3 style="clear:both; padding-top: 20px;">${_("Request for Quotation:")} ${purch.name}</h3>
         <table class="list_main_table" width="100%" >
             <thead>
-             <tr>
-	          <th class="list_main_headers" style="width: 100%">
-	            <table style="width:100%">
-	              <tr>
-                    <th class="main_col1">${_("Description")}</th>
-                    <th class="main_col3">${_("Expected Date")}</th>
-                    <th style="text-align:center" class="amount main_col4">${_("Qty")}</th>
-                  </tr>
-                </table>
-              </th>
-             </tr>
+              <tr class="list_main_headers">
+                <th class="main_col1">${_("Description")}</th>
+                <th class="main_col3">${_("Expected Date")}</th>
+                <th style="text-align:center" class="amount main_col4">${_("Qty")}</th>
+              </tr>
             </thead>
             <tbody>
-          <tr>
-            <td class="list_main_lines" style="width: 100%">
-              <div class="nobreak">
-                <table style="width:100%">
-                  %for line in purch.order_line :
-                  <tr class="line">
-                    <td class="main_col1">${line.name.replace('\n','<br/>') or '' | n}</td>
-                    <td style="text-align:center" class="main_col3">${formatLang(line.date_planned, date=True)}</td>
-                    <td class="amount main_col4">${line.product_qty} ${line.product_uom and line.product_uom.name or ''}</td>
-                  </tr>
-                  %endfor
-                 </table>
-              </div>
-            </td>
-          </tr>
+              %for line in purch.order_line :
+              <tr class="line list_main_lines">
+                <td class="main_col1"><div class="nobreak">${line.name.replace('\n','<br/>') or '' | n}</div></td>
+                <td style="text-align:center" class="main_col3">${formatLang(line.date_planned, date=True)}</td>
+                <td class="amount main_col4">${line.product_qty} ${line.product_uom and line.product_uom.name or ''}</td>
+              </tr>
+              %endfor
             </tbody>
         </table>
 
