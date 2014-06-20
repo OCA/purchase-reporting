@@ -40,13 +40,16 @@ table.list_main_table {
 .list_main_lines td,
 .list_main_footers td,
 .list_main_footers th {
-    border-style: none;
     text-align:left;
     font-size:12;
 }
 
 .list_main_lines td {
     border-bottom:thin solid #EEEEEE
+}
+
+.list_main_footers td {
+    border: thin solid  #ffffff;
 }
 
 .list_main_footers th {
@@ -58,6 +61,10 @@ td .total_empty_cell {
 }
 td .total_sum_cell {
     width: 13%;
+}
+
+tfoot.totals tr:first-child td{
+    padding-top: 15px;
 }
 
 .nobreak {
@@ -213,7 +220,6 @@ td.main_col1 {
     vertical-align:top;
 }
 
-
     </style>
 
 </head>
@@ -317,8 +323,8 @@ td.main_col1 {
             </tbody>
 	      <tfoot class="totals">
             <tr class="list_main_footers">
-                <td colspan="4" class="total_empty_cell"/>
-              <td colspan="2" style="font-weight:bold">
+                <td colspan="5" class="total_empty_cell"/>
+              <td style="font-weight:bold; text-align: right">
                 ${_("Net :")}
               </td>
               <td class="amount total_sum_cell">
@@ -326,8 +332,8 @@ td.main_col1 {
               </td>
             </tr>
             <tr class="list_main_footers">
-              <td colspan="4" class="total_empty_cell"/>
-              <td colspan="2" style="font-weight:bold">
+              <td colspan="5" class="total_empty_cell"/>
+              <td style="font-weight:bold; text-align: right">
                 ${_("Taxes:")}
               </td>
               <td class="amount total_sum_cell">
@@ -335,8 +341,8 @@ td.main_col1 {
               </td>
             </tr>
             <tr class="list_main_footers">
-              <td colspan="4" class="total_empty_cell"/>
-              <td colspan="2" style="font-weight:bold">
+              <td colspan="5" class="total_empty_cell"/>
+              <td style="font-weight:bold; text-align: right">
                 ${_("Total:")}
               </td>
               <td class="amount total_sum_cell">
