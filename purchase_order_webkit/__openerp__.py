@@ -34,8 +34,9 @@
     'description': """
 Replaces the legacy rml Quotation / Purchase Order report by
 a brand new webkit report.
-It's the same report as purchase_report_webkit_with_notes, but without header and footer notes
-    """,
+
+It's the same report as purchase_report_webkit_with_notes, but without header
+and footer notes """,
     'author': 'Camptocamp',
     'website': 'http://www.camptocamp.com',
     'depends': ['base', 'report_webkit', 'base_headers_webkit', 'purchase'],
