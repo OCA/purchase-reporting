@@ -39,7 +39,7 @@ class request_quotation(report_sxw.rml_parse):
                                                 context=context)
         self.localcontext.update({
             'time': time,
-            'cr':cr,
+            'cr': cr,
             'uid': uid,
         })
 
