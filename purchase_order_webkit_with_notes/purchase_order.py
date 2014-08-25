@@ -103,4 +103,3 @@ class PurchaseOrder(orm.Model):
                 'report_name': 'purchase.order.webkit',
                 'datas': datas,
                 'nodestroy': True}
-
