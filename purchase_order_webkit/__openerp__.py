@@ -31,9 +31,8 @@
     'name': 'Purchase Order Report using Webkit Library',
     'version': '1.0',
     'category': 'Reports/Webkit',
-    'description': """
-Replaces the legacy rml Quotation / Purchase Order report by a brand new webkit report.
-    """,
+    'description': """ Replaces the legacy rml Quotation / Purchase Order
+report by a brand new webkit report.""",
     'author': 'Camptocamp',
     'website': 'http://www.openerp.com',
     'depends': ['base', 'report_webkit', 'base_headers_webkit', 'purchase',],
