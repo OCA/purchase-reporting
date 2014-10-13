@@ -5,7 +5,6 @@ python:
 
 env:
   - VERSION="6.1" ODOO_REPO="odoo/odoo"
-  - VERSION="6.1" ODOO_REPO="OCA/OCB"
 
 virtualenv:
   system_site_packages: true
@@ -17,7 +16,6 @@ install:
   - travis_install_nightly
 
 script:
-  - travis_run_flake8
   - travis_run_tests
 
 after_success:
