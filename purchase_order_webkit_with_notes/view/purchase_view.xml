@@ -5,7 +5,6 @@
       <record model="ir.ui.view" id="view_purchase_condition_webkit">
         <field name="name">purchase.condition_text.form</field>
         <field name="model">purchase.condition_text</field>
-        <field name="type">form</field>
         <field name="arch" type="xml">
           <form string="purchase condition text">
             <field name="name" select="1"/>
@@ -17,7 +16,6 @@
       <record model="ir.ui.view" id="view_purchase_condition_list_webkit">
         <field name="name">purchase.condition_text.list</field>
         <field name="model">purchase.condition_text</field>
-        <field name="type">tree</field>
         <field name="priority" eval="6"/>
         <field name="arch" type="xml">
           <tree string="Purchase condition text">
