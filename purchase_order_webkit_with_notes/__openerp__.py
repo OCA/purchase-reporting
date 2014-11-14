@@ -44,7 +44,7 @@ for header and footer
     'depends': ['base', 'report_webkit', 'base_headers_webkit', 'purchase'],
     'data': ['purchase_report.xml',
              'view/purchase_view.xml',
-             'security/ir.model.access.csv',],
+             'security/ir.model.access.csv', ],
     'test': [],
     'installable': True,
     'active': False,

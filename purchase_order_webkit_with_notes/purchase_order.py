@@ -23,6 +23,7 @@ from openerp import netsvc
 
 
 class PurchaseConditionText(orm.Model):
+
     """ Purchase order Textual information """
     _name = "purchase.condition_text"
     _description = "purchase conditions"
@@ -37,6 +38,7 @@ class PurchaseConditionText(orm.Model):
 
 
 class PurchaseOrder(orm.Model):
+
     """ Adds condition to Po """
 
     _inherit = "purchase.order"
