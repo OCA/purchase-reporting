@@ -188,21 +188,12 @@ msgstr "Netto:"
 
 #. module: purchase_order_webkit
 #: report:addons/purchase_order_webkit_with_notes/report/purchase_order.mako:266
+#: report:addons/purchase_order_webkit_with_notes/report/request_quotation.mako:268
 msgid "Shipping address:"
 msgstr "Lieferanschrift:"
 
 #. module: purchase_order_webkit
-#: report:addons/purchase_order_webkit_with_notes/report/request_quotation.mako:268
-msgid "Shipping address:"
-msgstr ""
-
-#. module: purchase_order_webkit
 #: report:addons/purchase_order_webkit_with_notes/report/purchase_order.mako:259
-msgid "Invoice address:"
-msgstr "Rechnungsanschrift:"
-
-#. module: purchase_order_webkit
 #: report:addons/purchase_order_webkit_with_notes/report/request_quotation.mako:261
 msgid "Invoice address:"
-msgstr ""
-
+msgstr "Rechnungsanschrift:"
