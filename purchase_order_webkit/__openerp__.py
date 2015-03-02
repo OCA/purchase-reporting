@@ -33,7 +33,7 @@
     'category': 'Reports/Webkit',
     'description': """ Replaces the legacy rml Quotation / Purchase Order
 report by a brand new webkit report.""",
-    'author': 'Camptocamp',
+    'author': "Camptocamp,Odoo Community Association (OCA)",
     'website': 'http://www.openerp.com',
     'depends': ['base',
                 'report_webkit',
