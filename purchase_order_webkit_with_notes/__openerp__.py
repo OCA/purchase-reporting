@@ -39,7 +39,7 @@ purchase order and quotation
 It's the same report as purchase_order_webkit, but add notes
 for header and footer
     """,
-    'author': 'Camptocamp',
+    'author': "Camptocamp,Odoo Community Association (OCA)",
     'website': 'http://www.camptocamp.com',
     'depends': ['base', 'report_webkit', 'base_headers_webkit', 'purchase'],
     'data': ['purchase_report.xml',
