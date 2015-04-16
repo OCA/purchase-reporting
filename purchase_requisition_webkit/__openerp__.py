@@ -32,7 +32,59 @@
     'version': '1.0.1',
     'category': 'Reports/Webkit',
     'description': """
-Replaces the legacy rml Requisition report by a brand new webkit report.""",
+Purchase Requisition Report using Webkit Library
+================================================
+
+This module was written to replace the legacy rml Requisition report by
+a webkit report, and allow you to benefit from a more robust technology.
+
+Installation
+============
+
+To install this module, you need to:
+
+* Download additionally the module 'base_headers_webkit' available in OCA's
+'webkit-tools' repository (https://github.com/OCA/webkit-tools/tree/7.0)
+
+Configuration
+=============
+
+This module does not require any additional configuration.
+
+Usage
+=====
+
+This module replaces the Requisition form.
+
+Known issues / Roadmap
+======================
+
+No known issues have been identified.
+
+Credits
+=======
+
+Contributors
+------------
+
+* Jordi Ballester <jordi.ballester@eficent.com>
+
+Maintainer
+----------
+
+.. image:: http://odoo-community.org/logo.png
+   :alt: Odoo Community Association
+   :target: http://odoo-community.org
+
+This module is maintained by the OCA.
+
+OCA, or the Odoo Community Association, is a nonprofit organization whose
+mission is to support the collaborative development of Odoo features and
+promote its widespread use.
+
+To contribute to this module, please visit http://odoo-community.org.
+
+""",
     'author': "Eficent,Odoo Community Association (OCA)",
     'website': 'http://www.eficent.com',
     'depends': ['base', 'report_webkit', 'base_headers_webkit',
