@@ -8,9 +8,9 @@
       <field name="arch" type="xml">
         <graph string="Purchase Stock Analysis" type="pivot">
           <field name="partner_id" type="row"/>
-          <field name="date" interval="month" type="col"/>
+          <field name="date_order" interval="month" type="col"/>
           <field name="price_total" type="measure"/>
-          <field name="quantity" type="measure"/>
+          <field name="unit_quantity" type="measure"/>
           <field name="price_average" type="measure"/>
         </graph>
       </field>
@@ -21,7 +21,7 @@
       <field name="model_id">purchase.stock.analysis</field>
       <field name="domain">[('state','&lt;&gt;','cancel')]</field>
       <field name="user_id" eval="False"/>
-      <field name="context">{'group_by': ['category_id'], 'col_group_by': ['date:month'], 'measures': ['quantity']}</field>
+      <field name="context">{'group_by': ['category_id'], 'col_group_by': ['date_order:month'], 'measures': ['unit_quantity']}</field>
     </record>
 
     <record id="filter_purchase_stock_analysis_price_per_supplier" model="ir.filters">
@@ -55,7 +55,7 @@
             <field name="location_id"/>
             <field name="picking_type_id"/>
             <field name="company_id" groups="base.group_multi_company"/>
-            <field name="date"/>
+            <field name="date_order"/>
             <field name="date_approve"/>
             <field name="expected_date"/>
           </group>
@@ -66,7 +66,7 @@
             <filter string="Status" context="{'group_by':'state'}"/>
             <filter string="Company" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>
             <separator/>
-            <filter string="Order Month" context="{'group_by':'date:month'}" help="Order of Day"/>
+            <filter string="Order Month" context="{'group_by':'date_order:month'}" help="Order of Day"/>
           </group>
         </search>
       </field>
