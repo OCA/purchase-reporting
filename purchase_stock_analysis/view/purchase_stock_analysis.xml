@@ -32,12 +32,28 @@
       <field name="context">{'group_by': ['partner_id'], 'col_group_by': ['product_id'], 'measures': ['price_average']}</field>
     </record>
 
-    <record id="filter_purchase_stock_analysis_average_delivery_time" model="ir.filters">
-      <field name="name">Average Delivery Time</field>
+    <record id="filter_days_to_deliver" model="ir.filters">
+      <field name="name">Days to deliver</field>
       <field name="model_id">purchase.stock.analysis</field>
       <field name="domain">[('state','&lt;&gt;','draft'),('state','&lt;&gt;','cancel')]</field>
       <field name="user_id" eval="False"/>
-      <field name="context">{'group_by': ['partner_id'], 'measures': ['delay_pass']}</field>
+      <field name="context">{'group_by': ['partner_id'], 'measures': ['days_to_deliver']}</field>
+    </record>
+
+    <record id="filter_days_initial_to_updated_schedule" model="ir.filters">
+      <field name="name">Days initial to updated schedule</field>
+      <field name="model_id">purchase.stock.analysis</field>
+      <field name="domain">[('state','&lt;&gt;','draft'),('state','&lt;&gt;','cancel')]</field>
+      <field name="user_id" eval="False"/>
+      <field name="context">{'group_by': ['partner_id'], 'measures': ['days_initial_to_updated_schedule']}</field>
+    </record>
+
+    <record id="filter_days_schedule_to_actual_delivery" model="ir.filters">
+      <field name="name">Days from schedule to actual delivery</field>
+      <field name="model_id">purchase.stock.analysis</field>
+      <field name="domain">[('state','&lt;&gt;','draft'),('state','&lt;&gt;','cancel')]</field>
+      <field name="user_id" eval="False"/>
+      <field name="context">{'group_by': ['partner_id'], 'measures': ['days_schedule_to_actual_delivery']}</field>
     </record>
 
     <record id="view_purchase_stock_analysis_search" model="ir.ui.view">

@@ -35,7 +35,13 @@ class PurchaseStockAnalysis(models.Model):
     user_id = fields.Many2one('res.users', 'Responsible', readonly=True)
 
     delay = fields.Float('Days to Validate', digits=(16, 2), readonly=True)
-    delay_pass = fields.Float('Days to Deliver', digits=(16, 2), readonly=True)
+
+    # was delay_pass in purchase analysis
+    days_to_deliver = fields.Float(digits=(16, 2), readonly=True)
+    days_initial_to_updated_schedule = fields.Float(digits=(16, 2),
+                                                    readonly=True)
+    days_schedule_to_actual_delivery = fields.Float(digits=(16, 2),
+                                                    readonly=True)
 
     unit_quantity = fields.Integer('Unit Quantity', readonly=True)
     price_total = fields.Float('Total Price', readonly=True)
@@ -82,8 +88,17 @@ class PurchaseStockAnalysis(models.Model):
                     sum(l.product_qty/u.factor*u2.factor) as unit_quantity,
                     extract(epoch from age(s.date_approve,s.date_order)) /
                         (24*60*60)::decimal(16,2) as delay,
+
                     extract(epoch from age(l.date_planned,s.date_order)) /
-                        (24*60*60)::decimal(16,2) as delay_pass,
+                    (24*60*60)::decimal(16,2) as days_to_deliver,
+
+                    extract(epoch from move.date_expected - l.date_planned)
+                         / (24*60*60)::decimal(16,2)
+                         as days_initial_to_updated_schedule,
+                    extract(epoch from move.date - move.date_expected)
+                         / (24*60*60)::decimal(16,2)
+                         as days_schedule_to_actual_delivery,
+
                     sum(l.price_unit * cr.rate * l.product_qty)::decimal(16, 2)
                         as price_total,
                     avg(100.0 * (l.price_unit * cr.rate * l.product_qty) /
@@ -135,6 +150,8 @@ class PurchaseStockAnalysis(models.Model):
                     u.category_id,
                     t.uom_id,
                     u.id,
-                    u2.factor
+                    u2.factor,
+                    move.date,
+                    move.date_expected
             )
         """)
