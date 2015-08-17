@@ -34,14 +34,23 @@ class PurchaseStockAnalysis(models.Model):
     company_id = fields.Many2one('res.company', 'Company', readonly=True)
     user_id = fields.Many2one('res.users', 'Responsible', readonly=True)
 
-    delay = fields.Float('Days to Validate', digits=(16, 2), readonly=True)
+    delay = fields.Float(
+        'Days to Validate', digits=(16, 2), readonly=True,
+        help='Days between the Order Date and the Date Approval')
 
     # was delay_pass in purchase analysis
-    days_to_deliver = fields.Float(digits=(16, 2), readonly=True)
-    days_initial_to_updated_schedule = fields.Float(digits=(16, 2),
-                                                    readonly=True)
-    days_schedule_to_actual_delivery = fields.Float(digits=(16, 2),
-                                                    readonly=True)
+    days_to_deliver = fields.Float(
+        digits=(16, 2), readonly=True,
+        help='Days between the Order Date and the initial Scheduled Date')
+
+    days_initial_to_updated_schedule = fields.Float(
+        digits=(16, 2), readonly=True,
+        help='Days from initial to updated Scheduled Date of Delivery')
+
+    days_schedule_to_actual_delivery = fields.Float(
+        digits=(16, 2), readonly=True,
+        help='Days from the updated Scheduled Date of Delivery and the actual'
+        'Delivery Date')
 
     unit_quantity = fields.Integer('Unit Quantity', readonly=True)
     price_total = fields.Float('Total Price', readonly=True)
