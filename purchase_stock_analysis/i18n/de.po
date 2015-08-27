@@ -1,0 +1,285 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* purchase_stock_analysis
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-27 13:56+0000\n"
+"PO-Revision-Date: 2015-08-27 13:56+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: purchase_stock_analysis
+#: selection:purchase.stock.analysis,state:0
+msgid "Approved"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: field:purchase.stock.analysis,price_average:0
+msgid "Average Price"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: selection:purchase.stock.analysis,state:0
+msgid "Cancelled"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: field:purchase.stock.analysis,category_id:0
+msgid "Category id"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: view:purchase.stock.analysis:purchase_stock_analysis.view_purchase_stock_analysis_search
+msgid "Category of product"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: view:purchase.stock.analysis:purchase_stock_analysis.view_purchase_stock_analysis_search
+#: field:purchase.stock.analysis,company_id:0
+msgid "Company"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: field:purchase.stock.analysis,date_approve:0
+msgid "Date Approved"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: help:purchase.stock.analysis,date_order:0
+msgid "Date on which this document has been created"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: field:purchase.stock.analysis,date_order:0
+msgid "Date order"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: help:purchase.stock.analysis,delay:0
+msgid "Days between the Order Date and the Date Approval"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: help:purchase.stock.analysis,days_to_deliver:0
+msgid "Days between the Order Date and the initial Scheduled Date"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: help:purchase.stock.analysis,days_initial_to_updated_schedule:0
+msgid "Days from initial to updated Scheduled Date of Delivery"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: model:ir.filters,name:purchase_stock_analysis.filter_days_schedule_to_actual_delivery
+msgid "Days from schedule to actual delivery"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: help:purchase.stock.analysis,days_schedule_to_actual_delivery:0
+msgid "Days from the updated Scheduled Date of Delivery and the actualDelivery Date"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: model:ir.filters,name:purchase_stock_analysis.filter_days_initial_to_updated_schedule
+#: field:purchase.stock.analysis,days_initial_to_updated_schedule:0
+msgid "Days initial to updated schedule"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: field:purchase.stock.analysis,days_schedule_to_actual_delivery:0
+msgid "Days schedule to actual delivery"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: field:purchase.stock.analysis,delay:0
+msgid "Days to Validate"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: model:ir.filters,name:purchase_stock_analysis.filter_days_to_deliver
+#: field:purchase.stock.analysis,days_to_deliver:0
+msgid "Days to deliver"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: field:purchase.stock.analysis,location_id:0
+msgid "Destination"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: selection:purchase.stock.analysis,state:0
+msgid "Done"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: field:purchase.stock.analysis,expected_date:0
+msgid "Expected Date"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: view:purchase.stock.analysis:purchase_stock_analysis.view_purchase_stock_analysis_search
+msgid "Extended Filters"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: view:purchase.stock.analysis:purchase_stock_analysis.view_purchase_stock_analysis_search
+msgid "Group By"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: field:purchase.stock.analysis,id:0
+msgid "ID"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: model:ir.actions.act_window,help:purchase_stock_analysis.action_purchase_stock_analysis
+msgid "In addition to the information found in \"Purchase Analysis\", this report adds some new measures:\n"
+"\n"
+"  * Days from initial to updated schedule\n"
+"\n"
+"  * Days from initial to updated Scheduled Date of delivery\n"
+"\n"
+"  * Days from the updated Scheduled Date to the actual Delivery Date"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: selection:purchase.stock.analysis,state:0
+msgid "Invoice Exception"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: model:ir.filters,name:purchase_stock_analysis.filter_purchase_stock_analysis_monthly_purchases
+msgid "Monthly Purchases"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: view:purchase.stock.analysis:purchase_stock_analysis.view_purchase_stock_analysis_search
+msgid "Order Month"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: view:purchase.stock.analysis:purchase_stock_analysis.view_purchase_stock_analysis_search
+msgid "Order of Day"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: view:purchase.stock.analysis:purchase_stock_analysis.view_purchase_stock_analysis_search
+msgid "Orders"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: field:purchase.stock.analysis,picking_type_id:0
+msgid "Picking type id"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: model:ir.filters,name:purchase_stock_analysis.filter_purchase_stock_analysis_price_per_supplier
+msgid "Price Per Supplier"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: field:purchase.stock.analysis,price_standard:0
+msgid "Price standard"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: field:purchase.stock.analysis,pricelist_id:0
+msgid "Pricelist"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: field:purchase.stock.analysis,product_id:0
+msgid "Product id"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: view:purchase.stock.analysis:purchase_stock_analysis.view_purchase_stock_analysis_search
+msgid "Purchase Orders"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: model:ir.actions.act_window,name:purchase_stock_analysis.action_purchase_stock_analysis
+#: model:ir.ui.menu,name:purchase_stock_analysis.menu_purchase_stock_analysis
+#: view:purchase.stock.analysis:purchase_stock_analysis.view_purchase_stock_analysis_graph
+msgid "Purchase Stock Analysis"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: field:purchase.stock.analysis,negociation:0
+msgid "Purchase-Standard Price"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: model:ir.model,name:purchase_stock_analysis.model_purchase_stock_analysis
+msgid "Purchases Stock Analysis"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: view:purchase.stock.analysis:purchase_stock_analysis.view_purchase_stock_analysis_search
+msgid "Quotations"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: field:purchase.stock.analysis,product_uom:0
+msgid "Reference Unit of Measure"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: selection:purchase.stock.analysis,state:0
+msgid "Request for Quotation"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: view:purchase.stock.analysis:purchase_stock_analysis.view_purchase_stock_analysis_search
+#: field:purchase.stock.analysis,user_id:0
+msgid "Responsible"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: selection:purchase.stock.analysis,state:0
+msgid "Shipping Exception"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: field:purchase.stock.analysis,state:0
+msgid "State"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: view:purchase.stock.analysis:purchase_stock_analysis.view_purchase_stock_analysis_search
+msgid "Status"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: view:purchase.stock.analysis:purchase_stock_analysis.view_purchase_stock_analysis_search
+#: field:purchase.stock.analysis,partner_id:0
+msgid "Supplier"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: field:purchase.stock.analysis,price_total:0
+msgid "Total Price"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: field:purchase.stock.analysis,unit_quantity:0
+msgid "Unit Quantity"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: field:purchase.stock.analysis,validator:0
+msgid "Validated By"
+msgstr ""
+
+#. module: purchase_stock_analysis
+#: selection:purchase.stock.analysis,state:0
+msgid "Waiting Supplier Ack"
+msgstr ""
+
