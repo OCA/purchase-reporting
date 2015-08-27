@@ -95,7 +95,6 @@
       <field name="view_mode">graph</field>
       <field name="view_id" ref="view_purchase_stock_analysis_graph"></field>
       <field name="context">{'search_default_orders': 1, 'group_by_no_leaf':1,'group_by':[]}</field>
-      <field name="help">XXX</field>
     </record>
 
     <menuitem id="menu_purchase_stock_analysis" action="action_purchase_stock_analysis" parent="base.next_id_73" />
