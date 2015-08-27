@@ -21,5 +21,6 @@
     'author': "Camptocamp,Odoo Community Association (OCA)",
     'website': 'http://www.camptocamp.com',
     'depends': ['purchase'],
-    'data': ['view/purchase_stock_analysis.xml'],
+    'data': ['view/purchase_stock_analysis.xml',
+             'security/ir.model.access.csv'],
 }
