@@ -29,7 +29,7 @@
 
 {
     'name': 'Purchase Order Report using Webkit Library and notes',
-    'version': '1.0.1',
+    'version': '8.0.1.0.1',
     'category': 'Reports/Webkit',
     'description': """
 Replaces the legacy rml Quotation / Purchase Order report by
