@@ -43,6 +43,6 @@ and footer notes """,
     'data': ['purchase_report.xml',
              'view/purchase_view.xml'],
     'test': [],
-    'installable': True,
+    'installable': False,
     'active': False,
 }
