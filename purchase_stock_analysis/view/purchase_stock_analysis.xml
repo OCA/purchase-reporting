@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<openerp>
+  <data>
+
+    <record model="ir.ui.view" id="view_purchase_stock_analysis_graph">
+      <field name="name">view_purchase_stock_analysis_graph</field>
+      <field name="model">purchase.stock.analysis</field>
+      <field name="arch" type="xml">
+        <graph string="Purchase Stock Analysis" type="pivot">
+          <field name="partner_id" type="row"/>
+          <field name="date_order" interval="month" type="col"/>
+          <field name="price_total" type="measure"/>
+          <field name="unit_quantity" type="measure"/>
+          <field name="price_average" type="measure"/>
+        </graph>
+      </field>
+    </record>
+
+    <record id="filter_purchase_stock_analysis_monthly_purchases" model="ir.filters">
+      <field name="name">Monthly Purchases</field>
+      <field name="model_id">purchase.stock.analysis</field>
+      <field name="domain">[('state','&lt;&gt;','cancel')]</field>
+      <field name="user_id" eval="False"/>
+      <field name="context">{'group_by': ['category_id'], 'col_group_by': ['date_order:month'], 'measures': ['unit_quantity']}</field>
+    </record>
+
+    <record id="filter_purchase_stock_analysis_price_per_supplier" model="ir.filters">
+      <field name="name">Price Per Supplier</field>
+      <field name="model_id">purchase.stock.analysis</field>
+      <field name="domain">[('state','&lt;&gt;','draft'),('state','&lt;&gt;','cancel')]</field>
+      <field name="user_id" eval="False"/>
+      <field name="context">{'group_by': ['partner_id'], 'col_group_by': ['product_id'], 'measures': ['price_average']}</field>
+    </record>
+
+    <record id="filter_days_to_deliver" model="ir.filters">
+      <field name="name">Days to deliver</field>
+      <field name="model_id">purchase.stock.analysis</field>
+      <field name="domain">[('state','&lt;&gt;','draft'),('state','&lt;&gt;','cancel')]</field>
+      <field name="user_id" eval="False"/>
+      <field name="context">{'group_by': ['partner_id'], 'measures': ['days_to_deliver']}</field>
+    </record>
+
+    <record id="filter_days_initial_to_updated_schedule" model="ir.filters">
+      <field name="name">Days initial to updated schedule</field>
+      <field name="model_id">purchase.stock.analysis</field>
+      <field name="domain">[('state','&lt;&gt;','draft'),('state','&lt;&gt;','cancel')]</field>
+      <field name="user_id" eval="False"/>
+      <field name="context">{'group_by': ['partner_id'], 'measures': ['days_initial_to_updated_schedule']}</field>
+    </record>
+
+    <record id="filter_days_schedule_to_actual_delivery" model="ir.filters">
+      <field name="name">Days from schedule to actual delivery</field>
+      <field name="model_id">purchase.stock.analysis</field>
+      <field name="domain">[('state','&lt;&gt;','draft'),('state','&lt;&gt;','cancel')]</field>
+      <field name="user_id" eval="False"/>
+      <field name="context">{'group_by': ['partner_id'], 'measures': ['days_schedule_to_actual_delivery']}</field>
+    </record>
+
+    <record id="view_purchase_stock_analysis_search" model="ir.ui.view">
+      <field name="name">view_purchase_stock_analysis_search</field>
+      <field name="model">purchase.stock.analysis</field>
+      <field name="arch" type="xml">
+        <search string="Purchase Orders">
+          <filter string="Quotations" name="quotes" domain="[('state','=','draft')]"/>
+          <filter string="Orders" name="orders" domain="[('state','&lt;&gt;','draft'),('state','&lt;&gt;','cancel')]"/>
+          <field name="partner_id"/>
+          <field name="product_id"/>
+          <group expand="0" string="Extended Filters">
+            <field name="user_id"/>
+            <field name="validator"/>
+            <field name="location_id"/>
+            <field name="picking_type_id"/>
+            <field name="company_id" groups="base.group_multi_company"/>
+            <field name="date_order"/>
+            <field name="date_approve"/>
+            <field name="expected_date"/>
+          </group>
+          <group expand="1" string="Group By">
+            <filter string="Supplier" name="group_partner_id" context="{'group_by':'partner_id'}"/>
+            <filter string="Responsible" name="Responsible" context="{'group_by':'user_id'}"/>
+            <filter string="Category of product" name="group_category_id" context="{'group_by':'category_id'}"/>
+            <filter string="Status" context="{'group_by':'state'}"/>
+            <filter string="Company" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>
+            <separator/>
+            <filter string="Order Month" context="{'group_by':'date_order:month'}" help="Order of Day"/>
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <record id="action_purchase_stock_analysis" model="ir.actions.act_window">
+      <field name="name">Purchase Stock Analysis</field>
+      <field name="res_model">purchase.stock.analysis</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">graph</field>
+      <field name="view_id" ref="view_purchase_stock_analysis_graph"></field>
+      <field name="context">{'search_default_orders': 1, 'group_by_no_leaf':1,'group_by':[]}</field>
+    </record>
+
+    <menuitem id="menu_purchase_stock_analysis" action="action_purchase_stock_analysis" parent="base.next_id_73" />
+
+  </data>
+</openerp>
