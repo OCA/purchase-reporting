@@ -14,5 +14,6 @@ addon | version | summary
 --- | --- | ---
 [purchase_order_webkit](purchase_order_webkit/) | 8.0.1.0.1 | Purchase Order Report using Webkit Library
 [purchase_order_webkit_with_notes](purchase_order_webkit_with_notes/) | 8.0.1.0.1 | Purchase Order Report using Webkit Library and notes
+[purchase_stock_analysis](purchase_stock_analysis/) | 8.0.1.0.0 | Purchase Stock Analysis
 
 [//]: # (end addons)
