@@ -2,9 +2,9 @@
    :target: https://www.gnu.org/licenses/agpl.html
    :alt: License: AGPL-3
 
-================================
-Purchase Order Report With Notes	
-================================
+=====================================
+Purchase Order Qweb Report With Notes	
+=====================================
 
 * This module replaces the webkit Quotation / Purchase Order report by
   a qweb report and adds header and footer notes on the purchase order 

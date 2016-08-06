@@ -28,7 +28,7 @@
 ##############################################################################
 
 {
-    'name': 'Purchase Order Report',
+    'name': 'Purchase Order Qweb Report with notes',
     'version': '8.0.1',
     'category': 'Reports/Qweb',
     "author": "Camptocamp,"
