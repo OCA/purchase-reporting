@@ -28,23 +28,22 @@
 ##############################################################################
 
 {
-    'name': 'Purchase Order Report using Webkit Library and notes',
-    'version': '8.0.1.0.1',
-    'category': 'Reports/Webkit',
-    'description': """
-Replaces the legacy rml Quotation / Purchase Order report by
-a brand new webkit report with header and footer notes on the
-purchase order and quotation
-
-It's the same report as purchase_order_webkit, but add notes
-for header and footer
-    """,
-    'author': "Camptocamp,Odoo Community Association (OCA)",
-    'website': 'http://www.camptocamp.com',
-    'depends': ['base', 'report_webkit', 'base_headers_webkit', 'purchase'],
-    'data': ['purchase_report.xml',
-             'view/purchase_view.xml'],
-    'test': [],
+    'name': 'Purchase Order Report',
+    'version': '8.0.1',
+    'category': 'Reports/Qweb',
+    "author": "Camptocamp,"
+              "Eficent Business and IT Consulting Services S.L., "
+              "Serpent Consulting Services Pvt. Ltd.,"
+              "Odoo Community Association (OCA)",
+    'website': "http://www.camptocamp.com,"
+               "https://odoo-community.org/",
+    'depends': ['report', 'purchase'],
+    'data': [
+        'security/ir.model.access.csv',
+        'report/purchase_report.xml',
+        'views/purchase_view.xml',
+        'views/report_purchasequotation_qweb.xml',
+        'views/report_purchaseorder_qweb.xml',
+    ],
     'installable': True,
-    'active': False,
 }
