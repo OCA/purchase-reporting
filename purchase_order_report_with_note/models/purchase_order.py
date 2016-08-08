@@ -1,23 +1,10 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
 #   Copyright (c) 2013 Camptocamp SA (http://www.camptocamp.com)
 #   @author Vincent Renaville
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# © 2015 Eficent Business and IT Consulting Services S.L.
+# - Jordi Ballester Alomar
+# © 2015 Serpent Consulting Services Pvt. Ltd. - Sudhir Arya
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from openerp import api, fields, models,  _
 
@@ -66,7 +53,7 @@ class PurchaseOrder(models.Model):
         assert len(self.ids) == 1, '''This option should only be used
         for a single id at a time'''
         self.signal_workflow('send_rfq')
-        xml = 'purchase_order_webkit_with_notes.report_purchasequotation_qweb'
+        xml = 'purchase_order_report_with_note.report_purchasequotation_qweb'
         return self.env['report'].get_action(self, xml)
 
     @api.multi
@@ -74,5 +61,5 @@ class PurchaseOrder(models.Model):
         """
         This function prints the purchase order (already sent)
         """
-        xml = 'purchase_order_webkit_with_notes.report_purchaseorder_qweb'
+        xml = 'purchase_order_report_with_note.report_purchaseorder_qweb'
         return self.env['report'].get_action(self, xml)

@@ -2,9 +2,9 @@
    :target: https://www.gnu.org/licenses/agpl.html
    :alt: License: AGPL-3
 
-=====================================
-Purchase Order Qweb Report With Notes	
-=====================================
+===============================
+Purchase Order Report With Note	
+===============================
 
 * This module replaces the webkit Quotation / Purchase Order report by
   a qweb report and adds header and footer notes on the purchase order 
@@ -16,19 +16,17 @@ Installation
 
 To install this module there is no external library required.
 
-1. Nothing required at all.
 
 Configuration
 =============
 
-To configure this module, you need to:
+To configure this module, no configuration is required.
 
-1. No Configuration required at all.
 
 Usage
 =====
 
-* This module will be helpful to have the notes in header and footer for any Purchase Order.
+* To use this module set the header and footer notes in the Condition tab for Purchase order.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
@@ -40,12 +38,8 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues
 <https://github.com/OCA/purchase-reporting/issues>`_. In case of trouble, please
 check there if your issue has already been reported. If you spotted it first,
-help us smashing it by providing a detailed and welcomed `feedback
-<https://github.com/OCA/
-purchase-reporting/issues/new?body=module:%20
-purchase_order_webkit_with_notes%0Aversion:%20
-8.0%0A%0A**Steps%20to%20reproduce**%0A-%20..
-.%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+help us smashing it by providing a detailed and welcomed feedback.
+
 
 Credits
 =======
@@ -58,10 +52,9 @@ Images
 Contributors
 ------------
 
-* Camptocamp
-* Eficent Business and IT Consulting Services S.L. <contact@eficent.com>
+* Vincent Renaville <vincent.renaville@camptocamp.com>
+* Jordi Ballester Alomar <jordi.ballester@eficent.com>
 * Serpent Consulting Services Pvt. Ltd. <support@serpentcs.com>
-* Odoo Community Association (OCA)	
 
 Maintainer
 ----------

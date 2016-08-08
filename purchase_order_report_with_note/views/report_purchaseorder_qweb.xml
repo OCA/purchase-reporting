@@ -8,7 +8,7 @@
                             <template id="rfq_css" inherit_id="web.layout">
                                 <xpath expr="//head" position="inside">
                                     <link rel="stylesheet"
-                                        href="/purchase_order_webkit_with_notes/static/src/css/rfq.css" />
+                                        href="/purchase_order_report_with_note/static/src/css/rfq.css" />
                                 </xpath>
                             </template>
                             <div class="row">
