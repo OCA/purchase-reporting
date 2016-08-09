@@ -10,9 +10,11 @@
     'name': 'Purchase Order Report With Note',
     'version': '8.0.1.0.0',
     'category': 'Reports/Qweb',
+    'license': 'AGPL-3',
     "author": "Camptocamp SA,"
               "Eficent Business and IT Consulting Services S.L., "
-              "Serpent Consulting Services Pvt. Ltd.,",
+              "Serpent Consulting Services Pvt. Ltd.,"
+              "Odoo Community Association (OCA)",
     'website': "https://odoo-community.org/",
     'depends': ['purchase'],
     'data': [
