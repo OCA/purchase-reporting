@@ -1,0 +1,79 @@
+<openerp>
+    <data>
+        <template id="report_purchasequotation_qweb">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report.internal_layout">
+                        <div class="page" style="font-size:13px;">
+                            <template id="rfq_css" inherit_id="web.layout">
+                                <xpath expr="//head" position="inside">
+                                    <link rel="stylesheet"
+                                        href="/purchase_order_report_with_note/static/src/css/rfq.css" />
+                                </xpath>
+                            </template>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div t-if="o.company_id.partner_id" class="Address">
+                                        <strong t-if="o.company_id.partner_id">Invoice address: </strong>
+                                        <div t-field="o.company_id.partner_id"
+                                            t-field-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": true}'/>
+                                    </div>
+                                    <div t-if="o.dest_address_id" class="Address">
+                                        <strong t-if="o.dest_address_id">Shipping address :</strong>
+                                        <div t-field="o.dest_address_id" 
+                                            t-field-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": true}'/>
+                                    </div>                        
+                                </div>
+                                <div class="col-xs-5 col-xs-offset-1">
+                                    <div t-field="o.partner_id"
+                                        t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}' />
+                                </div>
+                            </div>
+                            <h3 style="clear:both; padding-top: 20px;">Request for Quotation: <t t-esc="o.name"/></h3>
+                            <t t-if="o.note1"><t t-raw="o.note1"/></t>
+                            <table class="list_main_table" width="100%" >
+                                <thead>
+                                    <tr>
+                                        <th class="list_main_headers" style="width: 100%">
+                                            <table style="width:100%">
+                                                <tr>
+                                                    <th class="main_col1">Description</th>
+                                                    <th class="main_col3">Expected Date</th>
+                                                    <th style="text-align:center" class="amount main_col4">Qty</th>
+                                                </tr>
+                                            </table>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="list_main_lines" style="width: 100%">
+                                        <div class="nobreak">
+                                            <table style="width:100%">
+                                                <tr class="line" t-foreach="o.order_line" t-as="order_line">
+                                                    <td>
+                                                        <span t-field="order_line.name"/>
+                                                    </td>
+                                                    <td class="main_col3">
+                                                        <span t-esc="order_line.date_planned"/>
+                                                    </td>
+                                                    <td class="amount main_col4">
+                                                        <span t-field="order_line.product_qty"/>
+                                                        <span t-field="order_line.product_uom"/>
+                                                   </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <t t-if="o.note2"><t t-raw="o.note2"/></t>
+                            <br/>
+                         </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+ </openerp>
