@@ -8,6 +8,13 @@ This project aims to deal with modules related to manage purchase report. You'll
 
 [//]: # (addons)
 
+Available addons
+----------------
+addon | version | summary
+--- | --- | ---
+[purchase_reporting_weight](purchase_reporting_weight/) | 9.0.1.0.0 | Weights in the purchase analysis view
+
+
 Unported addons
 ---------------
 addon | version | summary
