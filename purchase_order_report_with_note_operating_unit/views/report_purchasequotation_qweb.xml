@@ -1,0 +1,37 @@
+<openerp>
+    <data>
+        <template id="external_layout_application">
+            <t t-call="purchase_order_report_with_note_operating_unit.external_layout_header_application" />
+            <t t-raw="0" />
+        </template>
+        <template id="external_layout_header_application">
+            <t t-set="page_no" t-value="1" />
+            <t t-foreach="docs" t-as="op">
+                <div class="header">
+                    <div class="row">
+                        <table width="100%">
+                            <tr>
+                                <td width="30%"><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/></td>
+                                <td width="40" class="text-center"><span t-esc="op.operating_unit_id.name"/></td>
+                                <td width="30%" class="text-right">
+                                    <small>
+                                        <span>Page</span>
+                                        <span t-esc="page_no" />
+                                        of
+                                        <span t-esc="len(docs)" />
+                                    </small>
+                                </td>
+                            </tr>
+                        </table>
+                     </div>
+                  </div>
+                <span t-set="page_no" t-value="page_no + 1" />
+            </t>
+         </template>
+         <template id="inherit_layouts_headers_quo" inherit_id="purchase_order_report_with_note.report_purchasequotation_qweb">
+            <xpath expr="//t[@t-call='report.internal_layout']" position="attributes" primary="True">
+                <attribute name="t-call">purchase_order_report_with_note_operating_unit.external_layout_application</attribute>
+            </xpath>
+        </template>
+      </data>
+ </openerp>
