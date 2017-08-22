@@ -10,12 +10,10 @@ Purchase Order Report With Note
   a qweb report and adds header and footer notes on the purchase order 
   and quotation
 
-
 Installation
 ============
 
 No specific installation requirements.
-
 
 Configuration
 =============
@@ -30,7 +28,7 @@ Usage
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/141/9.0
+   :target: https://runbot.odoo-community.org/runbot/141/10.0
 
 Bug Tracker
 ===========

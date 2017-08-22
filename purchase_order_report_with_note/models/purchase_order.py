@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
-#   Copyright (c) 2013 Camptocamp SA (http://www.camptocamp.com)
+#   Copyright 2017 Camptocamp SA (http://www.camptocamp.com)
 #   @author Vincent Renaville
-# © 2015 Eficent Business and IT Consulting Services S.L.
-# - Jordi Ballester Alomar
-# © 2015 Serpent Consulting Services Pvt. Ltd. - Sudhir Arya
+# Copyright 2017 Eficent Business and IT Consulting Services S.L.
+# Copyright 2017 Serpent Consulting Services Pvt. Ltd.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from openerp import api, fields, models
+from odoo import api, fields, models
 
 
 class PurchaseConditionText(models.Model):
@@ -16,11 +15,22 @@ class PurchaseConditionText(models.Model):
     _name = "purchase.condition_text"
     _description = "purchase conditions"
 
-    name = fields.Char('Condition summary', required=True, size=128)
-    type = fields.Selection([('header', 'Top condition'),
-                             ('footer', 'Bottom condition')],
-                            'type', required=True)
-    text = fields.Html('Condition', translate=True, required=True)
+    name = fields.Char(
+        'Condition summary',
+        required=True,
+        size=128
+    )
+    type = fields.Selection(
+        [('header', 'Top condition'),
+         ('footer', 'Bottom condition')],
+        'Type',
+        required=True
+    )
+    text = fields.Html(
+        'Condition',
+        translate=True,
+        required=True
+    )
 
 
 class PurchaseOrder(models.Model):
@@ -30,10 +40,16 @@ class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
     _description = 'Purchase Order'
 
-    text_condition1 = fields.Many2one('purchase.condition_text', 'Header',
-                                      domain=[('type', '=', 'header')])
-    text_condition2 = fields.Many2one('purchase.condition_text', 'Footer',
-                                      domain=[('type', '=', 'footer')])
+    text_condition1 = fields.Many2one(
+        'purchase.condition_text',
+        'Header',
+        domain=[('type', '=', 'header')]
+    )
+    text_condition2 = fields.Many2one(
+        'purchase.condition_text',
+        'Footer',
+        domain=[('type', '=', 'footer')]
+    )
     note1 = fields.Html('Header')
     note2 = fields.Html('Footer')
 
