@@ -8,6 +8,13 @@ This project aims to deal with modules related to manage purchase report. You'll
 
 [//]: # (addons)
 
+Available addons
+----------------
+addon | version | summary
+--- | --- | ---
+[purchase_comment_template](purchase_comment_template/) | 10.0.1.0.0 | Comments texts templates on Purchase documents
+
+
 Unported addons
 ---------------
 addon | version | summary
