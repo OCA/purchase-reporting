@@ -26,6 +26,7 @@
         </xpath>
         <xpath expr="/form/sheet/notebook/page/field/form/sheet/notebook/page/field[@name='name']" position="after">
               <group>
+                  <field name="state" invisible="1"/>
                   <field name="formatted_note" colspan="4"/>
               </group>
         </xpath>
