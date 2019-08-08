@@ -26,14 +26,14 @@ Installation
 ============
 
 To install this module, you need to have the module `Invoice Comments
-<https://github.com/OCA/account-invoice-reporting/tree/10.0/invoice_comment_template>`_.
+<https://github.com/OCA/account-invoice-reporting/tree/12.0/account_invoice_comment_template>`_.
 
 Usage
 =====
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/141/10.0
+   :target: https://runbot.odoo-community.org/runbot/141/12.0
 
 Bug Tracker
 ===========
