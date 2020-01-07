@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_purchaseorder_document_comments"
+      inherit_id="purchase.report_purchaseorder_document">
+      <xpath expr="//div[hasclass('oe_structure')][1]" position="before">
+        <template id="purchase_css" inherit_id="web.layout">
+            <xpath expr="//head" position="inside">
+                <link rel="stylesheet"
+                    href="/purchase_comment_template/static/src/css/purchase.css" />
+            </xpath>
+        </template>
+      </xpath>
+      <xpath expr="//table[hasclass('table-sm')]" position="before">
+        <p t-if="o.note1">
+          <span t-field="o.note1"/>
+        </p>
+      </xpath>
+      <xpath expr="//tr[@t-as='line']" position="replace">
+        <t t-foreach="o.order_line" t-as="line">
+            <tr>
+                <td>
+                    <span t-field="line.name"/>
+                </td>
+                <td>
+                    <span t-esc="', '.join(map(lambda x: x.name, line.taxes_id))"/>
+                </td>
+                <td class="text-center">
+                    <span t-field="line.date_planned"/>
+                </td>
+                <td class="text-right">
+                    <span t-field="line.product_qty"/>
+                    <span t-field="line.product_uom.name" groups="uom.group_uom"/>
+                </td>
+                <td class="text-right">
+                    <span t-field="line.price_unit"/>
+                </td>
+                <td class="text-right">
+                    <span t-field="line.price_subtotal"
+                        t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                </td>
+            </tr>
+            <t t-if="line.formatted_note">
+                <tr style="padding:0;">
+                    <td colspan="6" style="padding:0;">
+                        <table style="width:100%;border:0;padding:0;">
+                            <caption class="formatted_note">
+                                <span t-field="line.formatted_note"/>
+                            </caption>
+                        </table>
+                    </td>
+                </tr>
+            </t>
+        </t>
+      </xpath>
+      <xpath expr="//p[@t-field='o.notes']" position="after">
+        <p t-if="o.note2">
+          <span t-field="o.note2"/>
+        </p>
+      </xpath>
+    </template>
+
+</odoo>

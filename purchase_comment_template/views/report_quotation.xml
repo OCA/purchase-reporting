@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_purchasequotation_document_comments"
+      inherit_id="purchase.report_purchasequotation_document">
+      <xpath expr="//div[hasclass('oe_structure')][1]" position="before">
+        <template id="purchase_css" inherit_id="web.layout">
+            <xpath expr="//head" position="inside">
+                <link rel="stylesheet"
+                    href="/purchase_comment_template/static/src/css/purchase.css" />
+            </xpath>
+        </template>
+      </xpath>
+      <xpath expr="//table[hasclass('table-sm')]" position="before">
+        <p t-if="o.note1">
+          <span t-field="o.note1"/>
+        </p>
+      </xpath>
+      <xpath expr="//tr[@t-as='order_line']" position="replace">
+        <t t-foreach="o.order_line" t-as="order_line">
+            <tr>
+                <td>
+                    <span t-field="order_line.name"/>
+                </td>
+                <td class="text-center">
+                    <span t-field="order_line.date_planned"/>
+                </td>
+                <td class="text-right">
+                    <span t-field="order_line.product_qty"/>
+                    <span t-field="order_line.product_uom" groups="uom.group_uom"/>
+                </td>
+            </tr>
+            <t t-if="order_line.formatted_note">
+                <tr style="padding:0;">
+                    <td colspan="3" style="padding:0;">
+                        <table style="width:100%;border:0;padding:0;">
+                            <caption class="formatted_note">
+                                <span t-field="order_line.formatted_note"/>
+                            </caption>
+                        </table>
+                    </td>
+                </tr>
+            </t>
+        </t>
+      </xpath>
+      <xpath expr="//p[@t-field='o.notes']" position="after">
+        <p t-if="o.note2">
+          <span t-field="o.note2"/>
+        </p>
+      </xpath>
+    </template>
+
+</odoo>
