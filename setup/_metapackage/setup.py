@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo12-addon-purchase_backorder',
+        'odoo12-addon-purchase_comment_template',
     ],
     classifiers=[
         'Programming Language :: Python',
