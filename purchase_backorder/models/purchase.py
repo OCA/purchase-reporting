@@ -73,39 +73,37 @@ class PurchaseOrderLine(models.Model):
         string="Last Bill Date",
         compute="_compute_last_bill_date", store=True)
     uigr_qty = fields.Float(string="UIGR Qty",
-                            compute='_compute_uigr_qty', store=True)
+                            compute='_compute_uigr_qty_value', store=True)
     bo_qty = fields.Float(string="Backorder Qty",
-                          compute='_compute_bo_qty', store=True)
+                          compute='_compute_bo_qty_value', store=True)
     uigr_value = fields.Monetary(string="UIGR Value",
-                                 compute='_compute_uigr_value', store=True)
+                                 compute='_compute_uigr_qty_value', store=True)
     bo_value = fields.Monetary(string="Backorder Value",
-                               compute='_compute_bo_value', store=True)
+                               compute='_compute_bo_qty_value', store=True)
     product_type = fields.Selection(related='product_id.product_tmpl_id.type',
                                     string='Product Type')
 
-    @api.multi
-    @api.depends('qty_received', 'product_qty')
-    def _compute_bo_qty(self):
-        for line in self:
-            line.bo_qty = line.product_qty - line.qty_received
+    @api.depends('qty_received', 'product_qty', 'price_unit')
+    def _compute_bo_qty_value(self):
 
-    @api.multi
-    @api.depends('qty_received', 'qty_invoiced')
-    def _compute_uigr_qty(self):
+        def is_po_with_reception(line):
+            if line.order_id.state in ('purchase', 'done'):
+                return bool(
+                    line.move_ids.filtered(lambda x: x.state == 'done'))
+            return False
+
+        for line in self:
+            if is_po_with_reception(line):
+                line.bo_qty = line.product_qty - line.qty_received
+            else:
+                line.bo_qty = 0
+            line.bo_value = line.bo_qty * line.price_unit
+
+    @api.depends('qty_received', 'qty_invoiced', 'price_unit')
+    def _compute_uigr_qty_value(self):
         for line in self:
             line.uigr_qty = line.qty_received - line.qty_invoiced
-
-    @api.multi
-    @api.depends('uigr_qty', 'price_unit')
-    def _compute_uigr_value(self):
-        for line in self:
             line.uigr_value = line.uigr_qty * line.price_unit
-
-    @api.multi
-    @api.depends('bo_qty', 'price_unit')
-    def _compute_bo_value(self):
-        for line in self:
-            line.bo_value = line.bo_qty * line.price_unit
 
     @api.multi
     @api.depends('order_id.state', 'move_ids.state',
