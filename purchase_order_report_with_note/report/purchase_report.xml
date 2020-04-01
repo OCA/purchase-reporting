@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report id="purchase.report_purchase_quotation"
+            string="Request for Quotation"
+            model="purchase.order"
+            name="purchase_order_report_with_note.report_purchasequotation_qweb"
+            report_type="qweb-pdf"
+            menu="True"
+        />
+        <report id="purchase.report_purchase_order"
+            string="Purchase Order"
+            model="purchase.order"
+            name="purchase_order_report_with_note.report_purchaseorder_qweb"
+            report_type="qweb-pdf"
+            menu="True"
+        />
+    </data>
+</openerp>
