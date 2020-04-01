@@ -6,31 +6,20 @@
 Purchase Order Report With Note
 ===============================
 
-* This module replaces the webkit Quotation / Purchase Order report by
-  a qweb report and adds header and footer notes on the purchase order 
-  and quotation
-
-
-Installation
-============
-
-No specific installation requirements.
-
-
-Configuration
-=============
-
-No configuration is required.
+This module replaces the webkit Quotation / Purchase Order report with
+a QWeb report and adds header and footer notes on the purchase order 
+and quotation.
 
 
 Usage
 =====
 
-* To use this module set the header and footer notes in the Condition tab for Purchase order.
+* Set the header and footer notes in the Condition tab of the Purchase order.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
    :target: https://runbot.odoo-community.org/runbot/141/9.0
+
 
 Bug Tracker
 ===========
