@@ -56,6 +56,7 @@ Authors
 ~~~~~~~
 
 * Jarsa Sistemas
+* Odoo SA
 
 Contributors
 ~~~~~~~~~~~~
