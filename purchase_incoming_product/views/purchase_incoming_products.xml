@@ -13,7 +13,7 @@
             name="view_ids"
             eval="[(5, 0, 0),
                 (0, 0, {'view_mode': 'tree', 'view_id': ref('stock.view_move_tree_receipt_picking')}),
-                (0, 0, {'view_mode': 'kanban', 'view_id': ref('stock.stock_move_view_kanban')})]"
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('stock.view_move_kandan')})]"
         />
         <field
             name="context"
@@ -37,7 +37,7 @@
     <menuitem
         id="menu_action_picking_tree_in_move"
         action="action_receipt_picking_move"
-        parent="purchase.purchase_report"
-        sequence="11"
+        parent="purchase.menu_purchase_products"
+        sequence="100"
     />
 </odoo>
