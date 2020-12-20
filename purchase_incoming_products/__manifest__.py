@@ -7,7 +7,7 @@
     "version": "13.0.1.0.0",
     "category": "Reporting",
     "author": "Jarsa Sistemas,Odoo SA,Odoo Community Association (OCA)",
-    "website": "https://www.jarsa.com.mx",
+    "website": "https://github.com/OCA/purchase-reporting",
     "license": "LGPL-3",
     "depends": ["purchase", "stock"],
     "data": ["views/purchase_incoming_products.xml"],
