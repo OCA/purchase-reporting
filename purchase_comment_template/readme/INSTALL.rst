@@ -1,2 +1,2 @@
-To install this module, you need to have the module `Invoice Comments
-<https://github.com/OCA/account-invoice-reporting/tree/12.0/account_invoice_comment_template>`_.
+To install this module, you need to have the module `Base Comment Template
+<https://github.com/OCA/reporting-engine/tree/14.0/base_comment_template>`_.
