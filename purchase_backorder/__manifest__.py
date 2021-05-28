@@ -1,4 +1,5 @@
-# Copyright (C) 2012 Open Source Integrators
+# Copyright (C) 2021 Open Source Integrators
+# Copyright (C) 2021 Serpent Consulting Services
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
@@ -9,11 +10,9 @@
     "summary": "Report of Un-Invoiced Goods Received and Backorders",
     "category": "Purchase",
     "website": "https://github.com/OCA/purchase-reporting",
-    "depends": [
-        "account",
-        "purchase_stock",
-    ],
+    "depends": ["account", "purchase_stock"],
     "data": [
+        "security/ir.model.access.csv",
         "views/po_backorder_view.xml",
         "views/purchase_view.xml",
         "report/po_backorder_report.xml",
