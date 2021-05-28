@@ -5,14 +5,14 @@
         <field name="model">purchase.order.line</field>
         <field name="arch" type="xml">
             <tree string="PO Backorders">
-                <field name="order_id"/>
-                <field name="name"/>
-                <field name="bo_qty"/>
-                <field name="bo_value"/>
-                <field name="uigr_qty"/>
-                <field name="uigr_value"/>
-                <field name="last_date_received"/>
-                <field name="last_bill_date"/>
+                <field name="order_id" />
+                <field name="name" />
+                <field name="bo_qty" />
+                <field name="bo_value" />
+                <field name="uigr_qty" />
+                <field name="uigr_value" />
+                <field name="last_date_received" />
+                <field name="last_bill_date" />
             </tree>
         </field>
     </record>
@@ -23,14 +23,17 @@
         <field name="res_model">purchase.order.line</field>
         <field name="view_id" ref="purchase_backorder.po_backorder_tree_view" />
         <field name="view_mode">tree,form</field>
-        <field name="domain">['&amp;', ('product_type', '=', 'product'), '|', ('bo_value', '!=', 0), ('uigr_value', '!=', 0)]</field>
+        <field
+            name="domain"
+        >['&amp;', ('product_type', '=', 'product'), '|', ('bo_value', '!=', 0), ('uigr_value', '!=', 0)]</field>
         <field name="view_type">form</field>
     </record>
 
     <menuitem
-            id="menu_po_backorder"
-            action="action_po_backorder"
-            parent="purchase.menu_procurement_management"
-            sequence="11"/>
+        id="menu_po_backorder"
+        action="action_po_backorder"
+        parent="purchase.menu_procurement_management"
+        sequence="11"
+    />
 
 </odoo>
