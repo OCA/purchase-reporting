@@ -6,13 +6,13 @@
         <field name="arch" type="xml">
             <form>
                 <footer>
-                    <button type="object"
-                            name="action_print_report"
-                            string="Print Report"
-                            class="btn-primary"/>
-                    <button string="Cancel"
-                            class="btn-default"
-                            special="cancel"/>
+                    <button
+                        type="object"
+                        name="action_print_report"
+                        string="Print Report"
+                        class="btn-primary"
+                    />
+                    <button string="Cancel" class="btn-default" special="cancel" />
                 </footer>
             </form>
         </field>
@@ -24,14 +24,15 @@
         <field name="type">ir.actions.act_window</field>
         <field name="view_type">form</field>
         <field name="view_mode">form</field>
-        <field name="view_id" ref="po_backorder_report_view"/>
+        <field name="view_id" ref="po_backorder_report_view" />
         <field name="target">new</field>
     </record>
 
     <menuitem
-            id="menu_po_backorder_report"
-            action="action_po_backorder_wizard"
-            parent="purchase.menu_procurement_management"
-            sequence="12"/>
+        id="menu_po_backorder_report"
+        action="action_po_backorder_wizard"
+        parent="purchase.menu_procurement_management"
+        sequence="12"
+    />
 
 </odoo>
