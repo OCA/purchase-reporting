@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo12-addon-purchase_backorder',
         'odoo12-addon-purchase_comment_template',
+        'odoo12-addon-purchase_report_extension',
     ],
     classifiers=[
         'Programming Language :: Python',
