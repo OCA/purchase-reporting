@@ -1,0 +1,45 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* purchase_report_extension
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: purchase_report_extension
+#: model:ir.model.fields,field_description:purchase_report_extension.field_purchase_report__order_id
+msgid "Order"
+msgstr ""
+
+#. module: purchase_report_extension
+#: model:ir.model,name:purchase_report_extension.model_purchase_report
+msgid "Purchase Report"
+msgstr ""
+
+#. module: purchase_report_extension
+#: model:ir.model.fields,field_description:purchase_report_extension.field_purchase_report__qty_billed
+msgid "Qty Billed"
+msgstr ""
+
+#. module: purchase_report_extension
+#: model:ir.model.fields,field_description:purchase_report_extension.field_purchase_report__qty_ordered
+msgid "Qty Ordered"
+msgstr ""
+
+#. module: purchase_report_extension
+#: model:ir.model.fields,field_description:purchase_report_extension.field_purchase_report__qty_received
+msgid "Qty Received"
+msgstr ""
+
+#. module: purchase_report_extension
+#: model:ir.model.fields,field_description:purchase_report_extension.field_purchase_report__qty_to_be_billed
+msgid "Qty to be Billed"
+msgstr ""
+
