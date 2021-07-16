@@ -6,40 +6,42 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2021-07-16 08:49+0000\n"
+"Last-Translator: David Vidal <david.vidal@tecnativa.com>\n"
 "Language-Team: none\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.3.2\n"
 
 #. module: purchase_report_extension
 #: model:ir.model.fields,field_description:purchase_report_extension.field_purchase_report__order_id
 msgid "Order"
-msgstr ""
+msgstr "Pedido"
 
 #. module: purchase_report_extension
 #: model:ir.model,name:purchase_report_extension.model_purchase_report
 msgid "Purchase Report"
-msgstr ""
+msgstr "Informe de compras"
 
 #. module: purchase_report_extension
 #: model:ir.model.fields,field_description:purchase_report_extension.field_purchase_report__qty_billed
 msgid "Qty Billed"
-msgstr ""
+msgstr "Ctd. facturada"
 
 #. module: purchase_report_extension
 #: model:ir.model.fields,field_description:purchase_report_extension.field_purchase_report__qty_ordered
 msgid "Qty Ordered"
-msgstr ""
+msgstr "Ctd. pedida"
 
 #. module: purchase_report_extension
 #: model:ir.model.fields,field_description:purchase_report_extension.field_purchase_report__qty_received
 msgid "Qty Received"
-msgstr ""
+msgstr "Ctd. recibida"
 
 #. module: purchase_report_extension
 #: model:ir.model.fields,field_description:purchase_report_extension.field_purchase_report__qty_to_be_billed
 msgid "Qty to be Billed"
-msgstr ""
+msgstr "Ctd. a facturar"
