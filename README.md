@@ -17,9 +17,9 @@ TODO: add repo description.
 
 Available addons
 ----------------
-addon | version | summary
---- | --- | ---
-[purchase_backorder](purchase_backorder/) | 14.0.1.0.0 | Report of Un-Invoiced Goods Received and Backorders
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[purchase_backorder](purchase_backorder/) | 14.0.1.0.0 | [![smangukiya](https://github.com/smangukiya.png?size=30px)](https://github.com/smangukiya) | Report of Un-Invoiced Goods Received and Backorders
 
 [//]: # (end addons)
 
