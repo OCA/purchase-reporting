@@ -25,7 +25,7 @@
                                 <td><span t-field="line.bo_qty" /></td>
                                 <td><span t-field="line.bo_value" /></td>
                                 <td><span t-field="line.uigr_qty" /></td>
-                                <td><span t-field="line.uigr_value " /></td>
+                                <td><span t-field="line.uigr_value" /></td>
                                 <td><span t-field="line.last_date_received" /></td>
                                 <td><span t-field="line.last_bill_date" /></td>
                                 <td />
