@@ -6,13 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2022-05-11 12:05+0000\n"
+"Last-Translator: Maria Sparenberg <maria.sparenberg@gmx.net>\n"
 "Language-Team: none\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.3.2\n"
 
 #. module: purchase_backorder
 #: model:ir.model.fields,help:purchase_backorder.field_purchase_order_line__product_type
@@ -38,29 +40,29 @@ msgstr ""
 #. module: purchase_backorder
 #: model_terms:ir.ui.view,arch_db:purchase_backorder.po_backorder_report_view
 msgid "Cancel"
-msgstr ""
+msgstr "Abbrechen"
 
 #. module: purchase_backorder
 #: model:ir.model.fields,field_description:purchase_backorder.field_pobackorder_report_wizard__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Erstellt von"
 
 #. module: purchase_backorder
 #: model:ir.model.fields,field_description:purchase_backorder.field_pobackorder_report_wizard__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Erstellt am"
 
 #. module: purchase_backorder
 #: model_terms:ir.ui.view,arch_db:purchase_backorder.po_backorder_report
 msgid "Description"
-msgstr ""
+msgstr "Beschreibung"
 
 #. module: purchase_backorder
 #: model:ir.model.fields,field_description:purchase_backorder.field_pobackorder_report_wizard__display_name
 #: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order__display_name
 #: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order_line__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Anzeigename"
 
 #. module: purchase_backorder
 #: model:ir.actions.act_window,name:purchase_backorder.action_po_backorder_wizard
@@ -73,7 +75,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order__id
 #: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order_line__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: purchase_backorder
 #: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order__last_bill_date
@@ -94,17 +96,17 @@ msgstr ""
 #: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order____last_update
 #: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order_line____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Zuletzt geändert am"
 
 #. module: purchase_backorder
 #: model:ir.model.fields,field_description:purchase_backorder.field_pobackorder_report_wizard__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Zuletzt aktualisiert von"
 
 #. module: purchase_backorder
 #: model:ir.model.fields,field_description:purchase_backorder.field_pobackorder_report_wizard__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Zuletzt aktualisiert am"
 
 #. module: purchase_backorder
 #: model_terms:ir.ui.view,arch_db:purchase_backorder.po_backorder_report
@@ -132,7 +134,7 @@ msgstr ""
 #. module: purchase_backorder
 #: model_terms:ir.ui.view,arch_db:purchase_backorder.po_backorder_report_view
 msgid "Print Report"
-msgstr ""
+msgstr "Beleg drucken"
 
 #. module: purchase_backorder
 #: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order_line__product_type
@@ -142,12 +144,12 @@ msgstr ""
 #. module: purchase_backorder
 #: model:ir.model,name:purchase_backorder.model_purchase_order
 msgid "Purchase Order"
-msgstr ""
+msgstr "Beschaffungsauftrag"
 
 #. module: purchase_backorder
 #: model:ir.model,name:purchase_backorder.model_purchase_order_line
 msgid "Purchase Order Line"
-msgstr ""
+msgstr "Bestellposition"
 
 #. module: purchase_backorder
 #: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order_line__uigr_qty
