@@ -10,17 +10,11 @@ class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
 
     last_date_received = fields.Datetime(
-        string="Last Date Received", compute="_compute_last_date_received", store=True
+        compute="_compute_last_date_received", store=True
     )
-    last_bill_date = fields.Datetime(
-        string="Last Bill Date", compute="_compute_last_bill_date", store=True
-    )
-    uigr_value = fields.Monetary(
-        string="UIGR Value", compute="_compute_uigr_value", store=True
-    )
-    bo_value = fields.Monetary(
-        string="Backorder Value", compute="_compute_bo_value", store=True
-    )
+    last_bill_date = fields.Datetime(compute="_compute_last_bill_date", store=True)
+    uigr_value = fields.Monetary(compute="_compute_uigr_value", store=True)
+    bo_value = fields.Monetary(compute="_compute_bo_value", store=True)
 
     @api.depends("order_line.uigr_qty", "order_line.price_unit")
     def _compute_uigr_value(self):
@@ -67,11 +61,9 @@ class PurchaseOrderLine(models.Model):
     _inherit = "purchase.order.line"
 
     last_date_received = fields.Datetime(
-        string="Last Date Received", compute="_compute_last_date_received", store=True
+        compute="_compute_last_date_received", store=True
     )
-    last_bill_date = fields.Datetime(
-        string="Last Bill Date", compute="_compute_last_bill_date", store=True
-    )
+    last_bill_date = fields.Datetime(compute="_compute_last_bill_date", store=True)
     uigr_qty = fields.Float(string="UIGR Qty", compute="_compute_uigr_qty", store=True)
     bo_qty = fields.Float(string="Backorder Qty", compute="_compute_bo_qty", store=True)
     uigr_value = fields.Monetary(
