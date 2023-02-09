@@ -2,7 +2,7 @@
 <odoo>
     <template
         id="report_purchasequotation_document_inherit"
-        inherit_id="purchase.report_purchasequotation_document"
+        inherit_id="purchase_stock.report_purchasequotation_document"
     >
         <xpath
             expr="//div[@t-if='o.picking_type_id and o.picking_type_id.warehouse_id']"
