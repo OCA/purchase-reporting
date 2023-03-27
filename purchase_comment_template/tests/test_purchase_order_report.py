@@ -1,4 +1,4 @@
-# Copyright 2018 Eficent Business and IT Consulting Services S.L.
+# Copyright 2018 ForgeFlow S.L.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo.tests.common import Form, TransactionCase
@@ -9,8 +9,8 @@ class TestPurchaseOrderReport(TransactionCase):
         super().setUp()
         self.company = self.env.ref("base.main_company")
         self.base_comment_model = self.env["base.comment.template"]
-        self.before_comment = self._create_comment("before_lines")
-        self.after_comment = self._create_comment("after_lines")
+        self.before_comment = self._create_comment("purchase.order", "before_lines")
+        self.after_comment = self._create_comment("purchase.order", "after_lines")
         self.partner = self.env["res.partner"].create({"name": "Partner Test"})
         self.partner.base_comment_template_ids = [
             (4, self.before_comment.id),
@@ -26,16 +26,14 @@ class TestPurchaseOrderReport(TransactionCase):
             }
         )
 
-    def _create_comment(self, position):
+    def _create_comment(self, models, position):
         return self.base_comment_model.create(
             {
                 "name": "Comment " + position,
                 "company_id": self.company.id,
                 "position": position,
                 "text": "Text " + position,
-                "model_ids": [
-                    (6, 0, self.env.ref("purchase.model_purchase_order").ids)
-                ],
+                "models": models,
             }
         )
 
