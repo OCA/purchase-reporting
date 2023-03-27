@@ -10,7 +10,7 @@
                 t-foreach="o.comment_template_ids.filtered(lambda x: x.position == 'before_lines')"
                 t-as="comment_template_top"
             >
-                <div t-raw="comment_template_top.text" />
+                <div t-out="comment_template_top.text" />
             </t>
         </xpath>
         <xpath expr="//p[@t-field='o.notes']" position="after">
@@ -18,7 +18,7 @@
                 t-foreach="o.comment_template_ids.filtered(lambda x: x.position == 'after_lines')"
                 t-as="comment_template_bottom"
             >
-                <div t-raw="comment_template_bottom.text" />
+                <div t-out="comment_template_bottom.text" />
             </t>
         </xpath>
     </template>

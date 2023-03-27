@@ -1,2 +1,2 @@
-* Miquel Raïch <miquel.raich@eficent.com>
+* Miquel Raïch <miquel.raich@forgeflow.com>
 * Alan Ramos <alan.ramos@jarsa.com.mx>
