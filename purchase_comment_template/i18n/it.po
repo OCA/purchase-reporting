@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* purchase_comment_template
+# 	* purchase_comment_template
 #
 msgid ""
 msgstr ""
@@ -17,19 +17,9 @@ msgstr ""
 "X-Generator: Weblate 3.10\n"
 
 #. module: purchase_comment_template
-#: model:ir.model.fields,field_description:purchase_comment_template.field_purchase_order__note2
-msgid "Bottom Comment"
-msgstr "Commento in basso"
-
-#. module: purchase_comment_template
-#: model:ir.model.fields,field_description:purchase_comment_template.field_purchase_order__comment_template2_id
-msgid "Bottom Comment Template"
-msgstr "Modello commento in basso"
-
-#. module: purchase_comment_template
-#: model_terms:ir.ui.view,arch_db:purchase_comment_template.purchase_order_form_add_comment
-msgid "Bottom Comments"
-msgstr "Commenti in basso"
+#: model:ir.model.fields,field_description:purchase_comment_template.field_purchase_order__comment_template_ids
+msgid "Comment Template"
+msgstr ""
 
 #. module: purchase_comment_template
 #: model_terms:ir.ui.view,arch_db:purchase_comment_template.purchase_order_form_add_comment
@@ -42,44 +32,47 @@ msgid "Document Comments"
 msgstr "Commenti del documento"
 
 #. module: purchase_comment_template
-#: model:ir.model.fields,field_description:purchase_comment_template.field_purchase_order_line__formatted_note
-msgid "Formatted Note"
-msgstr "Note formattate"
-
-#. module: purchase_comment_template
-#: model_terms:ir.ui.view,arch_db:purchase_comment_template.purchase_order_form_add_comment
-msgid "Load a template"
-msgstr "Carica un modello"
-
-#. module: purchase_comment_template
 #: model:ir.model,name:purchase_comment_template.model_purchase_order
 msgid "Purchase Order"
 msgstr "Ordine di acquisto"
 
 #. module: purchase_comment_template
-#: model:ir.model,name:purchase_comment_template.model_purchase_order_line
-msgid "Purchase Order Line"
-msgstr "Riga ordine di acquisto"
-
-#. module: purchase_comment_template
-#: model_terms:ir.ui.view,arch_db:purchase_comment_template.purchase_order_form_add_comment
-msgid "The comments will be displayed on the printed document. You can load a predefined template, write your own text or load a template and then modify it only for this document."
+#: model:ir.actions.act_window,name:purchase_comment_template.action_purchase_order_comment_template
+msgid "Purchase Orders Comments"
 msgstr ""
-"Il commenti saranno mostrati sul documento stampato. Puoi caricare un "
-"modello predefinito, puoi scrivere un tuo testo o caricare un modello e poi "
-"modificarlo solo per questo documento."
 
-#. module: purchase_comment_template
-#: model:ir.model.fields,field_description:purchase_comment_template.field_purchase_order__note1
-msgid "Top Comment"
-msgstr "Commento in alto"
+#~ msgid "Bottom Comment"
+#~ msgstr "Commento in basso"
 
-#. module: purchase_comment_template
-#: model:ir.model.fields,field_description:purchase_comment_template.field_purchase_order__comment_template1_id
-msgid "Top Comment Template"
-msgstr "Modello commento in alto"
+#~ msgid "Bottom Comment Template"
+#~ msgstr "Modello commento in basso"
 
-#. module: purchase_comment_template
-#: model_terms:ir.ui.view,arch_db:purchase_comment_template.purchase_order_form_add_comment
-msgid "Top Comments"
-msgstr "Commenti in alto"
+#~ msgid "Bottom Comments"
+#~ msgstr "Commenti in basso"
+
+#~ msgid "Formatted Note"
+#~ msgstr "Note formattate"
+
+#~ msgid "Load a template"
+#~ msgstr "Carica un modello"
+
+#~ msgid "Purchase Order Line"
+#~ msgstr "Riga ordine di acquisto"
+
+#~ msgid ""
+#~ "The comments will be displayed on the printed document. You can load a "
+#~ "predefined template, write your own text or load a template and then "
+#~ "modify it only for this document."
+#~ msgstr ""
+#~ "Il commenti saranno mostrati sul documento stampato. Puoi caricare un "
+#~ "modello predefinito, puoi scrivere un tuo testo o caricare un modello e "
+#~ "poi modificarlo solo per questo documento."
+
+#~ msgid "Top Comment"
+#~ msgstr "Commento in alto"
+
+#~ msgid "Top Comment Template"
+#~ msgstr "Modello commento in alto"
+
+#~ msgid "Top Comments"
+#~ msgstr "Commenti in alto"

@@ -27,24 +27,9 @@ msgid "Comments"
 msgstr "Textbausteine"
 
 #. module: purchase_comment_template
-#: model:ir.model.fields,field_description:purchase_comment_template.field_purchase_order__display_name
-msgid "Display Name"
-msgstr "Anzeigename"
-
-#. module: purchase_comment_template
 #: model:ir.ui.menu,name:purchase_comment_template.menu_base_comment_template_purchase
 msgid "Document Comments"
 msgstr "Textbausteine"
-
-#. module: purchase_comment_template
-#: model:ir.model.fields,field_description:purchase_comment_template.field_purchase_order__id
-msgid "ID"
-msgstr "ID"
-
-#. module: purchase_comment_template
-#: model:ir.model.fields,field_description:purchase_comment_template.field_purchase_order____last_update
-msgid "Last Modified on"
-msgstr "Zuletzt geändert am"
 
 #. module: purchase_comment_template
 #: model:ir.model,name:purchase_comment_template.model_purchase_order
@@ -55,3 +40,12 @@ msgstr "Beschaffungsauftrag"
 #: model:ir.actions.act_window,name:purchase_comment_template.action_purchase_order_comment_template
 msgid "Purchase Orders Comments"
 msgstr "Textbausteine für Beschaffungsaufträge"
+
+#~ msgid "Display Name"
+#~ msgstr "Anzeigename"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Zuletzt geändert am"
