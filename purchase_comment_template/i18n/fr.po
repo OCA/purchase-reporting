@@ -1,0 +1,83 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* purchase_comment_template
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+
+#. module: purchase_comment_template
+#: model:ir.model.fields,field_description:purchase_comment_template.field_purchase_order__note2
+msgid "Bottom Comment"
+msgstr ""
+
+#. module: purchase_comment_template
+#: model:ir.model.fields,field_description:purchase_comment_template.field_purchase_order__comment_template2_id
+msgid "Bottom Comment Template"
+msgstr ""
+
+#. module: purchase_comment_template
+#: model_terms:ir.ui.view,arch_db:purchase_comment_template.purchase_order_form_add_comment
+msgid "Bottom Comments"
+msgstr ""
+
+#. module: purchase_comment_template
+#: model_terms:ir.ui.view,arch_db:purchase_comment_template.purchase_order_form_add_comment
+msgid "Comments"
+msgstr ""
+
+#. module: purchase_comment_template
+#: model:ir.ui.menu,name:purchase_comment_template.menu_base_comment_template_purchase
+msgid "Document Comments"
+msgstr ""
+
+#. module: purchase_comment_template
+#: model:ir.model.fields,field_description:purchase_comment_template.field_purchase_order_line__formatted_note
+msgid "Formatted Note"
+msgstr ""
+
+#. module: purchase_comment_template
+#: model_terms:ir.ui.view,arch_db:purchase_comment_template.purchase_order_form_add_comment
+msgid "Load a template"
+msgstr ""
+
+#. module: purchase_comment_template
+#: model:ir.model,name:purchase_comment_template.model_purchase_order
+msgid "Purchase Order"
+msgstr ""
+
+#. module: purchase_comment_template
+#: model:ir.model,name:purchase_comment_template.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr ""
+
+#. module: purchase_comment_template
+#: model_terms:ir.ui.view,arch_db:purchase_comment_template.purchase_order_form_add_comment
+msgid ""
+"The comments will be displayed on the printed document. You can load a "
+"predefined template, write your own text or load a template and then modify "
+"it only for this document."
+msgstr ""
+
+#. module: purchase_comment_template
+#: model:ir.model.fields,field_description:purchase_comment_template.field_purchase_order__note1
+msgid "Top Comment"
+msgstr ""
+
+#. module: purchase_comment_template
+#: model:ir.model.fields,field_description:purchase_comment_template.field_purchase_order__comment_template1_id
+msgid "Top Comment Template"
+msgstr ""
+
+#. module: purchase_comment_template
+#: model_terms:ir.ui.view,arch_db:purchase_comment_template.purchase_order_form_add_comment
+msgid "Top Comments"
+msgstr ""
