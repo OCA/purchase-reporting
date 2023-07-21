@@ -16,41 +16,18 @@
           <span t-field="o.note1"/>
         </p>
       </xpath>
-      <xpath expr="//tr[@t-as='line']" position="replace">
-        <t t-foreach="o.order_line" t-as="line">
-            <tr>
-                <td>
-                    <span t-field="line.name"/>
-                </td>
-                <td>
-                    <span t-esc="', '.join(map(lambda x: x.name, line.taxes_id))"/>
-                </td>
-                <td class="text-center">
-                    <span t-field="line.date_planned"/>
-                </td>
-                <td class="text-right">
-                    <span t-field="line.product_qty"/>
-                    <span t-field="line.product_uom.name" groups="uom.group_uom"/>
-                </td>
-                <td class="text-right">
-                    <span t-field="line.price_unit"/>
-                </td>
-                <td class="text-right">
-                    <span t-field="line.price_subtotal"
-                        t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+      <xpath expr="//tr[@t-as='line']" position="inside">
+        <t t-if="line.formatted_note">
+            <tr style="padding:0;">
+                <!-- Span more than existing columns to cover all the columns. -->
+                <td colspan="42" style="padding:0;">
+                    <table style="width:100%;border:0;padding:0;">
+                        <caption class="formatted_note">
+                            <span t-field="line.formatted_note"/>
+                        </caption>
+                    </table>
                 </td>
             </tr>
-            <t t-if="line.formatted_note">
-                <tr style="padding:0;">
-                    <td colspan="6" style="padding:0;">
-                        <table style="width:100%;border:0;padding:0;">
-                            <caption class="formatted_note">
-                                <span t-field="line.formatted_note"/>
-                            </caption>
-                        </table>
-                    </td>
-                </tr>
-            </t>
         </t>
       </xpath>
       <xpath expr="//p[@t-field='o.notes']" position="after">
