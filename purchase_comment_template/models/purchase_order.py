@@ -32,6 +32,8 @@ class PurchaseOrder(models.Model):
     @api.onchange('partner_id')
     def onchange_partner_id_purchase_comment(self):
         if self.partner_id:
+            self._set_note1()
+            self._set_note2()
             comment_template = self.partner_id.property_comment_template_id
             if comment_template.position == 'before_lines':
                 self.comment_template1_id = comment_template
