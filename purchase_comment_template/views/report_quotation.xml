@@ -16,31 +16,18 @@
           <span t-field="o.note1"/>
         </p>
       </xpath>
-      <xpath expr="//tr[@t-as='order_line']" position="replace">
-        <t t-foreach="o.order_line" t-as="order_line">
-            <tr>
-                <td>
-                    <span t-field="order_line.name"/>
-                </td>
-                <td class="text-center">
-                    <span t-field="order_line.date_planned"/>
-                </td>
-                <td class="text-right">
-                    <span t-field="order_line.product_qty"/>
-                    <span t-field="order_line.product_uom" groups="uom.group_uom"/>
+      <xpath expr="//tr[@t-as='order_line']" position="inside">
+        <t t-if="order_line.formatted_note">
+            <tr style="padding:0;">
+                <!-- Span more than existing columns to cover all the columns. -->
+                <td colspan="42" style="padding:0;">
+                    <table style="width:100%;border:0;padding:0;">
+                        <caption class="formatted_note">
+                            <span t-field="order_line.formatted_note"/>
+                        </caption>
+                    </table>
                 </td>
             </tr>
-            <t t-if="order_line.formatted_note">
-                <tr style="padding:0;">
-                    <td colspan="3" style="padding:0;">
-                        <table style="width:100%;border:0;padding:0;">
-                            <caption class="formatted_note">
-                                <span t-field="order_line.formatted_note"/>
-                            </caption>
-                        </table>
-                    </td>
-                </tr>
-            </t>
         </t>
       </xpath>
       <xpath expr="//p[@t-field='o.notes']" position="after">
