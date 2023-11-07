@@ -21,7 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[purchase_report_date_format](purchase_report_date_format/) | 16.0.1.0.0 |  | Purchase Report Date Format
+[purchase_report_date_format](purchase_report_date_format/) | 16.0.1.0.1 |  | Purchase Report Date Format
 [purchase_report_shipping_address](purchase_report_shipping_address/) | 16.0.1.0.0 |  | Purchase Report Shipping Address
 
 [//]: # (end addons)
