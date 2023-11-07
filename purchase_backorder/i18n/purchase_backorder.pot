@@ -124,7 +124,6 @@ msgstr ""
 #. module: purchase_backorder
 #: model:ir.actions.act_window,name:purchase_backorder.action_po_backorder
 #: model:ir.ui.menu,name:purchase_backorder.menu_po_backorder
-#: model_terms:ir.ui.view,arch_db:purchase_backorder.po_backorder_tree_view
 msgid "PO Backorders"
 msgstr ""
 
