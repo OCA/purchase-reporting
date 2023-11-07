@@ -4,7 +4,7 @@
         <field name="name">po.backorder.report.view</field>
         <field name="model">purchase.order.line</field>
         <field name="arch" type="xml">
-            <tree string="PO Backorders">
+            <tree name="PO Backorders">
                 <field name="order_id" />
                 <field name="name" />
                 <field name="bo_qty" />
