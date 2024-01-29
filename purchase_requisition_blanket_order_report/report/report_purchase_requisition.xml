@@ -12,7 +12,7 @@
             expr="//div[hasclass('page')]/div[hasclass('row')]/div[span[@t-field='o.name']]/strong"
             position="replace"
         >
-            <strong><span t-esc="o.type_id.name" /> Reference:</strong><br />
+            <strong><span t-esc="o.type_id.name" /> Reference:</strong>
         </xpath>
         <xpath
             expr="//div[hasclass('page')]/t[@t-if='o.line_ids']/table/thead/tr/th[@groups='uom.group_uom']"
