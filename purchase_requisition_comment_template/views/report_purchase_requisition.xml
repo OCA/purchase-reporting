@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="report_purchaserequisitions_comments"
+        inherit_id="purchase_requisition.report_purchaserequisitions"
+    >
+        <xpath expr="//div[hasclass('oe_structure')][1]" position="before">
+            <template id="purchase_css" inherit_id="web.layout">
+                <xpath expr="//head" position="inside">
+                    <link
+                        href="/purchase_requisition_comment_template/static/src/css/purchase.css"
+                        rel="stylesheet"
+                    />
+                </xpath>
+            </template>
+        </xpath>
+        <xpath expr="//t[@t-if='o.line_ids']" position="before">
+            <p t-if="o.note1">
+                <span t-field="o.note1" />
+            </p>
+        </xpath>
+        <xpath expr="//t[@t-if='o.purchase_ids']" position="after">
+            <p t-if="o.note2">
+                <span t-field="o.note2" />
+            </p>
+        </xpath>
+    </template>
+</odoo>
