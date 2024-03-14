@@ -6,7 +6,10 @@
         <field name="arch" type="xml">
             <xpath expr="//notebook" position="inside">
                 <page string="Comments" name="comments">
-                    <field name="comment_template_ids" />
+                    <field
+                        name="comment_template_ids"
+                        context="{'default_models': 'purchase.order'}"
+                    />
                 </page>
             </xpath>
         </field>
