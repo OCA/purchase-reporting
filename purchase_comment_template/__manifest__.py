@@ -1,10 +1,11 @@
 # Copyright 2018 ForgeFlow S.L.
+# Copyright 2024 Simone Rubino - Aion Tech
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
     "name": "Purchase Comments",
     "summary": "Comments texts templates on Purchase documents",
-    "version": "15.0.1.0.0",
+    "version": "16.0.1.0.0",
     "category": "Purchase",
     "website": "https://github.com/OCA/purchase-reporting",
     "author": "Eficent, Odoo Community Association (OCA)",
