@@ -9,7 +9,7 @@
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">base.comment.template</field>
         <field name="view_mode">tree,form</field>
-        <field name="domain">[('models', '=', 'purchase.order')]</field>
+        <field name="domain">[('model_ids', '=', 'purchase.order')]</field>
         <field name="context">{'default_models': 'purchase.order'}</field>
         <field
             name="view_id"
