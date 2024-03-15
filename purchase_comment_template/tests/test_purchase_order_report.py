@@ -81,6 +81,35 @@ class TestPurchaseOrderReport(TransactionCase):
         # Assert
         self.assertTrue(comments)
 
+    def test_comments_menu_multi_model(self):
+        """Comments for multiple model can be found in the comments menu."""
+        # Arrange
+        comments_menu = self.env.ref(
+            "purchase_comment_template.menu_base_comment_template_purchase"
+        )
+        comments_action = comments_menu.action
+        comments_action_domain = literal_eval(comments_action.domain)
+        comments_model = self.env[comments_action.res_model]
+        user_ir_model = self.env.ref("base.model_res_users")
+        user_ir_model.is_comment_template = True
+        multi_model_comment = self._create_comment(
+            ",".join(
+                [
+                    self.purchase_order._name,
+                    user_ir_model.model,
+                ]
+            ),
+            "before_lines",
+        )
+        # pre-condition
+        self.assertGreater(len(multi_model_comment.model_ids), 1)
+
+        # Act
+        comments = comments_model.search(comments_action_domain)
+
+        # Assert
+        self.assertIn(multi_model_comment, comments)
+
     def test_create_from_comments_menu(self):
         """Comments created from the purchase comments menu
         are purchase order comments by default."""
