@@ -21,6 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[purchase_comment_template](purchase_comment_template/) | 16.0.1.0.0 |  | Comments texts templates on Purchase documents
 [purchase_report_date_format](purchase_report_date_format/) | 16.0.1.0.1 |  | Purchase Report Date Format
 [purchase_report_payment_term](purchase_report_payment_term/) | 16.0.1.0.0 |  | Purchase Report Payment Term
 [purchase_report_shipping_address](purchase_report_shipping_address/) | 16.0.1.0.0 |  | Purchase Report Shipping Address
