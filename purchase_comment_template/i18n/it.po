@@ -6,20 +6,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2020-11-16 20:36+0000\n"
-"Last-Translator: Mario Riva <mario.riva@agilebg.com>\n"
+"PO-Revision-Date: 2024-04-02 11:45+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: purchase_comment_template
 #: model:ir.model.fields,field_description:purchase_comment_template.field_purchase_order__comment_template_ids
 msgid "Comment Template"
-msgstr ""
+msgstr "Modello commento"
 
 #. module: purchase_comment_template
 #: model_terms:ir.ui.view,arch_db:purchase_comment_template.purchase_order_form_add_comment
@@ -39,7 +39,7 @@ msgstr "Ordine di acquisto"
 #. module: purchase_comment_template
 #: model:ir.actions.act_window,name:purchase_comment_template.action_purchase_order_comment_template
 msgid "Purchase Orders Comments"
-msgstr ""
+msgstr "Commenti ordini di acquisto"
 
 #~ msgid "Bottom Comment"
 #~ msgstr "Commento in basso"
