@@ -8,6 +8,7 @@ setuptools.setup(
     description="Meta package for oca-purchase-reporting Odoo addons",
     version=version,
     install_requires=[
+        'odoo-addon-purchase_backorder>=16.0dev,<16.1dev',
         'odoo-addon-purchase_comment_template>=16.0dev,<16.1dev',
         'odoo-addon-purchase_report_date_format>=16.0dev,<16.1dev',
         'odoo-addon-purchase_report_payment_term>=16.0dev,<16.1dev',
