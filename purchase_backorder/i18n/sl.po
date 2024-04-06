@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* purchase_backorder
+# 	* purchase_backorder
 #
 msgid ""
 msgstr ""
@@ -13,20 +13,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
-"n%100==4 ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3;\n"
 "X-Generator: Weblate 3.10\n"
-
-#. module: purchase_backorder
-#: model:ir.model.fields,help:purchase_backorder.field_purchase_order_line__product_type
-msgid "A storable product is a product for which you manage stock. The Inventory app has to be installed.\n"
-"A consumable product is a product for which stock is not managed.\n"
-"A service is a non-material product you provide."
-msgstr ""
-"Izdelek za zalogo je proizvod, za katerega se vodijo zaloge. Nameščena mora "
-"biti aplikacija Inventar.\n"
-"Potrošni proizvod je izdelek, za katerega se ne vodijo zaloge.\n"
-"Storitev je nematerialni proizvod, ki ga dobavljate."
 
 #. module: purchase_backorder
 #: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order_line__bo_qty
@@ -35,11 +24,15 @@ msgid "Backorder Qty"
 msgstr "Nedob. kol."
 
 #. module: purchase_backorder
-#: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order__bo_value
 #: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order_line__bo_value
 #: model_terms:ir.ui.view,arch_db:purchase_backorder.po_backorder_report
 msgid "Backorder Value"
 msgstr "Nedob. vred."
+
+#. module: purchase_backorder
+#: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order__bo_value
+msgid "Bo Value"
+msgstr ""
 
 #. module: purchase_backorder
 #: model_terms:ir.ui.view,arch_db:purchase_backorder.po_backorder_report_view
@@ -125,7 +118,6 @@ msgstr "Čarovnik za poročilo o zaost. prejemih"
 #. module: purchase_backorder
 #: model:ir.actions.act_window,name:purchase_backorder.action_po_backorder
 #: model:ir.ui.menu,name:purchase_backorder.menu_po_backorder
-#: model_terms:ir.ui.view,arch_db:purchase_backorder.po_backorder_tree_view
 msgid "PO Backorders"
 msgstr "Zaostali prejemi"
 
@@ -156,8 +148,23 @@ msgid "UIGR Qty"
 msgstr "UIGR kol"
 
 #. module: purchase_backorder
-#: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order__uigr_value
 #: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order_line__uigr_value
 #: model_terms:ir.ui.view,arch_db:purchase_backorder.po_backorder_report
 msgid "UIGR Value"
 msgstr "UIGR vred."
+
+#. module: purchase_backorder
+#: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order__uigr_value
+msgid "Uigr Value"
+msgstr ""
+
+#~ msgid ""
+#~ "A storable product is a product for which you manage stock. The Inventory "
+#~ "app has to be installed.\n"
+#~ "A consumable product is a product for which stock is not managed.\n"
+#~ "A service is a non-material product you provide."
+#~ msgstr ""
+#~ "Izdelek za zalogo je proizvod, za katerega se vodijo zaloge. Nameščena "
+#~ "mora biti aplikacija Inventar.\n"
+#~ "Potrošni proizvod je izdelek, za katerega se ne vodijo zaloge.\n"
+#~ "Storitev je nematerialni proizvod, ki ga dobavljate."
