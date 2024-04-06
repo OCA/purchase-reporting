@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -14,24 +14,20 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: purchase_backorder
-#: model:ir.model.fields,help:purchase_backorder.field_purchase_order_line__product_type
-msgid ""
-"A storable product is a product for which you manage stock. The Inventory app has to be installed.\n"
-"A consumable product is a product for which stock is not managed.\n"
-"A service is a non-material product you provide."
-msgstr ""
-
-#. module: purchase_backorder
 #: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order_line__bo_qty
 #: model_terms:ir.ui.view,arch_db:purchase_backorder.po_backorder_report
 msgid "Backorder Qty"
 msgstr ""
 
 #. module: purchase_backorder
-#: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order__bo_value
 #: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order_line__bo_value
 #: model_terms:ir.ui.view,arch_db:purchase_backorder.po_backorder_report
 msgid "Backorder Value"
+msgstr ""
+
+#. module: purchase_backorder
+#: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order__bo_value
+msgid "Bo Value"
 msgstr ""
 
 #. module: purchase_backorder
@@ -56,8 +52,6 @@ msgstr ""
 
 #. module: purchase_backorder
 #: model:ir.model.fields,field_description:purchase_backorder.field_pobackorder_report_wizard__display_name
-#: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order__display_name
-#: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order_line__display_name
 msgid "Display Name"
 msgstr ""
 
@@ -69,8 +63,6 @@ msgstr ""
 
 #. module: purchase_backorder
 #: model:ir.model.fields,field_description:purchase_backorder.field_pobackorder_report_wizard__id
-#: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order__id
-#: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order_line__id
 msgid "ID"
 msgstr ""
 
@@ -90,8 +82,6 @@ msgstr ""
 
 #. module: purchase_backorder
 #: model:ir.model.fields,field_description:purchase_backorder.field_pobackorder_report_wizard____last_update
-#: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order____last_update
-#: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order_line____last_update
 msgid "Last Modified on"
 msgstr ""
 
@@ -124,7 +114,6 @@ msgstr ""
 #. module: purchase_backorder
 #: model:ir.actions.act_window,name:purchase_backorder.action_po_backorder
 #: model:ir.ui.menu,name:purchase_backorder.menu_po_backorder
-#: model_terms:ir.ui.view,arch_db:purchase_backorder.po_backorder_tree_view
 msgid "PO Backorders"
 msgstr ""
 
@@ -155,8 +144,12 @@ msgid "UIGR Qty"
 msgstr ""
 
 #. module: purchase_backorder
-#: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order__uigr_value
 #: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order_line__uigr_value
 #: model_terms:ir.ui.view,arch_db:purchase_backorder.po_backorder_report
 msgid "UIGR Value"
+msgstr ""
+
+#. module: purchase_backorder
+#: model:ir.model.fields,field_description:purchase_backorder.field_purchase_order__uigr_value
+msgid "Uigr Value"
 msgstr ""
