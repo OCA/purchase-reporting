@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="action_report_purchase_order" model="ir.actions.report">
+        <field name="name">Purchase Order Grouped By Vendor</field>
+        <field name="model">purchase.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field
+            name="report_name"
+        >purchase_order_report_grouped_by_vendor.report_purchase_order_grouped_by_vendor</field>
+        <field
+            name="report_file"
+        >purchase_order_report_grouped_by_vendor.report_purchase_order_grouped_by_vendor</field>
+        <field name="print_report_name">
+            (object.state in ('draft', 'sent') and 'Request for Quotation - %s' % (object.name) or
+            'Purchase Order - %s' % (object.name))</field>
+        <field name="binding_model_id" ref="model_purchase_order" />
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_purchase_order_grouped_by_vendor_document">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div id="vendor" class="mb-2 row align-items-end">
+                    <h3
+                        class="col-9 align-items-end"
+                        t-esc="group['partner']"
+                        t-options='{"widget": "contact", "fields": ["name",]}'
+                    />
+                    <small
+                        class="col-3"
+                        t-esc="group['partner']"
+                        t-options='{"widget": "contact", "fields": ["address", "phone"], "no_marker": True, "phone_icons": True}'
+                    />
+                </div>
+                <div class="page">
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th name="th_description">
+                                    <strong>Description</strong>
+                                </th>
+                                <th name="th_taxes"><strong>Taxes</strong></th>
+                                <th name="th_quantity" class="text-right">
+                                    <strong>Qty</strong>
+                                </th>
+                                <th name="th_quantity" class="text-right">
+                                    <strong>Receip Date</strong>
+                                </th>
+                                <th name="th_price_unit" class="text-right">
+                                    <strong>Unit Price</strong>
+                                </th>
+                                <th name="th_amount" class="text-right">
+                                    <strong>Amount</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="group['order_ids']" t-as="order">
+                                <tr>
+                                    <td id="order_ref" colspan="5">
+                                        <strong>Order: <t t-esc="order.name" /></strong>
+                                        <strong
+                                            t-if="order.partner_ref"
+                                        >/ Vendor Ref: <t
+                                                t-esc="order.partner_ref"
+                                            /></strong>
+                                    </td>
+                                </tr>
+                                <t t-set="current_subtotal" t-value="0" />
+                                <t t-foreach="order.order_line" t-as="line">
+                                    <t
+                                        t-set="current_subtotal"
+                                        t-value="current_subtotal + line.price_subtotal"
+                                        groups="account.group_show_line_subtotals_tax_excluded"
+                                    />
+                                    <t
+                                        t-set="current_subtotal"
+                                        t-value="current_subtotal + line.price_total"
+                                        groups="account.group_show_line_subtotals_tax_included"
+                                    />
+                                    <tr>
+                                        <td id="product">
+                                            <span t-field="line.name" />
+                                        </td>
+                                        <td name="td_taxes">
+                                            <span
+                                                t-esc="', '.join(map(lambda x: x.name, line.taxes_id))"
+                                            />
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="line.product_qty" />
+                                            <span
+                                                t-field="line.product_uom.name"
+                                                groups="uom.group_uom"
+                                            />
+                                        </td>
+                                        <td class="text-right">
+                                            <span
+                                                t-field="line.date_planned"
+                                                t-options="{'widget': 'datetime', 'date_only': True, 'format': 'dd/MM/YY'}"
+                                            />
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="line.price_unit" />
+                                        </td>
+                                        <td class="text-right">
+                                            <span
+                                                t-field="line.price_subtotal"
+                                                t-options='{"widget": "monetary", "display_currency": line.currency_id}'
+                                            />
+                                        </td>
+                                    </tr>
+                                </t>
+                            </t>
+                            <tr>
+                                <tr>
+                                    <td colspan="5" class="text-right">
+                                        <strong>Total:</strong>
+                                    </td>
+                                    <td class="text-right">
+                                        <span
+                                            t-esc="sum(line.price_subtotal for order in group['order_ids'] for line in order.order_line)"
+                                            t-options='{"widget": "monetary", "display_currency": order.currency_id}'
+                                        />
+                                    </td>
+                                </tr>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- Insert page break after each vendor -->
+                    <div style="page-break-after: always;" />
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_purchase_order_grouped_by_vendor">
+        <t t-foreach="docs.get_grouped_data()" t-as="group">
+            <t
+                t-call="purchase_order_report_grouped_by_vendor.report_purchase_order_grouped_by_vendor_document"
+                t-lang="group['partner'].lang"
+            />
+        </t>
+    </template>
+
+</odoo>
