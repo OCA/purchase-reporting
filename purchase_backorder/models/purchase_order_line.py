@@ -3,7 +3,6 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models
-from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT
 
 
 class PurchaseOrderLine(models.Model):
@@ -65,17 +64,31 @@ class PurchaseOrderLine(models.Model):
     @api.depends("invoice_lines.move_id.state", "invoice_lines.quantity")
     def _compute_last_bill_date(self):
         for line in self:
-            max_date = False
-            for inv_line in line.invoice_lines:
-                if inv_line.move_id.state not in ["cancel"]:
-                    if inv_line.move_id.move_type == "in_invoice":
-                        if max_date and inv_line.move_id.date:
-                            if max_date < inv_line.move_id.date:
-                                max_date = inv_line.move_id.date
-                        else:
-                            max_date = inv_line.move_id.date
-                    elif inv_line.move_id.move_type == "in_refund":
-                        continue
-            line.last_bill_date = (
-                max_date and max_date.strftime(DEFAULT_SERVER_DATETIME_FORMAT) or False
+            line.last_bill_date = False
+            invoice_lines = [
+                inv_line
+                for inv_line in line.invoice_lines
+                if inv_line.move_id.state != "cancel"
+                and inv_line.move_id.move_type == "in_invoice"
+            ]
+            last_bill_date = max(
+                (
+                    inv_line.move_id.date
+                    for inv_line in invoice_lines
+                    if inv_line.move_id.date
+                ),
+                default=False,
             )
+            if last_bill_date:
+                timezone = (
+                    self._context.get("tz") or self.env.user.partner_id.tz or "UTC"
+                )
+                last_bill_date_tz = fields.Datetime.context_timestamp(
+                    self.with_context(tz=timezone),
+                    fields.Datetime.from_string(last_bill_date),
+                ).replace(tzinfo=None)
+                line.last_bill_date = last_bill_date_tz.replace(
+                    day=last_bill_date.day,
+                    month=last_bill_date.month,
+                    year=last_bill_date.year,
+                )

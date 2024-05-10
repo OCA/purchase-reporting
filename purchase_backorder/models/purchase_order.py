@@ -46,11 +46,12 @@ class PurchaseOrder(models.Model):
     @api.depends("order_line.last_bill_date")
     def _compute_last_bill_date(self):
         for order in self:
-            max_date = False
-            for line in order.order_line:
-                if max_date:
-                    if line.last_bill_date and max_date < line.last_bill_date:
-                        max_date = line.last_bill_date
-                else:
-                    max_date = line.last_bill_date
-            order.last_bill_date = max_date
+            last_bill_date = max(
+                (
+                    line.last_bill_date
+                    for line in order.order_line
+                    if line.last_bill_date
+                ),
+                default=False,
+            )
+            order.last_bill_date = last_bill_date
