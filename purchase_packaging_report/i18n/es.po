@@ -1,0 +1,52 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* purchase_packaging_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-28 09:54+0000\n"
+"PO-Revision-Date: 2024-05-28 11:54+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#. module: purchase_packaging_report
+#: model_terms:ir.ui.view,arch_db:purchase_packaging_report.report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:purchase_packaging_report.report_purchasequotation_document
+msgid "<span>(</span>"
+msgstr "<span>(</span>"
+
+#. module: purchase_packaging_report
+#: model_terms:ir.ui.view,arch_db:purchase_packaging_report.report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:purchase_packaging_report.report_purchasequotation_document
+msgid "<span>)</span>"
+msgstr ""
+"<span>Correo electrónico</span>\n"
+"<span> *</span>"
+
+#. module: purchase_packaging_report
+#: model:ir.model.fields,field_description:purchase_packaging_report.field_purchase_report__product_packaging_id
+msgid "Packaging"
+msgstr "Envase"
+
+#. module: purchase_packaging_report
+#: model:ir.model.fields,field_description:purchase_packaging_report.field_purchase_report__product_packaging_qty
+msgid "Packaging Qty"
+msgstr "Cantidad de Envases"
+
+#. module: purchase_packaging_report
+#: model_terms:ir.ui.view,arch_db:purchase_packaging_report.view_purchase_order_search
+msgid "Product Packaging"
+msgstr "Envase del Producto"
+
+#. module: purchase_packaging_report
+#: model:ir.model,name:purchase_packaging_report.model_purchase_report
+msgid "Purchase Report"
+msgstr "Informe de Compras"
