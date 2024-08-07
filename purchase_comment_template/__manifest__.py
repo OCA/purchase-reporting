@@ -4,7 +4,7 @@
 {
     "name": "Purchase Comments",
     "summary": "Comments texts templates on Purchase documents",
-    "version": "15.0.1.0.0",
+    "version": "15.0.1.1.0",
     "category": "Purchase",
     "website": "https://github.com/OCA/purchase-reporting",
     "author": "Eficent, Odoo Community Association (OCA)",

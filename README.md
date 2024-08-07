@@ -21,7 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[purchase_comment_template](purchase_comment_template/) | 15.0.1.0.0 |  | Comments texts templates on Purchase documents
+[purchase_comment_template](purchase_comment_template/) | 15.0.1.1.0 |  | Comments texts templates on Purchase documents
 [purchase_order_report_grouped_by_vendor](purchase_order_report_grouped_by_vendor/) | 15.0.1.0.0 |  | Purchase order report grouping orders by vendor
 
 [//]: # (end addons)
