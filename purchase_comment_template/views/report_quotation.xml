@@ -4,7 +4,6 @@
   ~ License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
   -->
 <odoo>
-
     <template
         id="report_purchasequotation_document_comments"
         inherit_id="purchase.report_purchasequotation_document"
@@ -26,5 +25,4 @@
             </t>
         </xpath>
     </template>
-
 </odoo>
