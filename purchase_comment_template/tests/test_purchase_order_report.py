@@ -4,38 +4,42 @@
 
 from ast import literal_eval
 
-from odoo.tests.common import Form, TransactionCase
+from odoo import Command
+from odoo.tests import Form
 
+from odoo.addons.base.tests.common import BaseCommon
 from odoo.addons.mail.tests.common import mail_new_test_user
 
 
-class TestPurchaseOrderReport(TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.company = self.env.ref("base.main_company")
-        self.base_comment_model = self.env["base.comment.template"]
-        self.before_comment = self._create_comment("purchase.order", "before_lines")
-        self.after_comment = self._create_comment("purchase.order", "after_lines")
-        self.partner = self.env["res.partner"].create({"name": "Partner Test"})
-        self.partner.base_comment_template_ids = [
-            (4, self.before_comment.id),
-            (4, self.after_comment.id),
+class TestPurchaseOrderReport(BaseCommon):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.company = cls.env.ref("base.main_company")
+        cls.base_comment_model = cls.env["base.comment.template"]
+        cls.before_comment = cls._create_comment("purchase.order", "before_lines")
+        cls.after_comment = cls._create_comment("purchase.order", "after_lines")
+        cls.partner = cls.env["res.partner"].create({"name": "Partner Test"})
+        cls.partner.base_comment_template_ids = [
+            Command.link(cls.before_comment.id),
+            Command.link(cls.after_comment.id),
         ]
-        self.purchase_order = self.env.ref("purchase.purchase_order_4")
-        self.purchase_order.update(
+        cls.purchase_order = cls.env.ref("purchase.purchase_order_4")
+        cls.purchase_order.update(
             {
                 "comment_template_ids": [
-                    (4, self.before_comment.id),
-                    (4, self.after_comment.id),
+                    Command.link(cls.before_comment.id),
+                    Command.link(cls.after_comment.id),
                 ],
             }
         )
 
-    def _create_comment(self, models, position):
-        return self.base_comment_model.create(
+    @classmethod
+    def _create_comment(cls, models, position):
+        return cls.base_comment_model.create(
             {
                 "name": "Comment " + position,
-                "company_id": self.company.id,
+                "company_id": cls.company.id,
                 "position": position,
                 "text": "Text " + position,
                 "models": models,
