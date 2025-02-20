@@ -5,7 +5,7 @@
         <field name="model">purchase.report</field>
         <field name="inherit_id" ref="purchase.purchase_report_view_tree" />
         <field name="arch" type="xml">
-            <xpath expr="//tree/field[@name='qty_billed']" position="after">
+            <xpath expr="//list/field[@name='qty_billed']" position="after">
                 <field
                     name="product_packaging_id"
                     optional="hide"

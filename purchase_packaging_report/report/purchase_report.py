@@ -3,6 +3,7 @@
 
 
 from odoo import fields, models
+from odoo.tools import SQL
 
 
 class PurchaseReport(models.Model):
@@ -19,20 +20,29 @@ class PurchaseReport(models.Model):
     )
 
     def _select(self):
-        result = super()._select()
-        return f"""
-            {result},
+        return SQL(
+            """
+            %s,
             l.product_packaging_id AS product_packaging_id,
             SUM(l.product_packaging_qty) AS product_packaging_qty
-        """
+        """,
+            super()._select(),
+        )
 
     def _from(self):
-        result = super()._from()
-        return f"""
-            {result}
+        return SQL(
+            """
+            %s
             LEFT JOIN product_packaging ON l.product_packaging_id = product_packaging.id
-        """
+        """,
+            super()._from(),
+        )
 
     def _group_by(self):
-        result = super()._group_by()
-        return f"{result}, l.product_packaging_id"
+        return SQL(
+            """
+            %s,
+            l.product_packaging_id
+        """,
+            super()._group_by(),
+        )
