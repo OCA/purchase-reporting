@@ -54,6 +54,13 @@ Authors
 
 * Quartile Limited
 
+Contributors
+------------
+
+- `Heliconia Solutions Pvt. Ltd. <https://www.heliconia.io>`__
+
+  - Bhavesh Heliconia
+
 Maintainers
 -----------
 
