@@ -3,7 +3,7 @@
 {
     "name": "Purchase Report Date Format",
     "category": "Reporting",
-    "version": "16.0.1.0.1",
+    "version": "17.0.1.0.0",
     "author": "Quartile Limited, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/purchase-reporting",
     "license": "AGPL-3",
