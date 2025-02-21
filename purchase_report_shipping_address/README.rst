@@ -44,9 +44,9 @@ shortcoming.
 Configuration
 =============
 
-#. Go to *Inventory > Configuration > Warehouses* and open a warehouse
+Go to *Inventory > Configuration > Warehouses* and open a warehouse
 record for which the address presentation should be adjusted for
-purchase reports. #. Update Warehouse Address Details field.
+purchase reports. Update Warehouse Address Details field.
 
 Bug Tracker
 ===========
@@ -65,6 +65,13 @@ Authors
 -------
 
 * Quartile Limited
+
+Contributors
+------------
+
+- `Heliconia Solutions Pvt. Ltd. <https://www.heliconia.io>`__
+
+  - Bhavesh Heliconia
 
 Maintainers
 -----------
