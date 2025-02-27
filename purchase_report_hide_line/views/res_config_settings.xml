@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2025 Alberto Martínez <alberto.martinez@sygel.es>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record
+        id="res_config_settings_view_form_purchase_report_hide_line"
+        model="ir.ui.view"
+    >
+        <field
+            name="name"
+        >res.config.settings.view.form.inherit.purchase.report.hide.line</field>
+        <field name="model">res.config.settings</field>
+        <field
+            name="inherit_id"
+            ref="purchase.res_config_settings_view_form_purchase"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='purchase_setting_container']" position="inside">
+                <setting
+                    id="purchase_hide_in_report_default"
+                    help="Select what purchase lines will be hiden by default"
+                >
+                    <field name="purchase_hide_in_report_default" />
+                </setting>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

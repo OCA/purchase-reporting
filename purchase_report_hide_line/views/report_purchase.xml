@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2025 Alberto Martínez <alberto.martinez@sygel.es>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <template
+        id="report_purchaseorder_document_hide_lines"
+        inherit_id="purchase.report_purchaseorder_document"
+    >
+        <xpath expr="//t[@t-foreach]/tr" position="attributes">
+            <attribute name="t-if">not line.hide_in_report</attribute>
+        </xpath>
+    </template>
+
+</odoo>
