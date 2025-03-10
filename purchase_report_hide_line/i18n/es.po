@@ -1,0 +1,62 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* purchase_report_hide_line
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-27 15:26+0000\n"
+"PO-Revision-Date: 2025-02-27 15:26+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: purchase_report_hide_line
+#: model:ir.model,name:purchase_report_hide_line.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: purchase_report_hide_line
+#: model:ir.model,name:purchase_report_hide_line.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
+
+#. module: purchase_report_hide_line
+#: model:ir.model.fields,field_description:purchase_report_hide_line.field_purchase_order_line__hide_in_report
+msgid "Hide In Report"
+msgstr "Ocultar en informe"
+
+#. module: purchase_report_hide_line
+#: model:ir.model.fields.selection,name:purchase_report_hide_line.selection__res_company__purchase_hide_in_report_default__none
+msgid "None"
+msgstr "Ninguna"
+
+#. module: purchase_report_hide_line
+#: model:ir.model.fields.selection,name:purchase_report_hide_line.selection__res_company__purchase_hide_in_report_default__price
+msgid "Price equal to 0"
+msgstr "Precio igual a 0"
+
+#. module: purchase_report_hide_line
+#: model:ir.model.fields,field_description:purchase_report_hide_line.field_res_company__purchase_hide_in_report_default
+#: model:ir.model.fields,field_description:purchase_report_hide_line.field_res_config_settings__purchase_hide_in_report_default
+msgid "Purchase Hide In Report Default"
+msgstr "Ocultar en informe de compra por defecto"
+
+#. module: purchase_report_hide_line
+#: model:ir.model,name:purchase_report_hide_line.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Línea de pedido de compra"
+
+#. module: purchase_report_hide_line
+#: model:ir.model.fields.selection,name:purchase_report_hide_line.selection__res_company__purchase_hide_in_report_default__quantity
+msgid "Quantity equal to 0"
+msgstr "Cantidad igual a 0"
+
+#. module: purchase_report_hide_line
+#: model_terms:ir.ui.view,arch_db:purchase_report_hide_line.res_config_settings_view_form_purchase_report_hide_line
+msgid "Select what purchase lines will be hiden by default"
+msgstr "Selecciona que líneas del pedido de compra se ocultarán por defecto"
