@@ -1,6 +1,5 @@
 # Copyright 2024 Tecnativa - Pilar Vargas
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-
 from odoo.tests.common import Form, TransactionCase
 
 
@@ -38,13 +37,13 @@ class TestPurchaseOrderReportGroupedByVendor(TransactionCase):
             po2_partner1.id,
             po1_partner2.id,
         ]
-        res = (
-            self.env["ir.actions.report"]
-            ._get_report_from_name(
+        IrActionsReport = self.env["ir.actions.report"]
+        res = IrActionsReport._render_qweb_html(
+            IrActionsReport._get_report_from_name(
                 "purchase_order_report_grouped_by_vendor"
                 ".report_purchase_order_grouped_by_vendor"
-            )
-            ._render_qweb_html(purchase_order_ids)
+            ),
+            purchase_order_ids,
         )
         # Both vendors must be in the report
         self.assertRegex(str(res[0]), '<span itemprop="name">Test Partner One</span>')
