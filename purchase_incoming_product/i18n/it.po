@@ -6,13 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2025-05-21 10:26+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #. module: purchase_incoming_product
 #: model_terms:ir.actions.act_window,help:purchase_incoming_product.action_receipt_picking_move
@@ -21,12 +23,16 @@ msgid ""
 "                purchase order or picking order they come from. You will find\n"
 "                the list of all products you are waiting for."
 msgstr ""
+"Qui si possono ricevere singoli prodotti, indipendentemente \n"
+"                dall'ordine di acquisto o dall'ordine di prelievo da cui "
+"provengono. Si troverà\n"
+"                l'elenco di tutti i prodotti che si stanno aspettando."
 
 #. module: purchase_incoming_product
 #: model:ir.actions.act_window,name:purchase_incoming_product.action_receipt_picking_move
 #: model:ir.ui.menu,name:purchase_incoming_product.menu_action_picking_tree_in_move
 msgid "Incoming  Products"
-msgstr ""
+msgstr "Prodotti in arrivo"
 
 #. module: purchase_incoming_product
 #: model_terms:ir.actions.act_window,help:purchase_incoming_product.action_receipt_picking_move
@@ -35,8 +41,13 @@ msgid ""
 "                the vendor or the purchase order reference. Then you can confirm\n"
 "                all products received using the buttons on the right of each line."
 msgstr ""
+"Una volta ricevuto un ordine, lo si può filtrare in base al nome del \n"
+"                fornitore o al riferimento dell'ordine di acquisto. Si può "
+"quindi confermare \n"
+"                tutti i prodotti ricevuti utilizzando i pulsanti a destra di "
+"ogni riga."
 
 #. module: purchase_incoming_product
 #: model_terms:ir.actions.act_window,help:purchase_incoming_product.action_receipt_picking_move
 msgid "Register a product receipt"
-msgstr ""
+msgstr "Registra una ricevuta del prodotto"
