@@ -1,7 +1,8 @@
 [project]
 name = "odoo-addons-oca-purchase-reporting"
-version = "17.0.20250418.0"
+version = "17.0.20250604.0"
 dependencies = [
+    "odoo-addon-purchase_comment_template>=17.0dev,<17.1dev",
     "odoo-addon-purchase_order_report_grouped_by_vendor>=17.0dev,<17.1dev",
     "odoo-addon-purchase_report_hide_line>=17.0dev,<17.1dev",
 ]
