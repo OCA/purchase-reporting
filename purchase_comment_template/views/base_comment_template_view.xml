@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  ~ Copyright 2024 Simone Rubino - Aion Tech
+  ~ License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+  -->
+<odoo>
+    <record model="ir.actions.act_window" id="action_purchase_order_comment_template">
+        <field name="name">Purchase Orders Comments</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">base.comment.template</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('model_ids', '=', 'purchase.order')]</field>
+        <field name="context">{'default_models': 'purchase.order'}</field>
+        <field
+            name="view_id"
+            ref="base_comment_template.view_base_comment_template_tree"
+        />
+    </record>
+    <menuitem
+        name="Document Comments"
+        id="menu_base_comment_template_purchase"
+        action="purchase_comment_template.action_purchase_order_comment_template"
+        parent="purchase.menu_purchase_config"
+    />
+</odoo>
