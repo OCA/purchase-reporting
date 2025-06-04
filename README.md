@@ -21,7 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[purchase_backorder](purchase_backorder/) | 12.0.1.1.0 | [![smangukiya](https://github.com/smangukiya.png?size=30px)](https://github.com/smangukiya) | Report of Un-Invoiced Goods Received and Backorders
+[purchase_backorder](purchase_backorder/) | 12.0.1.1.0 | <a href='https://github.com/smangukiya'><img src='https://github.com/smangukiya.png' width='32' height='32' style='border-radius:50%;' alt='smangukiya'/></a> | Report of Un-Invoiced Goods Received and Backorders
 [purchase_comment_template](purchase_comment_template/) | 12.0.1.0.0 |  | Comments texts templates on Purchase documents
 [purchase_report_extension](purchase_report_extension/) | 12.0.1.0.0 |  | Adds fields delivery and invoicing fields to purchase report
 
