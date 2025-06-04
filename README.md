@@ -20,10 +20,10 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[purchase_backorder](purchase_backorder/) | 14.0.1.1.1 | [![smangukiya](https://github.com/smangukiya.png?size=30px)](https://github.com/smangukiya) | Report of Un-Invoiced Goods Received and Backorders
+[purchase_backorder](purchase_backorder/) | 14.0.1.1.1 | <a href='https://github.com/smangukiya'><img src='https://github.com/smangukiya.png' width='32' height='32' style='border-radius:50%;' alt='smangukiya'/></a> | Report of Un-Invoiced Goods Received and Backorders
 [purchase_comment_template](purchase_comment_template/) | 14.0.1.0.0 |  | Comments texts templates on Purchase documents
 [purchase_incoming_product](purchase_incoming_product/) | 14.0.1.0.0 |  | Module that generates a view for incoming products
-[purchase_requisition_blanket_order_report](purchase_requisition_blanket_order_report/) | 14.0.1.0.0 | [![grindtildeath](https://github.com/grindtildeath.png?size=30px)](https://github.com/grindtildeath) | Improvement of call for tenders report for blanket orders
+[purchase_requisition_blanket_order_report](purchase_requisition_blanket_order_report/) | 14.0.1.0.0 | <a href='https://github.com/grindtildeath'><img src='https://github.com/grindtildeath.png' width='32' height='32' style='border-radius:50%;' alt='grindtildeath'/></a> | Improvement of call for tenders report for blanket orders
 
 [//]: # (end addons)
 
