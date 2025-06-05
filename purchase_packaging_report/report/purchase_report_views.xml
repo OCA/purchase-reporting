@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="purchase_report_view_tree" model="ir.ui.view">
+        <field name="name">purchase.report.view.tree</field>
+        <field name="model">purchase.report</field>
+        <field name="inherit_id" ref="purchase.purchase_report_view_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//tree/field[@name='qty_billed']" position="after">
+                <field
+                    name="product_packaging_id"
+                    optional="hide"
+                    groups="product.group_stock_packaging"
+                />
+                <field
+                    name="product_packaging_qty"
+                    optional="hide"
+                    groups="product.group_stock_packaging"
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_purchase_order_search" model="ir.ui.view">
+        <field name="name">report.purchase.order.search</field>
+        <field name="model">purchase.report</field>
+        <field name="inherit_id" ref="purchase.view_purchase_order_search" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//search/group/filter[@name='group_category_id']"
+                position="after"
+            >
+                <filter
+                    string="Product Packaging"
+                    name="group_product_packaging_id"
+                    context="{'group_by': 'product_packaging_id'}"
+                    groups="product.group_stock_packaging"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
