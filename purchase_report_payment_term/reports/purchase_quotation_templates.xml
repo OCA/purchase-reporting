@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="report_purchasequotation_document_adj"
+        inherit_id="purchase.report_purchasequotation_document"
+    >
+        <xpath expr="//p[@t-field='o.notes']" position="after">
+            <p t-if="not is_html_empty(o.payment_term_id.note)">
+                <span t-field="o.payment_term_id.note" />
+            </p>
+        </xpath>
+    </template>
+</odoo>
