@@ -22,6 +22,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [purchase_comment_template](purchase_comment_template/) | 18.0.1.0.1 |  | Comments texts templates on Purchase documents
+[purchase_report_shipping_address](purchase_report_shipping_address/) | 18.0.1.0.0 |  | Purchase Report Shipping Address
 
 [//]: # (end addons)
 
