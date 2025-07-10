@@ -16,13 +16,13 @@
                 <div t-out="comment_template_top.text" />
             </t>
         </div>
-        <p t-field="o.notes" position="after">
+        <span t-field="o.payment_term_id" position="after">
             <t
                 t-foreach="o.comment_template_ids.filtered(lambda x: x.position == 'after_lines')"
                 t-as="comment_template_bottom"
             >
                 <div t-out="comment_template_bottom.text" />
             </t>
-        </p>
+        </span>
     </template>
 </odoo>
