@@ -1,0 +1,110 @@
+<odoo>
+    <template
+        id="report_purchaseorder_document_without_taxation"
+        inherit_id="purchase.report_purchaseorder_document"
+    >
+        <xpath expr="//th[@name='th_taxes']" position="attributes">
+            <attribute name="t-if">False</attribute>
+        </xpath>
+        <xpath expr="//t[@t-foreach='o.order_line']" position="attributes">
+            <attribute name="t-if">False</attribute>
+        </xpath>
+        <xpath expr="//t[@t-set='current_subtotal']" position="after">
+            <t t-foreach="o.order_line" t-as="line">
+                <t
+                    t-set="current_subtotal"
+                    t-value="current_subtotal + line.price_subtotal"
+                />
+
+                <tr
+                    t-att-class="'fw-bold o_line_section' if line.display_type == 'line_section' else 'fst-italic o_line_note' if line.display_type == 'line_note' else ''"
+                >
+                    <t t-if="not line.display_type">
+                        <td id="product" class="text-start">
+                            <span t-field="line.name" />
+                        </td>
+                        <td class="text-end">
+                            <span t-field="line.product_qty" />
+                            <span
+                                t-field="line.product_uom.name"
+                                groups="uom.group_uom"
+                            />
+                            <span t-if="line.product_packaging_id">
+                                (<span
+                                t-field="line.product_packaging_qty"
+                                t-options='{"widget": "integer"}'
+                            /> <span t-field="line.product_packaging_id" />)
+                            </span>
+                        </td>
+                        <td class="text-end">
+                            <span t-field="line.price_unit" />
+                        </td>
+                        <td class="text-end">
+                            <span class="text-align-bottom"><span
+                                t-field="line.discount"
+                            />%</span>
+                        </td>
+                        <td class="text-end">
+                            <span
+                                t-field="line.price_subtotal"
+                                t-options='{"widget": "monetary", "display_currency": o.currency_id}'
+                            />
+                        </td>
+                    </t>
+                    <t t-if="line.display_type == 'line_section'">
+                        <td colspan="99" id="section">
+                            <span t-field="line.name" />
+                        </td>
+                        <t t-set="current_section" t-value="line" />
+                        <t t-set="current_subtotal" t-value="0" />
+                    </t>
+                    <t t-if="line.display_type == 'line_note'">
+                        <td colspan="99" id="note">
+                            <span t-field="line.name" />
+                        </td>
+                    </t>
+                </tr>
+                <t
+                    t-if="current_section and (line_last or o.order_line[line_index+1].display_type == 'line_section')"
+                >
+                    <tr class="is-subtotal text-end">
+                        <td colspan="99" id="subtotal">
+                            <strong class="mr16">Subtotal</strong>
+                            <span
+                                t-out="current_subtotal"
+                                t-options='{"widget": "monetary", "display_currency": o.currency_id}'
+                            />
+                        </td>
+                    </tr>
+                </t>
+            </t>
+        </xpath>
+        <xpath expr="//t[@t-call='purchase.document_tax_totals']" position="attributes">
+            <attribute
+                name="groups"
+            >purchase_order_report_without_tax_col.group_taxes_on_report_purchaseorder_document</attribute>
+        </xpath>
+        <xpath expr="//t[@t-call='purchase.document_tax_totals']" position="after">
+            <tr
+                groups="!purchase_order_report_without_tax_col.group_taxes_on_report_purchaseorder_document"
+                class="border-black o_total"
+                style="font-size: 1.5em"
+            >
+                <td>
+                    <strong>Total</strong>
+                </td>
+                <td class="text-end">
+                    <span t-field="o.amount_untaxed" />
+                </td>
+            </tr>
+            <tr
+                class="border-black"
+                groups="!purchase_order_report_without_tax_col.group_taxes_on_report_purchaseorder_document"
+            >
+                <td class="text-end" colspan="2" style="font-size: 0.8em">
+                    No taxes included
+                </td>
+            </tr>
+        </xpath>
+    </template>
+</odoo>
