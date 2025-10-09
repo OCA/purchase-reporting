@@ -8,7 +8,7 @@
     "version": "18.0.1.0.2",
     "category": "Purchase",
     "website": "https://github.com/OCA/purchase-reporting",
-    "author": "Eficent, Odoo Community Association (OCA)",
+    "author": "ForgeFlow, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "depends": [
         "purchase",
