@@ -13,5 +13,6 @@
     "depends": ["purchase"],
     "data": [
         "reports/purchase_order_report_template.xml",
+        "views/account_tax_group_views.xml",
     ],
 }
