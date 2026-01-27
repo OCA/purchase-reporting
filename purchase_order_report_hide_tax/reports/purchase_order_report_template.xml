@@ -7,7 +7,7 @@
         <xpath expr="//th[@name='th_taxes']" position="attributes">
             <attribute name="t-if">o.show_tax_column_in_report</attribute>
         </xpath>
-        <xpath expr="//td[@name='td_taxes']" position="attributes">
+        <xpath expr="//td[span[contains(@t-out, 'line.taxes_id')]]" position="attributes">
             <attribute name="t-if">o.show_tax_column_in_report</attribute>
         </xpath>
     </template>
