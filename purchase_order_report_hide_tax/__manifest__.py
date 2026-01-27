@@ -3,7 +3,7 @@
 {
     "name": "Purchase order line hide tax in report",
     "summary": "Hide taxes column when they don't add value",
-    "version": "18.0.1.0.0",
+    "version": "18.0.1.0.1",
     "development_status": "Alpha",
     "category": "Purchases",
     "website": "https://github.com/OCA/purchase-reporting",
@@ -13,5 +13,6 @@
     "depends": ["purchase"],
     "data": [
         "reports/purchase_order_report_template.xml",
+        "views/account_tax_group_views.xml",
     ],
 }
