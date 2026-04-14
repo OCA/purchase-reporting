@@ -17,7 +17,11 @@ purchase-reporting
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[purchase_report_shipping_address](purchase_report_shipping_address/) | 19.0.1.0.0 |  | Purchase Report Shipping Address
 
 [//]: # (end addons)
 

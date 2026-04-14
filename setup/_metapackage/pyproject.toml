@@ -1,0 +1,11 @@
+[project]
+name = "odoo-addons-oca-purchase-reporting"
+version = "19.0.20260414.0"
+dependencies = [
+    "odoo-addon-purchase_report_shipping_address==19.0.*",
+]
+classifiers=[
+    "Programming Language :: Python",
+    "Framework :: Odoo",
+    "Framework :: Odoo :: 19.0",
+]
