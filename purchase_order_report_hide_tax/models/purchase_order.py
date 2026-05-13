@@ -15,10 +15,12 @@ class PurchaseOrder(models.Model):
         for order in self.filtered("order_line"):
             order_lines = order.order_line.filtered(lambda x: not x.display_type)
             # Can be a recordset if several taxes apply
-            first_line_tax_group = fields.first(order_lines).taxes_id.tax_group_id
+            first_line_tax_group = next(
+                iter(order_lines), order_lines
+            ).tax_ids.tax_group_id
             if first_line_tax_group.filtered("show_tax_column_in_purchase_report"):
                 continue
             # Mixed group taxes, let's show them for clarity
             order.show_tax_column_in_report = (
-                first_line_tax_group != order_lines.taxes_id.tax_group_id
+                first_line_tax_group != order_lines.tax_ids.tax_group_id
             )

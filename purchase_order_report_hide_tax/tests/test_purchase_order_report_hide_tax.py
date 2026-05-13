@@ -10,7 +10,6 @@ class TestPurchaseOrderReportHideTax(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.vendor = cls.env["res.partner"].create({"name": "Test Vendor"})
         cls.product = cls.env["product.product"].create({"name": "Test Product"})
         cls.tax_group_10 = cls.env["account.tax.group"].create({"name": "Tax 10%"})
         cls.tax_group_15 = cls.env["account.tax.group"].create({"name": "Tax 15%"})
@@ -36,7 +35,7 @@ class TestPurchaseOrderReportHideTax(BaseCommon):
     def _create_po(self, taxes_per_line):
         return self.env["purchase.order"].create(
             {
-                "partner_id": self.vendor.id,
+                "partner_id": self.partner.id,
                 "order_line": [
                     Command.create(
                         {
@@ -44,7 +43,7 @@ class TestPurchaseOrderReportHideTax(BaseCommon):
                             "product_id": self.product.id,
                             "product_qty": 1.0,
                             "price_unit": 100.0,
-                            "taxes_id": [Command.link(taxes.id)],
+                            "tax_ids": [Command.link(taxes.id)],
                         }
                     )
                     for taxes in taxes_per_line

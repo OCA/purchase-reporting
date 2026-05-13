@@ -8,7 +8,7 @@
             <attribute name="t-if">o.show_tax_column_in_report</attribute>
         </xpath>
         <xpath
-            expr="//td[span[contains(@t-out, 'line.taxes_id')]]"
+            expr="//td[span[contains(@t-out, 'line.tax_ids')]]"
             position="attributes"
         >
             <attribute name="t-if">o.show_tax_column_in_report</attribute>
