@@ -1,7 +1,8 @@
 [project]
 name = "odoo-addons-oca-purchase-reporting"
-version = "19.0.20260414.0"
+version = "19.0.20260526.0"
 dependencies = [
+    "odoo-addon-purchase_order_report_hide_tax==19.0.*",
     "odoo-addon-purchase_report_shipping_address==19.0.*",
 ]
 classifiers=[
