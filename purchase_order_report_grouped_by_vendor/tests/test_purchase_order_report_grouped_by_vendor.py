@@ -1,9 +1,18 @@
 # Copyright 2024 Tecnativa - Pilar Vargas
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from odoo.tests.common import Form, TransactionCase
+from odoo.tests import Form, tagged
+
+from odoo.addons.base.tests.common import BaseCommon
+
+REPORT_NAME = (
+    "purchase_order_report_grouped_by_vendor.report_purchase_order_grouped_by_vendor"
+)
 
 
-class TestPurchaseOrderReportGroupedByVendor(TransactionCase):
+# Rendering the report needs a fully loaded registry, as modules loaded after
+# this one (purchase_stock, ...) extend the records involved in it.
+@tagged("post_install", "-at_install")
+class TestPurchaseOrderReportGroupedByVendor(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -32,25 +41,25 @@ class TestPurchaseOrderReportGroupedByVendor(TransactionCase):
         po2_partner1.button_confirm()
         po1_partner2 = self._create_purchase_order(self.partner2)
         po1_partner2.button_confirm()
-        purchase_order_ids = [
-            po1_partner1.id,
-            po2_partner1.id,
-            po1_partner2.id,
-        ]
-        IrActionsReport = self.env["ir.actions.report"]
-        res = IrActionsReport._render_qweb_html(
-            IrActionsReport._get_report_from_name(
-                "purchase_order_report_grouped_by_vendor"
-                ".report_purchase_order_grouped_by_vendor"
-            ),
-            purchase_order_ids,
+        purchase_orders = po1_partner1 + po2_partner1 + po1_partner2
+        # Only two groups, one per vendor
+        groups = purchase_orders.get_grouped_data()
+        self.assertEqual(
+            [group["partner"] for group in groups], [self.partner1, self.partner2]
+        )
+        self.assertEqual(groups[0]["order_ids"], po1_partner1 + po2_partner1)
+        self.assertEqual(groups[1]["order_ids"], po1_partner2)
+        html = str(
+            self.env["ir.actions.report"]._render_qweb_html(
+                REPORT_NAME, purchase_orders.ids
+            )[0]
         )
         # Both vendors must be in the report
-        self.assertRegex(str(res[0]), '<span itemprop="name">Test Partner One</span>')
-        self.assertRegex(str(res[0]), '<span itemprop="name">Test Partner Two</span>')
+        self.assertIn('<span itemprop="name">Test Partner One</span>', html)
+        self.assertIn('<span itemprop="name">Test Partner Two</span>', html)
         # Purchase orders are grouped by vendor with Order Ref in lines.
-        self.assertEqual(str(res[0]).count(f"Order: {po1_partner1.name}"), 1)
-        self.assertEqual(str(res[0]).count(f"Order: {po2_partner1.name}"), 1)
-        self.assertEqual(str(res[0]).count(f"Order: {po1_partner2.name}"), 1)
-        self.assertEqual(str(res[0]).count(self.product1.name), 3)
-        self.assertEqual(str(res[0]).count(self.product2.name), 3)
+        self.assertEqual(html.count(f"Order: {po1_partner1.name}"), 1)
+        self.assertEqual(html.count(f"Order: {po2_partner1.name}"), 1)
+        self.assertEqual(html.count(f"Order: {po1_partner2.name}"), 1)
+        self.assertEqual(html.count(self.product1.name), 3)
+        self.assertEqual(html.count(self.product2.name), 3)
