@@ -39,7 +39,9 @@
                                 <th name="th_description">
                                     <strong>Description</strong>
                                 </th>
-                                <th name="th_taxes"><strong>Taxes</strong></th>
+                                <th name="th_taxes">
+                                    <strong>Taxes</strong>
+                                </th>
                                 <th name="th_quantity" class="text-right">
                                     <strong>Qty</strong>
                                 </th>
@@ -50,7 +52,8 @@
                                     <strong>Unit Price</strong>
                                 </th>
                                 <th name="th_amount" class="text-right">
-                                    <strong>Amount</strong></th>
+                                    <strong>Amount</strong>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -61,8 +64,8 @@
                                         <strong
                                             t-if="order.partner_ref"
                                         >/ Vendor Ref: <t
-                                                t-esc="order.partner_ref"
-                                            /></strong>
+                                            t-esc="order.partner_ref"
+                                        /></strong>
                                     </td>
                                 </tr>
                                 <t t-set="current_subtotal" t-value="0" />
@@ -141,5 +144,4 @@
             />
         </t>
     </template>
-
 </odoo>
