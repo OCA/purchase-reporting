@@ -1,0 +1,86 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* purchase_order_report_grouped_by_vendor
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-13 11:35+0000\n"
+"PO-Revision-Date: 2024-05-13 13:36+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. module: purchase_order_report_grouped_by_vendor
+#: model:ir.actions.report,print_report_name:purchase_order_report_grouped_by_vendor.action_report_purchase_order
+msgid ""
+"\n"
+"            (object.state in ('draft', 'sent') and 'Request for Quotation - "
+"%s' % (object.name) or\n"
+"            'Purchase Order - %s' % (object.name))"
+msgstr ""
+"\n"
+"            (object.state in ('draft', 'sent') and 'Presupuesto de compra - "
+"%s' % (object.name) or\n"
+"            'Orden de compra - %s' % (object.name))"
+
+#. module: purchase_order_report_grouped_by_vendor
+#: model_terms:ir.ui.view,arch_db:purchase_order_report_grouped_by_vendor.report_purchase_order_grouped_by_vendor_document
+msgid "/ Vendor Ref:"
+msgstr "/ Ref. Proveedor:"
+
+#. module: purchase_order_report_grouped_by_vendor
+#: model_terms:ir.ui.view,arch_db:purchase_order_report_grouped_by_vendor.report_purchase_order_grouped_by_vendor_document
+msgid "<strong>Amount</strong>"
+msgstr "<strong>Importe</strong>"
+
+#. module: purchase_order_report_grouped_by_vendor
+#: model_terms:ir.ui.view,arch_db:purchase_order_report_grouped_by_vendor.report_purchase_order_grouped_by_vendor_document
+msgid "<strong>Description</strong>"
+msgstr "<strong>Descripción</strong>"
+
+#. module: purchase_order_report_grouped_by_vendor
+#: model_terms:ir.ui.view,arch_db:purchase_order_report_grouped_by_vendor.report_purchase_order_grouped_by_vendor_document
+msgid "<strong>Qty</strong>"
+msgstr "<strong>Cantidad</strong>"
+
+#. module: purchase_order_report_grouped_by_vendor
+#: model_terms:ir.ui.view,arch_db:purchase_order_report_grouped_by_vendor.report_purchase_order_grouped_by_vendor_document
+msgid "<strong>Receip Date</strong>"
+msgstr "<strong>Fecha Recepción</strong>"
+
+#. module: purchase_order_report_grouped_by_vendor
+#: model_terms:ir.ui.view,arch_db:purchase_order_report_grouped_by_vendor.report_purchase_order_grouped_by_vendor_document
+msgid "<strong>Taxes</strong>"
+msgstr "<strong>Impuestos</strong>"
+
+#. module: purchase_order_report_grouped_by_vendor
+#: model_terms:ir.ui.view,arch_db:purchase_order_report_grouped_by_vendor.report_purchase_order_grouped_by_vendor_document
+msgid "<strong>Total:</strong>"
+msgstr ""
+
+#. module: purchase_order_report_grouped_by_vendor
+#: model_terms:ir.ui.view,arch_db:purchase_order_report_grouped_by_vendor.report_purchase_order_grouped_by_vendor_document
+msgid "<strong>Unit Price</strong>"
+msgstr "<strong>Precio Unidad</strong>"
+
+#. module: purchase_order_report_grouped_by_vendor
+#: model_terms:ir.ui.view,arch_db:purchase_order_report_grouped_by_vendor.report_purchase_order_grouped_by_vendor_document
+msgid "Order:"
+msgstr "Pedido:"
+
+#. module: purchase_order_report_grouped_by_vendor
+#: model:ir.model,name:purchase_order_report_grouped_by_vendor.model_purchase_order
+msgid "Purchase Order"
+msgstr "Pedido de Compra"
+
+#. module: purchase_order_report_grouped_by_vendor
+#: model:ir.actions.report,name:purchase_order_report_grouped_by_vendor.action_report_purchase_order
+msgid "Purchase Order Grouped By Vendor"
+msgstr "Pedidos de Compra Agrupados por Proveedor"
