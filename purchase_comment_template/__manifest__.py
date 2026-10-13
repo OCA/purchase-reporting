@@ -5,7 +5,7 @@
 {
     "name": "Purchase Comments",
     "summary": "Comments texts templates on Purchase documents",
-    "version": "18.0.1.0.2",
+    "version": "19.0.1.0.0",
     "category": "Purchase",
     "website": "https://github.com/OCA/purchase-reporting",
     "author": "ForgeFlow, Odoo Community Association (OCA)",

@@ -24,7 +24,21 @@ class TestPurchaseOrderReport(BaseCommon):
             Command.link(cls.before_comment.id),
             Command.link(cls.after_comment.id),
         ]
-        cls.purchase_order = cls.env.ref("purchase.purchase_order_4")
+        cls.product = cls.env["product.product"].create({"name": "Product Test"})
+        cls.purchase_order = cls.env["purchase.order"].create(
+            {
+                "partner_id": cls.partner.id,
+                "order_line": [
+                    Command.create(
+                        {
+                            "product_id": cls.product.id,
+                            "product_qty": 1.0,
+                            "price_unit": 10.0,
+                        }
+                    ),
+                ],
+            }
+        )
         cls.purchase_order.update(
             {
                 "comment_template_ids": [
@@ -74,7 +88,7 @@ class TestPurchaseOrderReport(BaseCommon):
         comments_model = self.env[comments_action.res_model]
         # pre-condition
         self.assertNotIn(
-            self.env.ref("base.group_erp_manager"), purchase_manager.groups_id
+            self.env.ref("base.group_erp_manager"), purchase_manager.group_ids
         )
 
         # Act
