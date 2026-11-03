@@ -7,6 +7,12 @@ from odoo.addons.base.tests.common import BaseCommon
 
 
 class TestPurchaseOrderReportHideTax(BaseCommon):
+    _test_user_groups = (
+        "base.group_user",
+        "purchase.group_purchase_user",
+        "account.group_account_manager",
+    )
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
