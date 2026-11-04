@@ -25,6 +25,7 @@ addon | version | maintainers | summary
 [purchase_order_report_hide_tax](purchase_order_report_hide_tax/) | 18.0.1.0.1 | <a href='https://github.com/chienandalu'><img src='https://github.com/chienandalu.png' width='32' height='32' style='border-radius:50%;' alt='chienandalu'/></a> <a href='https://github.com/rafaelbn'><img src='https://github.com/rafaelbn.png' width='32' height='32' style='border-radius:50%;' alt='rafaelbn'/></a> | Hide taxes column when they don't add value
 [purchase_packaging_report](purchase_packaging_report/) | 18.0.1.0.0 | <a href='https://github.com/Shide'><img src='https://github.com/Shide.png' width='32' height='32' style='border-radius:50%;' alt='Shide'/></a> | Packaging data in purchase reports
 [purchase_report_date_format](purchase_report_date_format/) | 18.0.1.0.0 |  | Purchase Report Date Format
+[purchase_report_discount_visibility](purchase_report_discount_visibility/) | 18.0.1.0.0 | <a href='https://github.com/yostashiro'><img src='https://github.com/yostashiro.png' width='32' height='32' style='border-radius:50%;' alt='yostashiro'/></a> <a href='https://github.com/aungkokolin1997'><img src='https://github.com/aungkokolin1997.png' width='32' height='32' style='border-radius:50%;' alt='aungkokolin1997'/></a> | Configure visibility of discount column in purchase reports
 [purchase_report_shipping_address](purchase_report_shipping_address/) | 18.0.1.0.0 |  | Purchase Report Shipping Address
 
 [//]: # (end addons)
