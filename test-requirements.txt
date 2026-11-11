@@ -1,0 +1,1 @@
+odoo-addon-base_comment_template @ git+https://github.com/OCA/reporting-engine.git@refs/pull/1216/head#subdirectory=base_comment_template
