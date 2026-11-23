@@ -7,9 +7,6 @@
         <field
             name="report_name"
         >purchase_order_report_grouped_by_vendor.report_purchase_order_grouped_by_vendor</field>
-        <field
-            name="report_file"
-        >purchase_order_report_grouped_by_vendor.report_purchase_order_grouped_by_vendor</field>
         <field name="print_report_name">
             (object.state in ('draft', 'sent') and 'Request for Quotation - %s' % (object.name) or
             'Purchase Order - %s' % (object.name))</field>
@@ -74,7 +71,7 @@
                             >
                                 <tr>
                                     <td id="product" class="text-start">
-                                        <span t-field="line.name" />
+                                        <span t-field="line.label" />
                                     </td>
                                     <td name="td_taxes" class="text-end">
                                         <span
@@ -84,7 +81,7 @@
                                     <td class="text-end">
                                         <span t-field="line.product_qty" />
                                         <span
-                                            t-field="line.product_uom_id.name"
+                                            t-field="line.uom_id.name"
                                             groups="uom.group_uom"
                                         />
                                     </td>

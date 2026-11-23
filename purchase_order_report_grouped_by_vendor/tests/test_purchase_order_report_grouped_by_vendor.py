@@ -13,6 +13,8 @@ REPORT_NAME = (
 # this one (purchase_stock, ...) extend the records involved in it.
 @tagged("post_install", "-at_install")
 class TestPurchaseOrderReportGroupedByVendor(BaseCommon):
+    _test_user_groups = ("purchase.group_purchase_user",)
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
