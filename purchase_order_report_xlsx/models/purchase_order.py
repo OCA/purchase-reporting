@@ -67,7 +67,7 @@ class PurchaseOrder(models.Model):
             },
             "description": {
                 "header": {"value": self.env._("Description")},
-                "data": {"value": _render("order_line.name or ''")},
+                "data": {"value": _render("order_line.label or order_line.name or ''")},
                 "width": 40,
             },
             "qty": {
@@ -83,7 +83,7 @@ class PurchaseOrder(models.Model):
             },
             "uom": {
                 "header": {"value": self.env._("UoM")},
-                "data": {"value": _render("order_line.product_uom_id.name or ''")},
+                "data": {"value": _render("order_line.uom_id.name or ''")},
                 "width": 10,
             },
             "price_unit": {

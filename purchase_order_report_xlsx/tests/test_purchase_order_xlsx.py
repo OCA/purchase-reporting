@@ -7,6 +7,8 @@ from odoo.addons.base.tests.common import BaseCommon
 
 
 class TestPurchaseOrderXlsx(BaseCommon):
+    _test_user_groups = ("purchase.group_purchase_user",)
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -34,5 +36,10 @@ class TestPurchaseOrderXlsx(BaseCommon):
         cls.report = cls.env["ir.actions.report"].with_context(**ctx)
 
     def test_report_renders(self):
-        result = self.report._render_xlsx(None, None, None)
+        ctx = {
+            "report_name": "purchase_order_report_xlsx.purchase_order_xlsx",
+            "active_model": "purchase.order",
+            "active_ids": self.po.ids,
+        }
+        result = self.report.with_context(**ctx)._render_xlsx(None, None, None)
         self.assertEqual(result[1], "xlsx")
