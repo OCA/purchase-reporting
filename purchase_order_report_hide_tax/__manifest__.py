@@ -4,7 +4,7 @@
     "name": "Purchase order line hide tax in report",
     "summary": "Hide taxes column when they don't add value",
     "version": "19.0.1.0.1",
-    "development_status": "Alpha",
+    "development_status": "Beta",
     "category": "Purchases",
     "website": "https://github.com/OCA/purchase-reporting",
     "author": "Moduon, Odoo Community Association (OCA)",
