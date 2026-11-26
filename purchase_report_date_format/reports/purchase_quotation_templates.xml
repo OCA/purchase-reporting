@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="report_purchasequotation_document_inherit"
+        inherit_id="purchase.report_purchasequotation_document"
+    >
+        <xpath expr="//span[@t-field='order_line.date_planned']" position="attributes">
+            <attribute name="t-options">{"widget": "date"}</attribute>
+        </xpath>
+    </template>
+</odoo>
